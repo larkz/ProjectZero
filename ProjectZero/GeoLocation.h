@@ -6,8 +6,25 @@
 //  Copyright (c) 2012 Larkin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface GeoLocation : NSObject
+@protocol GeoLocationDelegate <NSObject>
+
+- (void)locationServicesState:(BOOL)state;
+
+@end
+
+@interface GeoLocation : NSObject <CLLocationManagerDelegate> {
+    
+    CLLocationManager *locationManager;
+    __weak id delegate;
+}
+
+- (void)updateCurrentLocationManager;
+
+@property (nonatomic, weak) id <GeoLocationDelegate> delegate;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property BOOL didUpdate;
 
 @end

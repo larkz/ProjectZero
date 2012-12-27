@@ -10,4 +10,10 @@
 
 @interface MapSearchView : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *postalCodeTextField;
+@property (weak, nonatomic) IBOutlet UIPickerView *distanceRadiusPicker;
+
+@property (strong, nonatomic) NSMutableArray *distanceList;
+
+
 @end

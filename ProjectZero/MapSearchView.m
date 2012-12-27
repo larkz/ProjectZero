@@ -10,9 +10,36 @@
 
 @interface MapSearchView ()
 
+
 @end
 
 @implementation MapSearchView
+
+@synthesize postalCodeTextField;
+@synthesize distanceRadiusPicker;
+@synthesize distanceList;
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)distanceRadiusPicker {
+
+    
+    return 1;
+}
+
+
+- (NSInteger)pickerView:(UIPickerView *)distanceRadiusPicker numberOfRowsInComponent:(NSInteger)component {
+    
+    return distanceList.count;
+}
+
+
+
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    return [distanceList objectAtIndex:row];
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,10 +50,23 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
+
+    
+    distanceList = [[NSMutableArray alloc] init];
+    
+    [distanceList addObject:@"5 km"];
+    [distanceList addObject:@"10 km"];
+    [distanceList addObject:@"20 km"];
+    [distanceList addObject:@"50 km"];
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSLog(@"distanceList: %@", distanceList);
+
+    
 }
 
 - (void)didReceiveMemoryWarning

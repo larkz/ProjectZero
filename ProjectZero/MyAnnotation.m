@@ -10,4 +10,12 @@
 
 @implementation MyAnnotation
 
+@synthesize coordinate;
+
+- (id) initWithCoordinate:(CLLocationCoordinate2D)coord
+{
+    coordinate = coord;
+    return self;
+}
+
 @end
