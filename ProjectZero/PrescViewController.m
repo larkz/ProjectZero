@@ -42,7 +42,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *PrescTableCellIdentifier = @"PrescTableCellItem";
+    static NSString *PrescTableCellIdentifier = @"PrescTableCell";
     
     PrescTableCell *cell = [tableView dequeueReusableCellWithIdentifier:PrescTableCellIdentifier];
     
@@ -53,7 +53,7 @@
     cell.drugName.text = @"asdf";
     cell.date.text = @"1234";
     
-    cell.textLabel.text =@"Testing";
+    //cell.textLabel.text =@"Testing";
     
     //    cell.pic.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
     
