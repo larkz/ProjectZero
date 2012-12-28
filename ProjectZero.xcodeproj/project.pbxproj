@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91DADFDB168E49CB006F027F /* SetPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DADFDA168E49CB006F027F /* SetPrescription.m */; };
 		DB448673168CE988002BEBF7 /* PrescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB448672168CE988002BEBF7 /* PrescViewController.m */; };
 		DB448679168CEAEC002BEBF7 /* PrescTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB448678168CEAEC002BEBF7 /* PrescTableCell.m */; };
 		DB44867B168CF297002BEBF7 /* PrescTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB44867A168CF297002BEBF7 /* PrescTableCell.xib */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91DADFD9168E49CB006F027F /* SetPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPrescription.h; sourceTree = "<group>"; };
+		91DADFDA168E49CB006F027F /* SetPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPrescription.m; sourceTree = "<group>"; };
 		DB448671168CE988002BEBF7 /* PrescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescViewController.h; sourceTree = "<group>"; };
 		DB448672168CE988002BEBF7 /* PrescViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescViewController.m; sourceTree = "<group>"; };
 		DB448677168CEAEC002BEBF7 /* PrescTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrescTableCell.h; path = ProjectZero/PrescTableCell.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				DBD8932D16894FE8005C0B87 /* Supporting Files */,
 				DB710C66168BF07C0029847F /* GeoLocation.h */,
 				DB710C67168BF07C0029847F /* GeoLocation.m */,
+				91DADFD9168E49CB006F027F /* SetPrescription.h */,
+				91DADFDA168E49CB006F027F /* SetPrescription.m */,
 			);
 			path = ProjectZero;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				DB448673168CE988002BEBF7 /* PrescViewController.m in Sources */,
 				DB448679168CEAEC002BEBF7 /* PrescTableCell.m in Sources */,
 				DB448681168D0D80002BEBF7 /* PrescTable.m in Sources */,
+				91DADFDB168E49CB006F027F /* SetPrescription.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
