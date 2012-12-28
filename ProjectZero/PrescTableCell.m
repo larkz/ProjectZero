@@ -10,6 +10,10 @@
 
 @implementation PrescTableCell
 
+@synthesize pic = _pic;
+@synthesize drugName = _drugName;
+@synthesize date = _date;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

@@ -10,6 +10,6 @@
 
 @interface PrescViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *prescTable;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

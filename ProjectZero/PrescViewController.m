@@ -7,12 +7,28 @@
 //
 
 #import "PrescViewController.h"
+#import "PrescTableCell.h"
 
 @interface PrescViewController ()
 
 @end
 
 @implementation PrescViewController
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 5;
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +38,30 @@
     }
     return self;
 }
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *PrescTableCellIdentifier = @"PrescTableCellItem";
+    
+    PrescTableCell *cell = [tableView dequeueReusableCellWithIdentifier:PrescTableCellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[PrescTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PrescTableCellIdentifier];
+    }
+    
+    cell.drugName.text = @"asdf";
+    cell.date.text = @"1234";
+    
+    cell.textLabel.text =@"Testing";
+    
+    //    cell.pic.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
+
+
+
 
 - (void)viewDidLoad
 {

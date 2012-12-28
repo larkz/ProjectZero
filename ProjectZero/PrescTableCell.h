@@ -10,4 +10,19 @@
 
 @interface PrescTableCell : UITableViewCell
 
+
+{
+    IBOutlet UITextField *drugName;
+    IBOutlet UITextField *date;
+    IBOutlet UITextField *pic;
+}
+
+@property (weak, nonatomic) IBOutlet UITextField *drugName;
+@property (weak, nonatomic) IBOutlet UITextField *date;
+
+@property (weak, nonatomic) IBOutlet UIImageView *pic;
+
+
+
+
 @end
