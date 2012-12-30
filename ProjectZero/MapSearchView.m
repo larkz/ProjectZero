@@ -18,6 +18,40 @@
 @synthesize postalCodeTextField;
 @synthesize distanceRadiusPicker;
 @synthesize distanceList;
+@synthesize locationManager;
+@synthesize currentLocation;
+
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+    
+    self.currentLocation = newLocation;
+    if(newLocation.horizontalAccuracy <= 100.0f) { [locationManager stopUpdatingLocation];
+    
+        
+        CLLocationCoordinate2D cood = self.currentLocation.coordinate;
+        
+    
+        NSLog(@" Long: %f, lat:%f", cood.longitude, cood.latitude);}
+    
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
+    if(error.code == kCLErrorDenied) {
+        [locationManager stopUpdatingLocation];
+    } else if(error.code == kCLErrorLocationUnknown) {
+        // retry
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error retrieving location"
+                                                        message:[error description]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
 
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)distanceRadiusPicker {
@@ -62,9 +96,15 @@
     [distanceList addObject:@"20 km"];
     [distanceList addObject:@"50 km"];
 
+    
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+    NSLog(@"%@", self.currentLocation);
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSLog(@"distanceList: %@", distanceList);
 
     
 }
