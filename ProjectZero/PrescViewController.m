@@ -8,21 +8,20 @@
 
 #import "PrescViewController.h"
 #import "PrescTableCell.h"
+#import "UserVariables.h"
 
 #define dataQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-
 #define dataURL [NSURL URLWithString:@"http://localhost:8888/index.php/QRCodeGen/getUser/?user_id=1"]
 
-
-
-
-
-
 @interface PrescViewController ()
+
 
 @end
 
 @implementation PrescViewController
+
+@synthesize prescList;
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -35,7 +34,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 5;
+    return [self.prescList count];
 }
 
 
@@ -59,14 +58,17 @@
         cell = [[PrescTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PrescTableCellIdentifier];
     }
     
-    cell.drugName.text = @"asdf";
-    cell.date.text = @"1234";
-    
-    //cell.textLabel.text =@"Testing";
-    
-    //    cell.pic.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+    cell.drugName.text = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
+    cell.date.text = @"Date";
     
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    
+    
 }
 
 
@@ -79,22 +81,14 @@
     
     NSError* error;
     
-    NSDictionary *presc = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    self.prescList = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
-    NSLog(@"%@", presc);
-    
-
+    NSLog(@"%@", [self.prescList objectAtIndex:1] );
     
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
 }
-
-
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning
 {

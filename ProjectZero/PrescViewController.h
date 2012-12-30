@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserVariables.h"
 
 
-@interface PrescViewController : UIViewController
+@interface PrescViewController : UIViewController{
+    
+    NSMutableArray *prescList;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (retain, nonatomic) NSMutableArray *prescList;
 
 
 
