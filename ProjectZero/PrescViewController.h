@@ -13,6 +13,8 @@
 @interface PrescViewController : UIViewController{
     
     NSMutableArray *prescList;
+    NSString *userID;
+    NSString *dataURL;
     
 }
 
@@ -20,7 +22,8 @@
 
 @property (retain, nonatomic) NSMutableArray *prescList;
 
-
+@property (retain, nonatomic) NSString *userID;
+@property (retain, nonatomic) NSString *dataURL;
 
 
 

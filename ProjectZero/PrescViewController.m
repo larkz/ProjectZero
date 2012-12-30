@@ -11,7 +11,7 @@
 #import "UserVariables.h"
 
 #define dataQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-#define dataURL [NSURL URLWithString:@"http://localhost:8888/index.php/QRCodeGen/getUser/?user_id=1"]
+#define dataDefault [NSURL URLWithString:@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=1"]
 
 @interface PrescViewController ()
 
@@ -21,6 +21,9 @@
 @implementation PrescViewController
 
 @synthesize prescList;
+@synthesize userID;
+@synthesize dataURL;
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -59,7 +62,8 @@
     }
     
     cell.drugName.text = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
-    cell.date.text = @"Date";
+
+    //cell.date.text = @"Date";
     
     return cell;
 }
@@ -72,18 +76,29 @@
 }
 
 
-
-
 - (void)viewDidLoad
 {
-    NSData* data = [NSData dataWithContentsOfURL:
-                    dataURL];
     
+    
+   self.dataURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=";
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults synchronize];
+    
+    self.userID =[ userDefaults objectForKey:@"userID"];
+    NSLog(@"User ID Presc %@", self.userID);
+    
+    
+    [NSURL URLWithString:[self.dataURL stringByAppendingString:self.userID]];
+    
+    NSLog(@"access URL %@",  [self.dataURL stringByAppendingString:self.userID]);
+    
+    
+    NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:[self.dataURL stringByAppendingString:self.userID]]];
+
     NSError* error;
-    
     self.prescList = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
-    NSLog(@"%@", [self.prescList objectAtIndex:1] );
     
     [super viewDidLoad];
     
