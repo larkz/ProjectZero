@@ -9,6 +9,14 @@
 #import "PrescViewController.h"
 #import "PrescTableCell.h"
 
+#define dataQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
+#define dataURL [NSURL URLWithString:@"http://localhost:8888/index.php/QRCodeGen/getUser/?user_id=1"]
+
+
+
+
+
 
 @interface PrescViewController ()
 
@@ -66,9 +74,27 @@
 
 - (void)viewDidLoad
 {
+    NSData* data = [NSData dataWithContentsOfURL:
+                    dataURL];
+    
+    NSError* error;
+    
+    NSDictionary *presc = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    NSLog(@"%@", presc);
+    
+
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
