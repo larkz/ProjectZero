@@ -9,6 +9,8 @@
 #import "PrescViewController.h"
 #import "PrescTableCell.h"
 
+#import "SBJSON.h"
+
 @interface PrescViewController ()
 
 @end
