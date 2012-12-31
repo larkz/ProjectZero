@@ -28,17 +28,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
+
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+
     return [self.prescList count];
 }
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"PrescQRSegue"])
+	{
+        //[segue.destinationViewController set]
+
+	}
+}
+
+
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -62,8 +74,6 @@
     }
     
     cell.drugName.text = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
-
-    //cell.date.text = @"Date";
     
     return cell;
 }

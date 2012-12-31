@@ -207,7 +207,7 @@
                                             <outlet property="date" destination="6TC-xK-Rtv" id="au6-Zj-Av4"/>
                                             <outlet property="drugName" destination="OZK-gJ-caO" id="H35-P4-Jnb"/>
                                             <outlet property="pic" destination="dTv-oy-7eI" id="1fK-UX-6h2"/>
-                                            <segue destination="buY-Zo-YGK" kind="push" id="8ry-H7-Nam"/>
+                                            <segue destination="buY-Zo-YGK" kind="push" identifier="PrescQRSegue" id="8ry-H7-Nam"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -357,10 +357,10 @@
             </objects>
             <point key="canvasLocation" x="-5652" y="-1399"/>
         </scene>
-        <!--View Controller-->
+        <!--PrescQR View Controller-->
         <scene sceneID="XSE-S3-Zjd">
             <objects>
-                <viewController id="buY-Zo-YGK" sceneMemberID="viewController">
+                <viewController id="buY-Zo-YGK" customClass="PrescQRViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A0K-1E-C6D">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -398,6 +398,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LND-l6-8Ke"/>
+                    <connections>
+                        <outlet property="drugName" destination="Jxt-ns-173" id="fgX-80-x8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O3-gp-Myq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -793,6 +796,12 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PrescQRViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescQRViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="drugName" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="PrescTableCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescTableCell.h"/>
