@@ -15,6 +15,7 @@
     NSMutableArray *prescList;
     NSString *userID;
     NSString *dataURL;
+    NSString *selectedDrug;
     
 }
 
@@ -24,6 +25,8 @@
 
 @property (retain, nonatomic) NSString *userID;
 @property (retain, nonatomic) NSString *dataURL;
+@property (retain, nonatomic) NSString *selectedDrug;
+
 
 
 

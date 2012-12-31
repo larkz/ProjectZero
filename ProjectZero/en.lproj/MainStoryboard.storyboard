@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -233,9 +233,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-sa-hVn">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="330" id="cxX-Fv-F9r"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PrescTableCell" rowHeight="93" id="50u-gM-MQQ" customClass="PrescTableCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="93"/>
@@ -275,7 +272,7 @@
                                             <outlet property="date" destination="6TC-xK-Rtv" id="au6-Zj-Av4"/>
                                             <outlet property="drugName" destination="OZK-gJ-caO" id="H35-P4-Jnb"/>
                                             <outlet property="pic" destination="dTv-oy-7eI" id="1fK-UX-6h2"/>
-                                            <segue destination="buY-Zo-YGK" kind="push" identifier="PrescQRSegue" id="8ry-H7-Nam"/>
+                                            <segue destination="buY-Zo-YGK" kind="push" identifier="PrescQRSegue" id="Xm4-z2-3nr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -287,9 +284,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XNv-sa-hVn" firstAttribute="top" secondItem="ri7-ap-ipz" secondAttribute="top" constant="124" id="SaG-ag-OEc"/>
+                            <constraint firstItem="XNv-sa-hVn" firstAttribute="top" secondItem="ri7-ap-ipz" secondAttribute="top" type="default" id="TAX-ym-whq"/>
                             <constraint firstItem="XNv-sa-hVn" firstAttribute="leading" secondItem="ri7-ap-ipz" secondAttribute="leading" type="default" id="mmF-sn-zdy"/>
                             <constraint firstItem="XNv-sa-hVn" firstAttribute="trailing" secondItem="ri7-ap-ipz" secondAttribute="trailing" type="default" id="qhL-PT-Ka2"/>
+                            <constraint firstItem="XNv-sa-hVn" firstAttribute="bottom" secondItem="ri7-ap-ipz" secondAttribute="bottom" type="default" id="qsS-hi-mUw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Prescriptions" id="vNw-l7-Rk3"/>
@@ -457,15 +455,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Drug Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxt-ns-173">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="jZ1-cr-RdW"/>
-                                    <constraint firstAttribute="height" constant="31" id="rzZ-z5-fax"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5J-SA-SoN">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="169" id="1ZL-cX-zee"/>
@@ -473,6 +462,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="QR Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blU-ec-wZ4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="hQ0-nH-OQU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3o-ng-9DW">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -480,21 +477,21 @@
                         </subviews>
                         <color key="backgroundColor" red="0.39827449199999998" green="0.63596325310000001" blue="1" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Jxt-ns-173" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="33" id="2Zz-vU-dQ3"/>
+                            <constraint firstItem="E3o-ng-9DW" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="44" id="20k-Ht-6FR"/>
+                            <constraint firstItem="blU-ec-wZ4" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="33" id="8Z4-43-gqm"/>
                             <constraint firstItem="FVI-iX-dHb" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8dS-Cx-3HC"/>
+                            <constraint firstItem="E3o-ng-9DW" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="45" id="Ixt-dz-4Gi"/>
                             <constraint firstItem="O5J-SA-SoN" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="69" id="RcN-Yl-2j1"/>
-                            <constraint firstItem="Jxt-ns-173" firstAttribute="leading" secondItem="blU-ec-wZ4" secondAttribute="leading" type="default" id="TSg-oB-MWj"/>
                             <constraint firstItem="O5J-SA-SoN" firstAttribute="top" secondItem="blU-ec-wZ4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cUl-kB-c7G"/>
                             <constraint firstAttribute="trailing" secondItem="FVI-iX-dHb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="l5f-KG-zif"/>
-                            <constraint firstItem="Jxt-ns-173" firstAttribute="trailing" secondItem="blU-ec-wZ4" secondAttribute="trailing" type="default" id="qBw-5P-ncR"/>
                             <constraint firstItem="FVI-iX-dHb" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rqv-wX-Rby"/>
                             <constraint firstItem="blU-ec-wZ4" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="220" id="sPR-lp-Oqg"/>
-                            <constraint firstItem="Jxt-ns-173" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="35" id="zu7-D8-CUm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LND-l6-8Ke"/>
                     <connections>
-                        <outlet property="drugName" destination="Jxt-ns-173" id="fgX-80-x8y"/>
+                        <outlet property="drugNameTextField" destination="E3o-ng-9DW" id="l6C-LN-Gqm"/>
+                        <outlet property="view" destination="A0K-1E-C6D" id="mEF-av-pWh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O3-gp-Myq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -711,7 +708,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyJ-TI-3vT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4805" y="-4219"/>
+            <point key="canvasLocation" x="-4770" y="-4221"/>
         </scene>
         <!--Table View Controller - Search Result-->
         <scene sceneID="5Wn-sM-sIB">
@@ -769,7 +766,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dz2-mc-kNa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4421" y="-4215"/>
+            <point key="canvasLocation" x="-4385" y="-4221"/>
         </scene>
         <!--View Controller - New Prescription-->
         <scene sceneID="ARP-IQ-gDw">
@@ -1083,7 +1080,7 @@
         <class className="PrescQRViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescQRViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="drugName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="drugNameTextField" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="PrescTableCell" superclassName="UITableViewCell">
@@ -1107,8 +1104,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Yej-04-1Zl"/>
         <segue reference="rEu-lR-Viw"/>
+        <segue reference="l7h-Pp-lDc"/>
         <segue reference="Fto-3t-Tr1"/>
     </inferredMetricsTieBreakers>
 </document>

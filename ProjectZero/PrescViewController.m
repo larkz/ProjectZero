@@ -7,6 +7,7 @@
 //
 
 #import "PrescViewController.h"
+#import "PrescQRViewController.h"
 #import "PrescTableCell.h"
 #import "UserVariables.h"
 
@@ -23,6 +24,7 @@
 @synthesize prescList;
 @synthesize userID;
 @synthesize dataURL;
+@synthesize selectedDrug;
 
 
 
@@ -44,11 +46,41 @@
 {
 	if ([segue.identifier isEqualToString:@"PrescQRSegue"])
 	{
-        //[segue.destinationViewController set]
+        
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        PrescQRViewController *destViewController = (PrescQRViewController*)segue.destinationViewController;
+        
+        //destViewController.drugName.text = @"TESt";
+        
+        
 
+        
+      [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
+        
+        
+        //[[segue destinationViewController] setDrugName:[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"]];
+
+        destViewController.drugName = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
+        
+        //destViewController.drugName = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
+        
+        //[[segue destinationViewController] setDrugName:[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"]];
+    
+        NSLog(@"Selected Row asdf: %@",[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"]) ;
+        NSLog(@"Selected Row asdf: %@", [segue.destinationViewController drugName]  );
+        
+        
 	}
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.selectedDrug = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
+    //NSLog(@"Selected Row: %@", self.selectedDrug);
+}
 
 
 
@@ -79,11 +111,6 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
- 
-    
-    
-}
 
 
 - (void)viewDidLoad
