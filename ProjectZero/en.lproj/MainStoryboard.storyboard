@@ -724,63 +724,28 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AAm-fT-VwL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jPQ-HF-idz">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="85" id="pgD-7X-0n4" customClass="UserTableCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="85"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIY-xE-nva">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="she-sH-Tpn">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSa-a7-G7c">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="51" id="4MS-Nq-eJz"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="JSa-a7-G7c" secondAttribute="trailing" constant="20" type="default" id="5eO-no-XaA"/>
-                                            <constraint firstItem="LIY-xE-nva" firstAttribute="top" secondItem="pgD-7X-0n4" secondAttribute="top" constant="20" type="default" id="EhR-VY-u8L"/>
-                                            <constraint firstItem="JSa-a7-G7c" firstAttribute="centerY" secondItem="pgD-7X-0n4" secondAttribute="centerY" type="default" id="HPG-Zx-nDU"/>
-                                            <constraint firstItem="LIY-xE-nva" firstAttribute="leading" secondItem="pgD-7X-0n4" secondAttribute="leading" constant="20" type="default" id="LjO-Gf-IKL"/>
-                                            <constraint firstItem="she-sH-Tpn" firstAttribute="leading" secondItem="pgD-7X-0n4" secondAttribute="leading" constant="20" type="default" id="YaG-v5-CLz"/>
-                                            <constraint firstItem="JSa-a7-G7c" firstAttribute="top" secondItem="pgD-7X-0n4" secondAttribute="top" constant="20" type="default" id="aHn-RQ-Fmu"/>
-                                            <constraint firstItem="she-sH-Tpn" firstAttribute="top" secondItem="LIY-xE-nva" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dEM-z7-ugI"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="name" destination="LIY-xE-nva" id="Zyg-kG-BZl"/>
-                                            <outlet property="pic" destination="JSa-a7-G7c" id="1Ef-HG-d6a"/>
-                                            <outlet property="subDesc" destination="she-sH-Tpn" id="qPE-l1-GS2"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="339" id="2ht-HN-JpA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="5iV-dD-23N" id="alG-MG-jfo"/>
+                                    <outlet property="delegate" destination="5iV-dD-23N" id="p4q-sD-EXF"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AAm-fT-VwL" firstAttribute="top" secondItem="eR8-bJ-uHC" secondAttribute="top" type="default" id="Wr7-Pm-uyo"/>
-                            <constraint firstItem="AAm-fT-VwL" firstAttribute="leading" secondItem="eR8-bJ-uHC" secondAttribute="leading" type="default" id="qbj-23-QZH"/>
-                            <constraint firstItem="AAm-fT-VwL" firstAttribute="trailing" secondItem="eR8-bJ-uHC" secondAttribute="trailing" type="default" id="rD9-i8-BqE"/>
-                            <constraint firstItem="AAm-fT-VwL" firstAttribute="bottom" secondItem="eR8-bJ-uHC" secondAttribute="bottom" type="default" id="yCw-S3-xX8"/>
+                            <constraint firstItem="jPQ-HF-idz" firstAttribute="leading" secondItem="eR8-bJ-uHC" secondAttribute="leading" type="default" id="e26-tx-fhx"/>
+                            <constraint firstItem="jPQ-HF-idz" firstAttribute="trailing" secondItem="eR8-bJ-uHC" secondAttribute="trailing" type="default" id="gnu-sq-qkr"/>
+                            <constraint firstItem="jPQ-HF-idz" firstAttribute="top" secondItem="eR8-bJ-uHC" secondAttribute="top" constant="59" id="rH0-J7-gEK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vZZ-5f-dfC"/>
                     <connections>
-                        <outlet property="tableView" destination="AAm-fT-VwL" id="qXU-2p-JBb"/>
+                        <outlet property="tableView" destination="jPQ-HF-idz" id="Cy3-IB-Ugr"/>
+                        <outlet property="view" destination="eR8-bJ-uHC" id="4Th-mN-kxo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxc-zz-g2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1163,14 +1128,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UserTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pic" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="subDesc" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
