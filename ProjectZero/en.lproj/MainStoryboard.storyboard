@@ -29,6 +29,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="pressPatientLogin:" destination="2" eventType="touchUpInside" id="swL-bW-fro"/>
                                     <segue destination="zcj-Ui-nWo" kind="modal" id="hoT-0J-S50"/>
                                 </connections>
                             </button>
@@ -138,6 +139,11 @@
                             <constraint firstAttribute="bottom" secondItem="tfd-0j-Qo6" secondAttribute="bottom" constant="60" id="zr8-fg-05D"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="mCo-lJ-XXN" id="gUr-3B-kJj"/>
+                        <outlet property="patientLogin" destination="ub3-kA-87R" id="UgA-c8-pYh"/>
+                        <outlet property="userID" destination="je6-HR-FHb" id="Hyr-Ki-4qy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,12 +253,12 @@
                                                         <constraint firstAttribute="height" constant="49" id="jnv-59-Euc"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZK-gJ-caO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Drug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZK-gJ-caO">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TC-xK-Rtv">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TC-xK-Rtv">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -775,7 +781,27 @@
                     <view key="view" contentMode="scaleToFill" id="ZJi-21-MBF">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Drug Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkP-Ie-h6X">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="Ctq-xc-ovw">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="0.39827449199999998" green="0.63596325310000001" blue="1" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ctq-xc-ovw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3Z6-Hf-7PH"/>
+                            <constraint firstAttribute="bottom" secondItem="Ctq-xc-ovw" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="CqJ-gX-sgB"/>
+                            <constraint firstItem="kkP-Ie-h6X" firstAttribute="leading" secondItem="ZJi-21-MBF" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="IAL-b7-HPG"/>
+                            <constraint firstItem="kkP-Ie-h6X" firstAttribute="top" secondItem="ZJi-21-MBF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="KEI-Mc-KN6"/>
+                            <constraint firstItem="Ctq-xc-ovw" firstAttribute="top" secondItem="kkP-Ie-h6X" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Rvf-sO-BY0"/>
+                            <constraint firstAttribute="trailing" secondItem="kkP-Ie-h6X" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="T3v-ai-8wl"/>
+                            <constraint firstItem="Ctq-xc-ovw" firstAttribute="leading" secondItem="ZJi-21-MBF" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lWj-Vu-hxH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Prescription" id="Sw6-WK-CzM"/>
                 </viewController>
@@ -887,10 +913,10 @@
             </objects>
             <point key="canvasLocation" x="-4053" y="-3537"/>
         </scene>
-        <!--View Controller - New Profile-->
+        <!--New Patient Profile View Controller - New Profile-->
         <scene sceneID="ylO-VD-HD1">
             <objects>
-                <viewController id="YwB-Y5-XaG" sceneMemberID="viewController">
+                <viewController id="YwB-Y5-XaG" customClass="NewPatientProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NdI-fx-hEv">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -937,6 +963,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="pressCreate:" destination="YwB-Y5-XaG" eventType="touchUpInside" id="ZSB-Hu-F6M"/>
                                     <segue destination="F54-rU-MjW" kind="push" id="Yej-04-1Zl"/>
                                 </connections>
                             </button>
@@ -1020,6 +1047,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Profile" id="HDs-VY-kpB"/>
+                    <connections>
+                        <outlet property="address" destination="c15-O8-IWv" id="J3I-eC-rL7"/>
+                        <outlet property="day" destination="TBd-uW-TA3" id="cJ7-Wx-F6u"/>
+                        <outlet property="firstName" destination="sl8-Wc-C2h" id="iH4-7i-zuL"/>
+                        <outlet property="healthCardNum" destination="ZQ7-Wa-wEb" id="Q58-30-gVq"/>
+                        <outlet property="lastName" destination="Sdx-MM-q85" id="gk0-oK-sCg"/>
+                        <outlet property="month" destination="qRh-Wu-guZ" id="q48-OO-eWt"/>
+                        <outlet property="year" destination="Wt2-TR-ohU" id="i57-ID-pDI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJX-0w-yVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1077,6 +1113,19 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="NewPatientProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewPatientProfileViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressCreate:"/>
+                <relationship kind="outlet" name="address" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="day" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="healthCardNum" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="month" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="year" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="PrescQRViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescQRViewController.h"/>
             <relationships>
@@ -1088,7 +1137,7 @@
             <relationships>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="drugName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pic" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="PrescViewController" superclassName="UIViewController">
