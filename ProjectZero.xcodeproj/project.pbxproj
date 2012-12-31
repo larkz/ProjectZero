@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		91DADFDB168E49CB006F027F /* SetPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DADFDA168E49CB006F027F /* SetPrescription.m */; };
 		DB1C6A571690BA1D00D08169 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A561690BA1D00D08169 /* LoginViewController.m */; };
-		DB1C6A5F1691416C00D08169 /* PrescQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A5E1691416C00D08169 /* PrescQRViewController.m */; };
 		DB448673168CE988002BEBF7 /* PrescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB448672168CE988002BEBF7 /* PrescViewController.m */; };
 		DB448679168CEAEC002BEBF7 /* PrescTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB448678168CEAEC002BEBF7 /* PrescTableCell.m */; };
 		DB44867B168CF297002BEBF7 /* PrescTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB44867A168CF297002BEBF7 /* PrescTableCell.xib */; };
@@ -54,8 +53,6 @@
 		91DADFDA168E49CB006F027F /* SetPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPrescription.m; sourceTree = "<group>"; };
 		DB1C6A551690BA1D00D08169 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		DB1C6A561690BA1D00D08169 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		DB1C6A5D1691416C00D08169 /* PrescQRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrescQRViewController.h; path = ../PrescQRViewController.h; sourceTree = "<group>"; };
-		DB1C6A5E1691416C00D08169 /* PrescQRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrescQRViewController.m; path = ../PrescQRViewController.m; sourceTree = "<group>"; };
 		DB448671168CE988002BEBF7 /* PrescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescViewController.h; sourceTree = "<group>"; };
 		DB448672168CE988002BEBF7 /* PrescViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescViewController.m; sourceTree = "<group>"; };
 		DB448677168CEAEC002BEBF7 /* PrescTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrescTableCell.h; path = ProjectZero/PrescTableCell.h; sourceTree = "<group>"; };
@@ -177,8 +174,6 @@
 		DBD8932C16894FE8005C0B87 /* ProjectZero */ = {
 			isa = PBXGroup;
 			children = (
-				DB1C6A5D1691416C00D08169 /* PrescQRViewController.h */,
-				DB1C6A5E1691416C00D08169 /* PrescQRViewController.m */,
 				DB1C6A551690BA1D00D08169 /* LoginViewController.h */,
 				DB1C6A561690BA1D00D08169 /* LoginViewController.m */,
 				DB710C56168BE5500029847F /* MapViewController.h */,
@@ -358,7 +353,6 @@
 				91DADFDB168E49CB006F027F /* SetPrescription.m in Sources */,
 				DBFF2C6C168FFBFD0002C403 /* UserVariables.m in Sources */,
 				DB1C6A571690BA1D00D08169 /* LoginViewController.m in Sources */,
-				DB1C6A5F1691416C00D08169 /* PrescQRViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
