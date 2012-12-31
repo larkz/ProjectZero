@@ -22,7 +22,7 @@
 		DB448681168D0D80002BEBF7 /* PrescTable.m in Sources */ = {isa = PBXBuildFile; fileRef = DB448680168D0D80002BEBF7 /* PrescTable.m */; };
 		DB534DE5169185C100225DE0 /* UserTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB534DE4169185C100225DE0 /* UserTableCell.m */; };
 		DB534DE71691860100225DE0 /* UserTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB534DE61691860100225DE0 /* UserTableCell.xib */; };
-		DB534DEA16918AA600225DE0 /* PatientListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB534DE916918AA600225DE0 /* PatientListViewController.m */; };
+		DB55417F169249BB00B31ADF /* PatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB55417E169249BB00B31ADF /* PatListViewController.m */; };
 		DB710C2C168B89B60029847F /* MapSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB710C2B168B89B60029847F /* MapSearchView.m */; };
 		DB710C54168BE4730029847F /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB710C53168BE4730029847F /* MyAnnotation.m */; };
 		DB710C58168BE5500029847F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB710C57168BE5500029847F /* MapViewController.m */; };
@@ -82,8 +82,8 @@
 		DB534DE3169185C100225DE0 /* UserTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableCell.h; sourceTree = "<group>"; };
 		DB534DE4169185C100225DE0 /* UserTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableCell.m; sourceTree = "<group>"; };
 		DB534DE61691860100225DE0 /* UserTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableCell.xib; sourceTree = "<group>"; };
-		DB534DE816918AA600225DE0 /* PatientListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientListViewController.h; sourceTree = "<group>"; };
-		DB534DE916918AA600225DE0 /* PatientListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientListViewController.m; sourceTree = "<group>"; };
+		DB55417D169249BB00B31ADF /* PatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatListViewController.h; sourceTree = "<group>"; };
+		DB55417E169249BB00B31ADF /* PatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatListViewController.m; sourceTree = "<group>"; };
 		DB710C2A168B89B60029847F /* MapSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapSearchView.h; path = ProjectZero/MapSearchView.h; sourceTree = "<group>"; };
 		DB710C2B168B89B60029847F /* MapSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapSearchView.m; path = ProjectZero/MapSearchView.m; sourceTree = "<group>"; };
 		DB710C52168BE4730029847F /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAnnotation.h; path = ProjectZero/MyAnnotation.h; sourceTree = "<group>"; };
@@ -176,8 +176,8 @@
 				DB448672168CE988002BEBF7 /* PrescViewController.m */,
 				DBD8934116894FE8005C0B87 /* ViewController.h */,
 				DBD8934216894FE8005C0B87 /* ViewController.m */,
-				DB534DE816918AA600225DE0 /* PatientListViewController.h */,
-				DB534DE916918AA600225DE0 /* PatientListViewController.m */,
+				DB55417D169249BB00B31ADF /* PatListViewController.h */,
+				DB55417E169249BB00B31ADF /* PatListViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 				DB1C6A671691522300D08169 /* PrescQRViewController.m in Sources */,
 				DB1C6A7316916C8B00D08169 /* NewPatientProfileViewController.m in Sources */,
 				DB534DE5169185C100225DE0 /* UserTableCell.m in Sources */,
-				DB534DEA16918AA600225DE0 /* PatientListViewController.m in Sources */,
+				DB55417F169249BB00B31ADF /* PatListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
