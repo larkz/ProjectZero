@@ -8,6 +8,7 @@
 
 #import "PatListViewController.h"
 #import "UserTableCell.h"
+#import "PatientProfileViewController.h"
 
 @interface PatListViewController ()
 
@@ -32,7 +33,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"asdf");
    static NSString *UserTableCellIdentifier = @"UserTableCell";
    
    UserTableCell *cell = [tableView dequeueReusableCellWithIdentifier:UserTableCellIdentifier];
@@ -46,7 +46,6 @@
     
     cell.name.text = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"name"];;
     
-    
     [[self.patList objectAtIndex:indexPath.row] objectForKey:@"name"];
     
     return cell;
@@ -56,21 +55,41 @@
 - (void)viewDidLoad
 {
     
-    
     self.accessURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/fetchUsers";
     
     NSLog(@"access URL %@",  self.accessURL);
-    
     
     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.accessURL]];
     
     NSError* error;
     self.patList = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
-    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"toProfileSegue"])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        PatientProfileViewController *destViewController = (PatientProfileViewController*)segue.destinationViewController;
+
+        destViewController.firstName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"name"];
+        
+        
+    }
+    
+    
+}
+
+
+
+
+
 
 
 

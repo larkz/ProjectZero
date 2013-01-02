@@ -15,12 +15,15 @@
     UILabel * drugNameTextField;
     NSString *drugName;
     
+    
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *drugNameTextField;
 @property (strong, nonatomic) NSString *drugName;
 
+@property (strong, nonatomic) IBOutlet UIImageView *QRImageView;
 
+@property (strong, nonatomic) UIImage *QRImage;
 
 
 

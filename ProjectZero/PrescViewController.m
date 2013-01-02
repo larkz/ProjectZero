@@ -51,22 +51,8 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         PrescQRViewController *destViewController = (PrescQRViewController*)segue.destinationViewController;
-        
-        //destViewController.drugName.text = @"TESt";
-        
-        
-
-        
-      [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
-        
-        
-        //[[segue destinationViewController] setDrugName:[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"]];
-
+       
         destViewController.drugName = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
-        
-        //destViewController.drugName = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
-        
-        //[[segue destinationViewController] setDrugName:[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"]];
     
         NSLog(@"Selected Row asdf: %@",[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"]) ;
         NSLog(@"Selected Row asdf: %@", [segue.destinationViewController drugName]  );
@@ -113,7 +99,6 @@
 
 - (void)viewDidLoad
 {
-    
     
    self.dataURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=";
     

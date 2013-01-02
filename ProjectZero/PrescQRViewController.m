@@ -18,7 +18,8 @@
 
 @synthesize drugName;
 @synthesize drugNameTextField;
-
+@synthesize QRImage;
+@synthesize QRImageView;
 
 
 
@@ -34,9 +35,19 @@
 - (void)viewDidLoad
 {
     
-    //self.drugName.text = @"text";
+    
+    self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/generate/?code=Hello"]]];
+
+    
+    
+    self.QRImageView.image = self.QRImage;
     self.drugNameTextField.text = self.drugName;
+    
     NSLog(@"Text Label: %@", self.drugName );
+    
+    
+    
+    
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

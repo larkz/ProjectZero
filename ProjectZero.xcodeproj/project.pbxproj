@@ -23,6 +23,8 @@
 		DB534DE5169185C100225DE0 /* UserTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB534DE4169185C100225DE0 /* UserTableCell.m */; };
 		DB534DE71691860100225DE0 /* UserTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB534DE61691860100225DE0 /* UserTableCell.xib */; };
 		DB55417F169249BB00B31ADF /* PatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB55417E169249BB00B31ADF /* PatListViewController.m */; };
+		DB67F50E16947A7F009097BD /* facebook-profile-picture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB67F50D16947A7F009097BD /* facebook-profile-picture.jpg */; };
+		DB67F51216947C2B009097BD /* PatientProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67F51116947C2B009097BD /* PatientProfileViewController.m */; };
 		DB710C2C168B89B60029847F /* MapSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB710C2B168B89B60029847F /* MapSearchView.m */; };
 		DB710C54168BE4730029847F /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB710C53168BE4730029847F /* MyAnnotation.m */; };
 		DB710C58168BE5500029847F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB710C57168BE5500029847F /* MapViewController.m */; };
@@ -84,6 +86,9 @@
 		DB534DE61691860100225DE0 /* UserTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableCell.xib; sourceTree = "<group>"; };
 		DB55417D169249BB00B31ADF /* PatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatListViewController.h; sourceTree = "<group>"; };
 		DB55417E169249BB00B31ADF /* PatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatListViewController.m; sourceTree = "<group>"; };
+		DB67F50D16947A7F009097BD /* facebook-profile-picture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "facebook-profile-picture.jpg"; sourceTree = "<group>"; };
+		DB67F51016947C2B009097BD /* PatientProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientProfileViewController.h; sourceTree = "<group>"; };
+		DB67F51116947C2B009097BD /* PatientProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientProfileViewController.m; sourceTree = "<group>"; };
 		DB710C2A168B89B60029847F /* MapSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapSearchView.h; path = ProjectZero/MapSearchView.h; sourceTree = "<group>"; };
 		DB710C2B168B89B60029847F /* MapSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapSearchView.m; path = ProjectZero/MapSearchView.m; sourceTree = "<group>"; };
 		DB710C52168BE4730029847F /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAnnotation.h; path = ProjectZero/MyAnnotation.h; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 				63F7BD521691441700EAE9A5 /* patient.jpg */,
 				63F7BD49169138E200EAE9A5 /* 89.jpg */,
 				63F7BD4A169138E200EAE9A5 /* blank-clipboard-icon.jpg */,
+				DB67F50D16947A7F009097BD /* facebook-profile-picture.jpg */,
 				63F7BD4B169138E200EAE9A5 /* e-prescribe.jpg */,
 				63F7BD4C169138E200EAE9A5 /* medicine.jpg */,
 			);
@@ -178,6 +184,8 @@
 				DBD8934216894FE8005C0B87 /* ViewController.m */,
 				DB55417D169249BB00B31ADF /* PatListViewController.h */,
 				DB55417E169249BB00B31ADF /* PatListViewController.m */,
+				DB67F51016947C2B009097BD /* PatientProfileViewController.h */,
+				DB67F51116947C2B009097BD /* PatientProfileViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -367,6 +375,7 @@
 				63F7BD50169138E200EAE9A5 /* medicine.jpg in Resources */,
 				63F7BD531691441700EAE9A5 /* patient.jpg in Resources */,
 				DB534DE71691860100225DE0 /* UserTableCell.xib in Resources */,
+				DB67F50E16947A7F009097BD /* facebook-profile-picture.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +427,7 @@
 				DB1C6A7316916C8B00D08169 /* NewPatientProfileViewController.m in Sources */,
 				DB534DE5169185C100225DE0 /* UserTableCell.m in Sources */,
 				DB55417F169249BB00B31ADF /* PatListViewController.m in Sources */,
+				DB67F51216947C2B009097BD /* PatientProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
