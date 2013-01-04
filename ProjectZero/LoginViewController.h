@@ -24,11 +24,10 @@
 
 @property (strong, nonatomic) NSString * userIDStr;
 @property (strong, nonatomic) NSString * passwordStr;
+@property (strong, nonatomic) NSString * loginURL;
 
 
 - (IBAction)pressPatientLogin:(id)sender;
-
-
 
 
 @end

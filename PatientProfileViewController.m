@@ -7,6 +7,7 @@
 //
 
 #import "PatientProfileViewController.h"
+#import "MakePrescriptionViewController.h"
 
 @interface PatientProfileViewController ()
 
@@ -18,7 +19,6 @@
 @synthesize lastNameField;
 @synthesize birthdayField;
 @synthesize healthCardField;
-
 
 @synthesize firstName;
 @synthesize lastName;
@@ -35,6 +35,26 @@
     return self;
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"toNewPrescSegue"])
+    {
+        
+        MakePrescriptionViewController *destViewController = (MakePrescriptionViewController*)segue.destinationViewController;
+        
+        destViewController.userID = self.userID;
+        
+    }
+    
+    
+}
+
+
+
+
+
 - (void)viewDidLoad
 {
     
@@ -42,6 +62,11 @@
     self.lastNameField.text =  self.lastName;
     self.birthdayField.text = self.birthday;
     self.healthCardField.text = self.healthCard;
+    
+    
+    NSLog(@"userID:: %@", self.userID);
+    
+    
     
     
     [super viewDidLoad];

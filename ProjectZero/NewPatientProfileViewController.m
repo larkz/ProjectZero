@@ -7,6 +7,7 @@
 //
 
 #import "NewPatientProfileViewController.h"
+#import "PatientProfileViewController.h"
 
 @interface NewPatientProfileViewController ()
 
@@ -22,10 +23,20 @@
 @synthesize day;
 @synthesize address;
 @synthesize healthCardNum;
+@synthesize regURL;
 
 
 - (void)viewDidLoad
 {
+    
+    self.firstName.delegate = self;
+    self.lastName.delegate = self;
+    self.year.delegate = self;
+    self.month.delegate = self;
+    self.day.delegate =self;
+    
+    self.address.delegate = self;
+    self.healthCardNum.delegate = self;
     
     
     
@@ -37,10 +48,65 @@
 
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    
+    if ([segue.identifier isEqualToString:@"toProfileSegue"]){
+        
+        PatientProfileViewController *destViewController = (PatientProfileViewController*)segue.destinationViewController;
+        
+        destViewController.firstName = self.firstName.text;
+        destViewController.lastName = self.lastName.text;
+        
+        NSLog(@"self.firstName class :: %@", [self.firstName class]);
+        NSLog(@"test:: %@", [[self.year.text stringByAppendingString: self.month.text] stringByAppendingString: self.day.text]);
+        
+        
+        NSArray *myStrings = [[NSArray alloc] initWithObjects: self.year.text, self.month.text, self.day.text, nil];
+        NSString *joinedString = [myStrings componentsJoinedByString:@"-"];
+        NSLog(@"joined string :: %@", joinedString);
+        destViewController.birthday = joinedString;
+        
+    }
+    
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    //Touch outside of box
+    NSLog(@"touchesBegan:withEvent:");
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    NSLog(@"textFieldShouldReturn:");
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
 
 
 
 
+
+- (IBAction)pressCreate:(id)sender
+{
+    
+    self.regURL = [[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?user=" stringByAppendingString:self.firstName.text] stringByAppendingString:@"&password="] stringByAppendingString:@"password"] stringByAppendingString:@"&account_type_id=2"];
+    
+     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.regURL]];
+    
+    //NSError* error;
+    //[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"JSON Serialization:: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    
+    
+}
 
 
 
@@ -59,5 +125,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

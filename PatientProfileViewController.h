@@ -15,6 +15,8 @@
     NSString * birthday;
     NSString * healthCard;
     
+    NSString * userID;
+    
 }
 
 
@@ -29,5 +31,8 @@
 @property (strong, nonatomic) IBOutlet UILabel * birthdayField;
 @property (strong, nonatomic) IBOutlet UILabel * healthCardField;
 @property (strong, nonatomic) IBOutlet UIImageView * profPic;
+
+@property (strong, nonatomic) NSString * userID;
+
 
 @end

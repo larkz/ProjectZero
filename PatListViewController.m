@@ -58,10 +58,11 @@
     self.accessURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/fetchUsers";
     
     NSLog(@"access URL %@",  self.accessURL);
-    
+
     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.accessURL]];
     
     NSError* error;
+    
     self.patList = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
     [super viewDidLoad];
@@ -79,7 +80,7 @@
         PatientProfileViewController *destViewController = (PatientProfileViewController*)segue.destinationViewController;
 
         destViewController.firstName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"name"];
-        
+        destViewController.userID = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"id"];
         
     }
     

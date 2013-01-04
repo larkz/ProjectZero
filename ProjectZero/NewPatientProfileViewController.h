@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewPatientProfileViewController : UIViewController{
+@interface NewPatientProfileViewController : UIViewController<UITextFieldDelegate>{
     
     
 }
@@ -22,6 +22,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *address;
 @property (weak, nonatomic) IBOutlet UITextField *healthCardNum;
+
+
+@property (strong, nonatomic) NSString *regURL;
+
 
 - (IBAction)pressCreate:(id)sender;
 
