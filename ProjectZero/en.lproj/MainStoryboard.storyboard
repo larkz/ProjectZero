@@ -418,6 +418,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="verify:" destination="hYw-t3-M7s" eventType="touchUpInside" id="roX-Jx-u8W"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgh-yS-Eby">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -1249,6 +1252,9 @@
         </class>
         <class className="PharmaHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PharmaHomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="verify:"/>
+            </relationships>
         </class>
         <class className="PrescQRViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescQRViewController.h"/>
