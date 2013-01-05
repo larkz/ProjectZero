@@ -43,8 +43,13 @@
         NSLog(@"allocated cell");
     }
 
+    if ( [[self.patList objectAtIndex:indexPath.row]  objectForKey:@"first_name"] != [NSNull null] && [[self.patList objectAtIndex:indexPath.row]  objectForKey:@"last_name"] != [NSNull null] ){
+        cell.name.text = [[[[self.patList objectAtIndex:indexPath.row] objectForKey:@"first_name"] stringByAppendingString:@" " ]  stringByAppendingString:[[self.patList objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
+    }
     
-    cell.name.text = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"name"];;
+    //cell.name.text = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"first_name"]; //stringByAppendingString:[[self.patList objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
+    
+    
     
     [[self.patList objectAtIndex:indexPath.row] objectForKey:@"name"];
     
@@ -79,7 +84,9 @@
         
         PatientProfileViewController *destViewController = (PatientProfileViewController*)segue.destinationViewController;
 
-        destViewController.firstName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"name"];
+        destViewController.firstName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"first_name"];
+        destViewController.lastName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"last_name"];
+        
         destViewController.userID = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"id"];
         
     }

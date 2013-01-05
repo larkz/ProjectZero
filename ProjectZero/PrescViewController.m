@@ -109,7 +109,7 @@
     NSLog(@"User ID Presc %@", self.userID);
     
     
-    [NSURL URLWithString:[self.dataURL stringByAppendingString:self.userID]];
+    //[NSURL URLWithString:[self.dataURL stringByAppendingString:self.userID]];
     
     NSLog(@"access URL %@",  [self.dataURL stringByAppendingString:self.userID]);
     

@@ -25,6 +25,8 @@
 @synthesize birthday;
 @synthesize healthCard;
 
+@synthesize prescButton;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,10 +65,18 @@
     self.birthdayField.text = self.birthday;
     self.healthCardField.text = self.healthCard;
     
-    
     NSLog(@"userID:: %@", self.userID);
     
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults objectForKey:@"account_type_id"] == @"3")
+    {
+        self.prescButton.hidden = YES;
+        
+    }
+    
+    [userDefaults setObject:self.userID forKey:@"userID"];
+    [userDefaults synchronize];
     
     
     [super viewDidLoad];

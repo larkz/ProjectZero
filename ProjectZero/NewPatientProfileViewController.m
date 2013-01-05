@@ -48,6 +48,28 @@
 
 
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:0.3];
+//    textField.superview.frame = CGRectMake(0.0f, 100.0f, 280.0f, 130.0f); // experiment with frame size
+//    [UIView commitAnimations];
+    
+    
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationBeginsFromCurrentState:YES];
+	textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y - 100.0), textField.frame.size.width, textField.frame.size.height);
+	[UIView commitAnimations];
+    
+    
+}
+
+
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     

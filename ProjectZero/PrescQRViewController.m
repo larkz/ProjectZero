@@ -20,6 +20,7 @@
 @synthesize drugNameTextField;
 @synthesize QRImage;
 @synthesize QRImageView;
+@synthesize imageURL;
 
 
 
@@ -36,11 +37,17 @@
 {
     
     
-    self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/generate/?code=Hello"]]];
+    //self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/generate/?code=Hello"]]];
 
     
+    self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: self.imageURL ]]];
+                    
+    NSLog(@"Image URL %@", self.imageURL);
     
     self.QRImageView.image = self.QRImage;
+    
+    [self.QRImageView setNeedsDisplay];
+    
     self.drugNameTextField.text = self.drugName;
     
     NSLog(@"Text Label: %@", self.drugName );

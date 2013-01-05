@@ -19,11 +19,9 @@
 @synthesize userID;
 @synthesize password;
 
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     //Touch outside of box
-    //NSLog(@"touchesBegan:withEvent:");
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }

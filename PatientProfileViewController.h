@@ -17,6 +17,9 @@
     
     NSString * userID;
     
+    UIButton * prescButton;
+    
+    
 }
 
 
@@ -24,6 +27,9 @@
 @property (strong, nonatomic) NSString * lastName;
 @property (strong, nonatomic) NSString * birthday;
 @property (strong, nonatomic) NSString * healthCard;
+
+
+@property IBOutlet UIButton * prescButton;
 
 
 @property (strong, nonatomic) IBOutlet UILabel * firstNameField;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MakePrescriptionViewController : UIViewController{
+@interface MakePrescriptionViewController : UIViewController <UITextFieldDelegate>{
     
     
 }
@@ -22,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UITextView * descriptionView;
 
 @property (weak, nonatomic) NSString * userID;
+@property (weak, nonatomic) NSString * doctorID;
+@property (weak, nonatomic) NSString * addPrescURL;
+
+@property (weak, nonatomic) UIImage * QRImage;
 
 - (IBAction)pressMakePresc:(id)sender;
 

@@ -25,6 +25,9 @@
 
 @property (strong, nonatomic) UIImage *QRImage;
 
+@property (strong, nonatomic) NSString * imageURL;
+
+
 
 
 
