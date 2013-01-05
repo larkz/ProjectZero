@@ -27,6 +27,7 @@
 		DB67F51216947C2B009097BD /* PatientProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67F51116947C2B009097BD /* PatientProfileViewController.m */; };
 		DB67F5151696802E009097BD /* MakePrescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67F5141696802D009097BD /* MakePrescriptionViewController.m */; };
 		DB67F51C1697B97C009097BD /* PharmaHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67F51B1697B97C009097BD /* PharmaHomeViewController.m */; };
+		DB67F5201697DA75009097BD /* FindUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67F51F1697DA75009097BD /* FindUserViewController.m */; };
 		DB710C2C168B89B60029847F /* MapSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB710C2B168B89B60029847F /* MapSearchView.m */; };
 		DB710C54168BE4730029847F /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB710C53168BE4730029847F /* MyAnnotation.m */; };
 		DB710C58168BE5500029847F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB710C57168BE5500029847F /* MapViewController.m */; };
@@ -95,6 +96,8 @@
 		DB67F5141696802D009097BD /* MakePrescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakePrescriptionViewController.m; sourceTree = "<group>"; };
 		DB67F51A1697B97C009097BD /* PharmaHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PharmaHomeViewController.h; sourceTree = "<group>"; };
 		DB67F51B1697B97C009097BD /* PharmaHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PharmaHomeViewController.m; sourceTree = "<group>"; };
+		DB67F51E1697DA75009097BD /* FindUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindUserViewController.h; sourceTree = "<group>"; };
+		DB67F51F1697DA75009097BD /* FindUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindUserViewController.m; sourceTree = "<group>"; };
 		DB710C2A168B89B60029847F /* MapSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapSearchView.h; path = ProjectZero/MapSearchView.h; sourceTree = "<group>"; };
 		DB710C2B168B89B60029847F /* MapSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapSearchView.m; path = ProjectZero/MapSearchView.m; sourceTree = "<group>"; };
 		DB710C52168BE4730029847F /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAnnotation.h; path = ProjectZero/MyAnnotation.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				DB67F51116947C2B009097BD /* PatientProfileViewController.m */,
 				DB67F5131696802D009097BD /* MakePrescriptionViewController.h */,
 				DB67F5141696802D009097BD /* MakePrescriptionViewController.m */,
+				DB67F51E1697DA75009097BD /* FindUserViewController.h */,
+				DB67F51F1697DA75009097BD /* FindUserViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				DB67F51216947C2B009097BD /* PatientProfileViewController.m in Sources */,
 				DB67F5151696802E009097BD /* MakePrescriptionViewController.m in Sources */,
 				DB67F51C1697B97C009097BD /* PharmaHomeViewController.m in Sources */,
+				DB67F5201697DA75009097BD /* FindUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

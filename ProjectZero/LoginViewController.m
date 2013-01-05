@@ -69,8 +69,8 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:userID.text forKey:@"userID"];
     [userDefaults setObject:password.text forKey:@"password"];
-    
     [userDefaults synchronize];
+    
     
     NSLog(@"Login Pressed!");
     NSLog(@"contained fields: ID %@ Pass %@", [userDefaults objectForKey:@"userID"], [userDefaults objectForKey:@"password"]);

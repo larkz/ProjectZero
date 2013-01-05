@@ -546,7 +546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O3-gp-Myq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4168" y="-2763"/>
+            <point key="canvasLocation" x="-4168" y="-2775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yM0-2Y-f9b">
@@ -574,7 +574,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-hI-qDq">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Patient Search">
+                                <state key="normal" title="Patient Databse">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -582,7 +582,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Cud-RM-Fxk" kind="push" id="DKP-xl-3yt"/>
+                                    <segue destination="Ikd-xv-Nkm" kind="push" id="hYV-yY-A8q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDG-vn-BeG">
@@ -628,10 +628,10 @@
             </objects>
             <point key="canvasLocation" x="-5235" y="-3537"/>
         </scene>
-        <!--View Controller - Find-->
+        <!--Find User View Controller - Find ID-->
         <scene sceneID="bqu-d0-NNl">
             <objects>
-                <viewController id="Cud-RM-Fxk" sceneMemberID="viewController">
+                <viewController id="Cud-RM-Fxk" customClass="FindUserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="39c-zr-iXn">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -690,26 +690,33 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="JGq-XX-7tS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="16L-UF-fLe"/>
                             <constraint firstItem="DS3-wm-7dW" firstAttribute="bottom" secondItem="39c-zr-iXn" secondAttribute="bottom" type="default" id="5O8-Un-uYV"/>
-                            <constraint firstItem="Ix4-8u-FWj" firstAttribute="top" secondItem="Jf0-ev-kfS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8qg-y8-X3h"/>
+                            <constraint firstItem="UpV-T4-dCJ" firstAttribute="top" secondItem="JGq-XX-7tS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5xt-OV-oOW"/>
                             <constraint firstItem="DS3-wm-7dW" firstAttribute="leading" secondItem="39c-zr-iXn" secondAttribute="leading" type="default" id="FHn-qx-ON8"/>
                             <constraint firstItem="DS3-wm-7dW" firstAttribute="top" secondItem="39c-zr-iXn" secondAttribute="top" type="default" id="Gd5-Zc-HOT"/>
                             <constraint firstAttribute="trailing" secondItem="Jf0-ev-kfS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Mag-tR-sxd"/>
+                            <constraint firstAttribute="bottom" secondItem="JGq-XX-7tS" secondAttribute="bottom" constant="133" id="My3-We-4zL"/>
                             <constraint firstAttribute="trailing" secondItem="UpV-T4-dCJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PSy-nc-0j5"/>
-                            <constraint firstItem="JGq-XX-7tS" firstAttribute="top" secondItem="yPb-2z-FZL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ub5-AM-6zv"/>
                             <constraint firstItem="DS3-wm-7dW" firstAttribute="trailing" secondItem="39c-zr-iXn" secondAttribute="trailing" type="default" id="VMM-Sr-Zoj"/>
                             <constraint firstItem="Jf0-ev-kfS" firstAttribute="leading" secondItem="39c-zr-iXn" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Vqq-LX-7N8"/>
-                            <constraint firstItem="UpV-T4-dCJ" firstAttribute="top" secondItem="JGq-XX-7tS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Vw1-x6-OE7"/>
-                            <constraint firstItem="Jf0-ev-kfS" firstAttribute="top" secondItem="39c-zr-iXn" secondAttribute="top" constant="49" id="a8b-6L-VWS"/>
+                            <constraint firstItem="Ix4-8u-FWj" firstAttribute="top" secondItem="39c-zr-iXn" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YYb-dQ-QgS"/>
                             <constraint firstItem="UpV-T4-dCJ" firstAttribute="leading" secondItem="39c-zr-iXn" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cqb-m1-t37"/>
+                            <constraint firstItem="Jf0-ev-kfS" firstAttribute="top" secondItem="39c-zr-iXn" secondAttribute="top" constant="96" id="cr2-E0-fPK"/>
+                            <constraint firstItem="JGq-XX-7tS" firstAttribute="top" secondItem="yPb-2z-FZL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dGl-iL-g35"/>
                             <constraint firstItem="JGq-XX-7tS" firstAttribute="leading" secondItem="39c-zr-iXn" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gru-u0-7fr"/>
-                            <constraint firstItem="yPb-2z-FZL" firstAttribute="top" secondItem="39c-zr-iXn" secondAttribute="top" constant="192" id="kgI-ot-BAd"/>
                             <constraint firstItem="Ix4-8u-FWj" firstAttribute="leading" secondItem="39c-zr-iXn" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="r9x-r7-Xp7"/>
                             <constraint firstItem="yPb-2z-FZL" firstAttribute="leading" secondItem="39c-zr-iXn" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="t2X-fb-23c"/>
                             <constraint firstAttribute="trailing" secondItem="Ix4-8u-FWj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wFe-4L-NsG"/>
                             <constraint firstAttribute="trailing" secondItem="yPb-2z-FZL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xR8-g9-bHN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Find" id="Olu-hg-VHo"/>
+                    <navigationItem key="navigationItem" title="Find ID" id="Olu-hg-VHo"/>
+                    <connections>
+                        <outlet property="firstName" destination="yPb-2z-FZL" id="gEC-FW-jDK"/>
+                        <outlet property="lastName" destination="JGq-XX-7tS" id="R24-dj-kKt"/>
+                        <outlet property="patientID" destination="Jf0-ev-kfS" id="hwL-pf-BUR"/>
+                        <outlet property="searchByName" destination="UpV-T4-dCJ" id="MmY-ug-QLk"/>
+                        <outlet property="seeAllPatients" destination="Ix4-8u-FWj" id="HH7-x7-aap"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyJ-TI-3vT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -975,17 +982,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sl8-Wc-C2h">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="pcE-gw-uVH"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-MM-q85">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="278" id="uFU-UD-S6S"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yyyy" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wt2-TR-ohU">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="D6S-hI-H6Z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1040,30 +1050,29 @@
                         <constraints>
                             <constraint firstItem="c15-O8-IWv" firstAttribute="top" secondItem="Sdx-MM-q85" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0oZ-Aj-hf7"/>
                             <constraint firstItem="jf5-Mi-IPe" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" type="default" id="1eT-LH-zcY"/>
-                            <constraint firstItem="Sdx-MM-q85" firstAttribute="leading" secondItem="sl8-Wc-C2h" secondAttribute="leading" type="default" id="1rG-vV-zRT"/>
                             <constraint firstItem="jf5-Mi-IPe" firstAttribute="top" secondItem="NdI-fx-hEv" secondAttribute="top" type="default" id="3IX-nl-3OB"/>
+                            <constraint firstItem="hpl-xh-KEX" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="76" id="3NJ-9p-XXv"/>
                             <constraint firstItem="Wt2-TR-ohU" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4th-ys-cRA"/>
-                            <constraint firstItem="Sdx-MM-q85" firstAttribute="trailing" secondItem="sl8-Wc-C2h" secondAttribute="trailing" type="default" id="7Al-km-4dX"/>
+                            <constraint firstItem="ZQ7-Wa-wEb" firstAttribute="top" secondItem="NdI-fx-hEv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="9Oh-gS-Zf8"/>
                             <constraint firstItem="jf5-Mi-IPe" firstAttribute="trailing" secondItem="NdI-fx-hEv" secondAttribute="trailing" type="default" id="Cyd-YV-vgi"/>
+                            <constraint firstItem="ZQ7-Wa-wEb" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DpK-ED-dqZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ZQ7-Wa-wEb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dwn-We-bGf"/>
                             <constraint firstItem="c15-O8-IWv" firstAttribute="leading" secondItem="Sd4-Qb-FRF" secondAttribute="leading" type="default" id="EzU-ZD-c95"/>
                             <constraint firstItem="jf5-Mi-IPe" firstAttribute="bottom" secondItem="NdI-fx-hEv" secondAttribute="bottom" type="default" id="G6n-GV-tex"/>
                             <constraint firstItem="qRh-Wu-guZ" firstAttribute="leading" secondItem="Wt2-TR-ohU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="HWS-Mm-mho"/>
+                            <constraint firstAttribute="trailing" secondItem="sl8-Wc-C2h" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Oba-5R-w24"/>
                             <constraint firstItem="TBd-uW-TA3" firstAttribute="leading" secondItem="qRh-Wu-guZ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="PpM-FO-iHY"/>
-                            <constraint firstItem="Sdx-MM-q85" firstAttribute="trailing" secondItem="c15-O8-IWv" secondAttribute="trailing" type="default" id="PsM-l6-wAp"/>
-                            <constraint firstItem="ZQ7-Wa-wEb" firstAttribute="leading" secondItem="Sd4-Qb-FRF" secondAttribute="leading" type="default" id="Tdh-I8-vFK"/>
                             <constraint firstItem="Wt2-TR-ohU" firstAttribute="top" secondItem="Sd4-Qb-FRF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ueo-GY-qKv"/>
-                            <constraint firstAttribute="bottom" secondItem="Wt2-TR-ohU" secondAttribute="bottom" constant="150" id="Vau-Rd-A9G"/>
                             <constraint firstItem="Sdx-MM-q85" firstAttribute="top" secondItem="sl8-Wc-C2h" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Wl8-EE-sQE"/>
                             <constraint firstItem="qRh-Wu-guZ" firstAttribute="baseline" secondItem="Wt2-TR-ohU" secondAttribute="baseline" type="default" id="Z0a-aO-SZf"/>
                             <constraint firstItem="Sdx-MM-q85" firstAttribute="leading" secondItem="c15-O8-IWv" secondAttribute="leading" type="default" id="ZzR-dl-6YR"/>
-                            <constraint firstItem="sl8-Wc-C2h" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="22" id="bwR-hJ-Lcu"/>
-                            <constraint firstAttribute="trailing" secondItem="TBd-uW-TA3" secondAttribute="trailing" constant="29" id="l16-T0-srY"/>
-                            <constraint firstItem="ZQ7-Wa-wEb" firstAttribute="centerX" secondItem="hpl-xh-KEX" secondAttribute="centerX" type="default" id="muz-7y-ccc"/>
-                            <constraint firstItem="c15-O8-IWv" firstAttribute="trailing" secondItem="ZQ7-Wa-wEb" secondAttribute="trailing" type="default" id="nZ0-UQ-Z4e"/>
+                            <constraint firstItem="sl8-Wc-C2h" firstAttribute="top" secondItem="ZQ7-Wa-wEb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nYD-9Y-KDM"/>
                             <constraint firstItem="TBd-uW-TA3" firstAttribute="baseline" secondItem="qRh-Wu-guZ" secondAttribute="baseline" type="default" id="ph8-nd-Gro"/>
-                            <constraint firstItem="sl8-Wc-C2h" firstAttribute="top" secondItem="NdI-fx-hEv" secondAttribute="top" constant="58" id="rwQ-Mv-qrC"/>
+                            <constraint firstAttribute="trailing" secondItem="c15-O8-IWv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sda-mM-4Y8"/>
+                            <constraint firstAttribute="trailing" secondItem="Sdx-MM-q85" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uPz-pH-aX5"/>
+                            <constraint firstItem="sl8-Wc-C2h" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vS2-d8-CwC"/>
                             <constraint firstAttribute="bottom" secondItem="hpl-xh-KEX" secondAttribute="bottom" constant="50" id="wxR-7i-ahE"/>
-                            <constraint firstAttribute="bottom" secondItem="ZQ7-Wa-wEb" secondAttribute="bottom" constant="98" id="yt0-6G-cCl"/>
+                            <constraint firstItem="Sd4-Qb-FRF" firstAttribute="top" secondItem="NdI-fx-hEv" secondAttribute="top" constant="207" id="yu4-QG-7wF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Profile" id="HDs-VY-kpB"/>
@@ -1079,7 +1088,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJX-0w-yVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4298" y="-3553"/>
+            <point key="canvasLocation" x="-4328" y="-3553"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bQd-iL-kZP">
@@ -1105,6 +1114,16 @@
         <image name="facebook-profile-picture.jpg" width="563" height="353"/>
     </resources>
     <classes>
+        <class className="FindUserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindUserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="firstName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="patientID" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchByName" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="seeAllPatients" candidateClass="UIButton"/>
+            </relationships>
+        </class>
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
@@ -1183,7 +1202,7 @@
             <relationships>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="drugName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pic" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="PrescViewController" superclassName="UIViewController">
@@ -1208,8 +1227,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Yej-04-1Zl"/>
+        <segue reference="hYV-yY-A8q"/>
         <segue reference="P0Y-n8-U77"/>
-        <segue reference="Xm4-z2-3nr"/>
-        <segue reference="wOq-Pt-sKU"/>
+        <segue reference="LbL-F0-a3j"/>
     </inferredMetricsTieBreakers>
 </document>
