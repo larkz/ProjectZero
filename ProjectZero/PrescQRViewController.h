@@ -23,6 +23,11 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *QRImageView;
 
+@property (strong, nonatomic) IBOutlet UILabel *descriptionTextField;
+@property (strong, nonatomic) NSString *description;
+
+
+
 @property (strong, nonatomic) UIImage *QRImage;
 
 @property (strong, nonatomic) NSString * imageURL;

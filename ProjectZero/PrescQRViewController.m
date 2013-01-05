@@ -21,6 +21,8 @@
 @synthesize QRImage;
 @synthesize QRImageView;
 @synthesize imageURL;
+@synthesize description;
+@synthesize descriptionTextField;
 
 
 
@@ -65,6 +67,7 @@
     [self.QRImageView setNeedsDisplay];
     
     self.drugNameTextField.text = self.drugName;
+    self.descriptionTextField.text = self.description;
     
     NSLog(@"Text Label: %@", self.drugName );
     

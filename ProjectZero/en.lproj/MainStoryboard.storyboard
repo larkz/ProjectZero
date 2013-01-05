@@ -522,6 +522,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uai-I0-xwQ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.39827449199999998" green="0.63596325310000001" blue="1" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -531,15 +536,18 @@
                             <constraint firstItem="blU-ec-wZ4" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Qh6-tH-GPb"/>
                             <constraint firstItem="O5J-SA-SoN" firstAttribute="top" secondItem="blU-ec-wZ4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RAH-jc-Fdb"/>
                             <constraint firstItem="FVI-iX-dHb" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" type="default" id="RMv-av-MyS"/>
+                            <constraint firstItem="uai-I0-xwQ" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="78" id="hky-RQ-zh4"/>
                             <constraint firstItem="FVI-iX-dHb" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" type="default" id="m9b-E0-o2o"/>
                             <constraint firstItem="FVI-iX-dHb" firstAttribute="trailing" secondItem="A0K-1E-C6D" secondAttribute="trailing" type="default" id="nH8-q9-184"/>
                             <constraint firstItem="FVI-iX-dHb" firstAttribute="bottom" secondItem="A0K-1E-C6D" secondAttribute="bottom" type="default" id="wot-Lb-1tG"/>
+                            <constraint firstItem="uai-I0-xwQ" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xGR-d4-k35"/>
                             <constraint firstItem="E3o-ng-9DW" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xSJ-I1-H4d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Prescription" id="LND-l6-8Ke"/>
                     <connections>
                         <outlet property="QRImageView" destination="O5J-SA-SoN" id="wJO-8D-d5m"/>
+                        <outlet property="descriptionTextField" destination="uai-I0-xwQ" id="rth-I5-wKc"/>
                         <outlet property="drugNameTextField" destination="E3o-ng-9DW" id="l6C-LN-Gqm"/>
                         <outlet property="view" destination="A0K-1E-C6D" id="mEF-av-pWh"/>
                     </connections>
@@ -608,14 +616,29 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srQ-f1-JkA">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Find Patient">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Cud-RM-Fxk" kind="push" id="YSa-j8-CJy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.39827449199999998" green="0.63596325310000001" blue="1" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="afz-NG-nK8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0bQ-7q-NUg"/>
                             <constraint firstAttribute="trailing" secondItem="LDG-vn-BeG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2rW-md-oxb"/>
+                            <constraint firstItem="srQ-f1-JkA" firstAttribute="top" secondItem="afz-NG-nK8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="J7Y-PH-h31"/>
                             <constraint firstItem="cdb-hI-qDq" firstAttribute="top" secondItem="Z7w-Oc-G3a" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Krv-aF-GGu"/>
                             <constraint firstItem="cdb-hI-qDq" firstAttribute="leading" secondItem="Z7w-Oc-G3a" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QAk-oR-OyQ"/>
                             <constraint firstItem="LDG-vn-BeG" firstAttribute="top" secondItem="cdb-hI-qDq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SCP-mg-uVE"/>
+                            <constraint firstItem="srQ-f1-JkA" firstAttribute="leading" secondItem="Z7w-Oc-G3a" secondAttribute="leading" constant="117" id="ZXs-sG-vhj"/>
                             <constraint firstItem="afz-NG-nK8" firstAttribute="top" secondItem="LDG-vn-BeG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fea-GN-EaZ"/>
                             <constraint firstItem="LDG-vn-BeG" firstAttribute="leading" secondItem="Z7w-Oc-G3a" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="htR-81-Vfs"/>
                             <constraint firstItem="afz-NG-nK8" firstAttribute="leading" secondItem="Z7w-Oc-G3a" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pNp-d5-TjO"/>
@@ -806,12 +829,15 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Drug Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkP-Ie-h6X">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medication" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkP-Ie-h6X">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="Ctq-xc-ovw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ctq-xc-ovw">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="kHZ-ik-Yny"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -829,25 +855,56 @@
                                     <segue destination="buY-Zo-YGK" kind="push" identifier="PrescQRSegue" id="LbL-F0-a3j"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NmG-wB-UCT">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="Tq1-Eq-oQe"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hqh-N1-6BI" id="AQL-vI-6Pu"/>
+                                    <outlet property="delegate" destination="Hqh-N1-6BI" id="MqG-29-y7w"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnf-i3-fjf">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="03L-bb-S7l"/>
+                                    <constraint firstAttribute="width" constant="113" id="fdN-gD-B7d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="# of Refills">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressNumRefill:" destination="Hqh-N1-6BI" eventType="touchUpInside" id="anB-1s-Eu6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.39827449199999998" green="0.63596325310000001" blue="1" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ctq-xc-ovw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3Z6-Hf-7PH"/>
                             <constraint firstItem="NVo-pF-KKC" firstAttribute="leading" secondItem="ZJi-21-MBF" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6V7-GV-EWD"/>
-                            <constraint firstItem="NVo-pF-KKC" firstAttribute="top" secondItem="Ctq-xc-ovw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EMO-rY-h7A"/>
+                            <constraint firstAttribute="trailing" secondItem="NmG-wB-UCT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FfQ-7l-ChM"/>
+                            <constraint firstItem="Fnf-i3-fjf" firstAttribute="top" secondItem="kkP-Ie-h6X" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Gby-Jy-cWI"/>
                             <constraint firstItem="kkP-Ie-h6X" firstAttribute="leading" secondItem="ZJi-21-MBF" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="IAL-b7-HPG"/>
-                            <constraint firstItem="kkP-Ie-h6X" firstAttribute="top" secondItem="ZJi-21-MBF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="KEI-Mc-KN6"/>
+                            <constraint firstItem="NmG-wB-UCT" firstAttribute="top" secondItem="ZJi-21-MBF" secondAttribute="top" constant="84" id="Qxi-D7-i4p"/>
                             <constraint firstAttribute="trailing" secondItem="NVo-pF-KKC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Rht-Ky-J1S"/>
-                            <constraint firstItem="Ctq-xc-ovw" firstAttribute="top" secondItem="kkP-Ie-h6X" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Rvf-sO-BY0"/>
                             <constraint firstAttribute="trailing" secondItem="kkP-Ie-h6X" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="T3v-ai-8wl"/>
+                            <constraint firstItem="kkP-Ie-h6X" firstAttribute="top" secondItem="ZJi-21-MBF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="drm-FQ-Aon"/>
                             <constraint firstAttribute="bottom" secondItem="NVo-pF-KKC" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="gSM-qR-rm7"/>
+                            <constraint firstAttribute="trailing" secondItem="Fnf-i3-fjf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hok-r5-lsx"/>
                             <constraint firstItem="Ctq-xc-ovw" firstAttribute="leading" secondItem="ZJi-21-MBF" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lWj-Vu-hxH"/>
+                            <constraint firstItem="Ctq-xc-ovw" firstAttribute="top" secondItem="ZJi-21-MBF" secondAttribute="top" constant="201" id="lYV-J3-PjK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Prescription" id="Sw6-WK-CzM"/>
                     <connections>
                         <outlet property="descriptionView" destination="Ctq-xc-ovw" id="v0P-hm-nLd"/>
                         <outlet property="drugNameField" destination="kkP-Ie-h6X" id="fgn-jh-rqn"/>
+                        <outlet property="numRefillButton" destination="Fnf-i3-fjf" id="McS-5X-Q1o"/>
+                        <outlet property="refillPicker" destination="NmG-wB-UCT" id="OWL-0f-HMg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBI-dx-Aq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1137,8 +1194,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MakePrescriptionViewController.h"/>
             <relationships>
                 <relationship kind="action" name="pressMakePresc:"/>
+                <relationship kind="action" name="pressNumRefill:"/>
                 <relationship kind="outlet" name="descriptionView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="drugNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numRefillButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="refillPicker" candidateClass="UIPickerView"/>
             </relationships>
         </class>
         <class className="MapSearchView" superclassName="UIViewController">
@@ -1194,6 +1254,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescQRViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="QRImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="descriptionTextField" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="drugNameTextField" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -1202,7 +1263,7 @@
             <relationships>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="drugName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pic" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pic" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="PrescViewController" superclassName="UIViewController">
@@ -1227,6 +1288,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Yej-04-1Zl"/>
+        <segue reference="wOq-Pt-sKU"/>
         <segue reference="hYV-yY-A8q"/>
         <segue reference="P0Y-n8-U77"/>
         <segue reference="LbL-F0-a3j"/>

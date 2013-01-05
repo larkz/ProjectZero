@@ -19,9 +19,6 @@
 @synthesize lastName;
 
 
-
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -99,14 +96,9 @@
         
         self.searchByName.frame = CGRectMake(self.searchByName.frame.origin.x, (self.searchByName.frame.origin.y - 130.0), self.searchByName.frame.size.width, self.searchByName.frame.size.height);
         
-        
         [UIView commitAnimations];
         
     }
-
-    
-    
-    
 
 }
 

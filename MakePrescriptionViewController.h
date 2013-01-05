@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MakePrescriptionViewController : UIViewController <UITextFieldDelegate>{
+@interface MakePrescriptionViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource>{
+    
+    UIPickerView *refillPicker;
+    NSMutableArray * refillArray;
     
     
 }
@@ -16,10 +19,16 @@
 
 @property (strong, nonatomic) NSString * drugName;
 @property (strong, nonatomic) NSString * description;
+@property (strong, nonatomic) NSString * amountRefill;
+
 
 
 @property (weak, nonatomic) IBOutlet UITextField * drugNameField;
 @property (weak, nonatomic) IBOutlet UITextView * descriptionView;
+@property (strong, nonatomic) IBOutlet UIPickerView * refillPicker;
+
+@property (strong, nonatomic) NSMutableArray * refillArray;
+
 
 @property (weak, nonatomic) NSString * userID;
 @property (weak, nonatomic) NSString * doctorID;
@@ -27,6 +36,14 @@
 
 @property (weak, nonatomic) UIImage * QRImage;
 
+
+
+@property (strong, nonatomic) IBOutlet UIButton *numRefillButton;
+
+
 - (IBAction)pressMakePresc:(id)sender;
+- (IBAction)pressNumRefill:(id)sender;
+
+
 
 @end
