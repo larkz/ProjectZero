@@ -72,7 +72,7 @@
     [userDefaults synchronize];
     
     
-    NSLog(@"Login Pressed!");
+    NSLog(@"Login Pressed! 123asfd");
     NSLog(@"contained fields: ID %@ Pass %@", [userDefaults objectForKey:@"userID"], [userDefaults objectForKey:@"password"]);
     
 }
@@ -82,7 +82,6 @@
     
     
     //self.loginURL = [[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/login/?user=" stringByAppendingString:self.userIDStr] stringByAppendingString: @"&password="] stringByAppendingString: self.passwordStr];
-    
     
     password.delegate = self; // ADD THIS LINE
     [self.view addSubview:password];
