@@ -24,13 +24,12 @@
                                     <constraint firstAttribute="height" constant="31" id="VRK-L5-1wk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="Patient Login">
+                                <state key="normal" title="Register">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pressPatientLogin:" destination="2" eventType="touchUpInside" id="swL-bW-fro"/>
-                                    <segue destination="zcj-Ui-nWo" kind="modal" id="hoT-0J-S50"/>
+                                    <action selector="pressRegister:" destination="2" eventType="touchUpInside" id="Vsz-fg-ZuO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZDS-Cx-mJh">
@@ -45,6 +44,7 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="OHIP Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="je6-HR-FHb">
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="234" id="KcC-Rn-ANF"/>
                                     <constraint firstAttribute="height" constant="31" id="cSf-gm-hcX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -69,7 +69,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="7GF-MX-rTQ"/>
-                                    <constraint firstAttribute="height" constant="47" id="I14-Hg-YVH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -83,31 +82,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7J-0U-Ghm">
-                                <color key="backgroundColor" red="1" green="0.63881093180000004" blue="0.025878631159999999" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="eLC-DK-mMw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Doctor Login">
-                                    <color key="titleColor" red="0.041010962060000003" green="0.041530303810000002" blue="0.043088329080000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zyQ-S6-uAH" kind="modal" id="Bhs-Ls-5TC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxz-Se-BV9">
                                 <color key="backgroundColor" red="1" green="0.63881093180000004" blue="0.025878631159999999" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="234" id="jqz-TO-3Co"/>
                                     <constraint firstAttribute="height" constant="30" id="ra6-3k-TJa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Pharmacist Login">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" red="0.041010962060000003" green="0.041530303810000002" blue="0.043088329080000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -115,47 +96,48 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TxP-xJ-xsp" kind="modal" id="Bqa-v2-XQb"/>
+                                    <action selector="pressLogin:" destination="2" eventType="touchUpInside" id="3Ne-3p-PKq"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u7J-0U-Ghm" firstAttribute="top" secondItem="ub3-kA-87R" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1e7-CP-abK"/>
-                            <constraint firstItem="mCo-lJ-XXN" firstAttribute="top" secondItem="3" secondAttribute="top" constant="202" id="2aR-dj-PPM"/>
-                            <constraint firstItem="ub3-kA-87R" firstAttribute="leading" secondItem="mCo-lJ-XXN" secondAttribute="leading" type="default" id="2jM-v3-wrC"/>
+                            <constraint firstItem="Lxz-Se-BV9" firstAttribute="leading" secondItem="ub3-kA-87R" secondAttribute="leading" type="default" id="1Vj-ne-9eT"/>
+                            <constraint firstItem="gFf-kF-nSC" firstAttribute="top" secondItem="3" secondAttribute="top" constant="8" id="2Nh-eM-LKt"/>
+                            <constraint firstItem="qz8-ia-rfI" firstAttribute="centerX" secondItem="ZDS-Cx-mJh" secondAttribute="centerX" type="default" id="5Ed-0a-uzP"/>
+                            <constraint firstItem="je6-HR-FHb" firstAttribute="top" secondItem="3Y8-Ln-301" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8KU-n6-c1L"/>
+                            <constraint firstItem="je6-HR-FHb" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="46" id="8ij-NO-x15"/>
+                            <constraint firstItem="Lxz-Se-BV9" firstAttribute="trailing" secondItem="mCo-lJ-XXN" secondAttribute="trailing" type="default" id="A2h-Iu-LEV"/>
+                            <constraint firstItem="je6-HR-FHb" firstAttribute="top" secondItem="3" secondAttribute="top" constant="76" id="CGm-rq-8Ku"/>
                             <constraint firstItem="je6-HR-FHb" firstAttribute="trailing" secondItem="mCo-lJ-XXN" secondAttribute="trailing" type="default" id="EqZ-F3-aTu"/>
-                            <constraint firstItem="qz8-ia-rfI" firstAttribute="top" secondItem="3" secondAttribute="top" constant="-94" id="Ipn-j2-18h"/>
-                            <constraint firstItem="ub3-kA-87R" firstAttribute="trailing" secondItem="mCo-lJ-XXN" secondAttribute="trailing" type="default" id="J5a-yq-F5l"/>
-                            <constraint firstItem="u7J-0U-Ghm" firstAttribute="leading" secondItem="ub3-kA-87R" secondAttribute="leading" type="default" id="Lm5-pf-jNG"/>
-                            <constraint firstItem="Lxz-Se-BV9" firstAttribute="leading" secondItem="u7J-0U-Ghm" secondAttribute="leading" type="default" id="LyO-t1-fsV"/>
+                            <constraint firstItem="Lxz-Se-BV9" firstAttribute="leading" secondItem="mCo-lJ-XXN" secondAttribute="leading" type="default" id="Fir-ZK-xiE"/>
+                            <constraint firstItem="ub3-kA-87R" firstAttribute="trailing" secondItem="tfd-0j-Qo6" secondAttribute="trailing" type="default" id="HQ6-tU-Qwc"/>
+                            <constraint firstItem="Lxz-Se-BV9" firstAttribute="top" secondItem="qz8-ia-rfI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Jv8-Nk-B7M"/>
+                            <constraint firstItem="ub3-kA-87R" firstAttribute="trailing" secondItem="Lxz-Se-BV9" secondAttribute="trailing" type="default" id="L6J-CF-a9p"/>
                             <constraint firstItem="ZDS-Cx-mJh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="431" id="Ugu-te-aqy"/>
-                            <constraint firstItem="Lxz-Se-BV9" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="46" id="W77-gG-F0X"/>
-                            <constraint firstItem="ZDS-Cx-mJh" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="XO7-dO-msJ"/>
-                            <constraint firstItem="ZDS-Cx-mJh" firstAttribute="leading" secondItem="qz8-ia-rfI" secondAttribute="leading" type="default" id="XvE-wY-iAM"/>
-                            <constraint firstItem="3Y8-Ln-301" firstAttribute="centerX" secondItem="gFf-kF-nSC" secondAttribute="centerX" type="default" id="Y8J-gY-iUa"/>
-                            <constraint firstItem="u7J-0U-Ghm" firstAttribute="trailing" secondItem="ub3-kA-87R" secondAttribute="trailing" type="default" id="aqi-us-3Q4"/>
-                            <constraint firstItem="je6-HR-FHb" firstAttribute="top" secondItem="3" secondAttribute="top" constant="157" id="cp1-Up-6FV"/>
-                            <constraint firstItem="3Y8-Ln-301" firstAttribute="top" secondItem="3" secondAttribute="top" constant="74" id="cwA-Ny-da9"/>
-                            <constraint firstAttribute="bottom" secondItem="Lxz-Se-BV9" secondAttribute="bottom" constant="100" id="enj-3o-bbV"/>
-                            <constraint firstItem="3Y8-Ln-301" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="55" id="evY-ca-Aho"/>
-                            <constraint firstItem="gFf-kF-nSC" firstAttribute="top" secondItem="3" secondAttribute="top" constant="60" id="mlf-A6-ISx"/>
+                            <constraint firstItem="3Y8-Ln-301" firstAttribute="centerX" secondItem="je6-HR-FHb" secondAttribute="centerX" type="default" id="Uqp-Ny-2d6"/>
+                            <constraint firstItem="ZDS-Cx-mJh" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="-3" id="ZvF-3K-Uw4"/>
+                            <constraint firstItem="ub3-kA-87R" firstAttribute="top" secondItem="Lxz-Se-BV9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="e7M-FO-5lJ"/>
+                            <constraint firstItem="qz8-ia-rfI" firstAttribute="top" secondItem="3" secondAttribute="top" constant="-123" id="exw-IY-I6w"/>
                             <constraint firstItem="je6-HR-FHb" firstAttribute="leading" secondItem="mCo-lJ-XXN" secondAttribute="leading" type="default" id="pKZ-yG-B7C"/>
-                            <constraint firstItem="Lxz-Se-BV9" firstAttribute="top" secondItem="u7J-0U-Ghm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qry-Gd-9Sm"/>
-                            <constraint firstItem="Lxz-Se-BV9" firstAttribute="trailing" secondItem="tfd-0j-Qo6" secondAttribute="trailing" type="default" id="wFY-Ld-kv9"/>
-                            <constraint firstItem="Lxz-Se-BV9" firstAttribute="trailing" secondItem="u7J-0U-Ghm" secondAttribute="trailing" type="default" id="wLX-vz-pK8"/>
+                            <constraint firstItem="mCo-lJ-XXN" firstAttribute="top" secondItem="je6-HR-FHb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rv4-d9-vKo"/>
+                            <constraint firstItem="3Y8-Ln-301" firstAttribute="centerY" secondItem="gFf-kF-nSC" secondAttribute="centerY" type="default" id="u4F-e1-TMn"/>
+                            <constraint firstItem="3Y8-Ln-301" firstAttribute="centerX" secondItem="gFf-kF-nSC" secondAttribute="centerX" type="default" id="w7i-ND-48l"/>
                             <constraint firstItem="tfd-0j-Qo6" firstAttribute="top" secondItem="ZDS-Cx-mJh" secondAttribute="top" type="default" id="yaS-Qi-kYl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="OHIPNum" destination="je6-HR-FHb" id="tbz-zo-y1G"/>
+                        <outlet property="login" destination="Lxz-Se-BV9" id="Cmd-SN-NK0"/>
                         <outlet property="password" destination="mCo-lJ-XXN" id="gUr-3B-kJj"/>
-                        <outlet property="patientLogin" destination="ub3-kA-87R" id="UgA-c8-pYh"/>
-                        <outlet property="userID" destination="je6-HR-FHb" id="Hyr-Ki-4qy"/>
+                        <segue destination="zcj-Ui-nWo" kind="modal" identifier="toPatientSegue" id="iH0-GD-m0b"/>
+                        <segue destination="zyQ-S6-uAH" kind="modal" identifier="toDoctorSegue" id="qA6-B0-AL6"/>
+                        <segue destination="TxP-xJ-xsp" kind="modal" identifier="toPharmaSegue" id="wDs-fM-Hzo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6218" y="-2775"/>
+            <point key="canvasLocation" x="-6286" y="-2775"/>
         </scene>
         <!--View Controller - Home-->
         <scene sceneID="CzJ-GX-dl8">
@@ -231,7 +213,13 @@
                             <constraint firstItem="cYh-cG-zef" firstAttribute="top" secondItem="33J-hp-IB9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xdI-C6-ch5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="8nQ-2U-rsq"/>
+                    <navigationItem key="navigationItem" title="Home" id="8nQ-2U-rsq">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="dOe-Id-cNx">
+                            <connections>
+                                <segue destination="2" kind="modal" id="yst-Fv-oDL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoD-mr-crn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -459,7 +447,13 @@
                             <constraint firstItem="6aU-Hr-ZyV" firstAttribute="top" secondItem="gMS-wg-Mfi" secondAttribute="top" constant="20" symbolic="YES" type="default" id="x64-du-hcJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="B1v-em-cPn"/>
+                    <navigationItem key="navigationItem" title="Home" id="B1v-em-cPn">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="moK-Ra-aT4">
+                            <connections>
+                                <segue destination="2" kind="modal" id="J8M-eq-iG1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54a-Dz-514" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -490,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pua-OR-acy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4168" y="-2145"/>
+            <point key="canvasLocation" x="-4168" y="-2139"/>
         </scene>
         <!--PrescQR View Controller - Prescription-->
         <scene sceneID="XSE-S3-Zjd">
@@ -557,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O3-gp-Myq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4168" y="-2775"/>
+            <point key="canvasLocation" x="-4168" y="-2763"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yM0-2Y-f9b">
@@ -648,7 +642,13 @@
                             <constraint firstAttribute="trailing" secondItem="cdb-hI-qDq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rOu-wq-wyM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Doctor Home" id="4YD-4O-Fab"/>
+                    <navigationItem key="navigationItem" title="Doctor Home" id="4YD-4O-Fab">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="4YZ-Fz-v6y">
+                            <connections>
+                                <segue destination="2" kind="modal" id="1nQ-V9-ZsE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foi-SQ-EJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1046,9 +1046,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-MM-q85">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="278" id="uFU-UD-S6S"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1114,18 +1111,19 @@
                             <constraint firstItem="hpl-xh-KEX" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="76" id="3NJ-9p-XXv"/>
                             <constraint firstItem="Wt2-TR-ohU" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4th-ys-cRA"/>
                             <constraint firstItem="ZQ7-Wa-wEb" firstAttribute="top" secondItem="NdI-fx-hEv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="9Oh-gS-Zf8"/>
+                            <constraint firstItem="Sd4-Qb-FRF" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="22" id="Ayt-hw-20L"/>
                             <constraint firstItem="jf5-Mi-IPe" firstAttribute="trailing" secondItem="NdI-fx-hEv" secondAttribute="trailing" type="default" id="Cyd-YV-vgi"/>
                             <constraint firstItem="ZQ7-Wa-wEb" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DpK-ED-dqZ"/>
                             <constraint firstAttribute="trailing" secondItem="ZQ7-Wa-wEb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dwn-We-bGf"/>
-                            <constraint firstItem="c15-O8-IWv" firstAttribute="leading" secondItem="Sd4-Qb-FRF" secondAttribute="leading" type="default" id="EzU-ZD-c95"/>
                             <constraint firstItem="jf5-Mi-IPe" firstAttribute="bottom" secondItem="NdI-fx-hEv" secondAttribute="bottom" type="default" id="G6n-GV-tex"/>
                             <constraint firstItem="qRh-Wu-guZ" firstAttribute="leading" secondItem="Wt2-TR-ohU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="HWS-Mm-mho"/>
+                            <constraint firstItem="Sdx-MM-q85" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Lla-Y0-A9D"/>
                             <constraint firstAttribute="trailing" secondItem="sl8-Wc-C2h" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Oba-5R-w24"/>
                             <constraint firstItem="TBd-uW-TA3" firstAttribute="leading" secondItem="qRh-Wu-guZ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="PpM-FO-iHY"/>
                             <constraint firstItem="Wt2-TR-ohU" firstAttribute="top" secondItem="Sd4-Qb-FRF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ueo-GY-qKv"/>
                             <constraint firstItem="Sdx-MM-q85" firstAttribute="top" secondItem="sl8-Wc-C2h" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Wl8-EE-sQE"/>
                             <constraint firstItem="qRh-Wu-guZ" firstAttribute="baseline" secondItem="Wt2-TR-ohU" secondAttribute="baseline" type="default" id="Z0a-aO-SZf"/>
-                            <constraint firstItem="Sdx-MM-q85" firstAttribute="leading" secondItem="c15-O8-IWv" secondAttribute="leading" type="default" id="ZzR-dl-6YR"/>
+                            <constraint firstItem="c15-O8-IWv" firstAttribute="leading" secondItem="NdI-fx-hEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bSh-PO-NEe"/>
                             <constraint firstItem="sl8-Wc-C2h" firstAttribute="top" secondItem="ZQ7-Wa-wEb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nYD-9Y-KDM"/>
                             <constraint firstItem="TBd-uW-TA3" firstAttribute="baseline" secondItem="qRh-Wu-guZ" secondAttribute="baseline" type="default" id="ph8-nd-Gro"/>
                             <constraint firstAttribute="trailing" secondItem="c15-O8-IWv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sda-mM-4Y8"/>
@@ -1187,10 +1185,11 @@
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
-                <relationship kind="action" name="pressPatientLogin:"/>
+                <relationship kind="action" name="pressLogin:"/>
+                <relationship kind="action" name="pressRegister:"/>
+                <relationship kind="outlet" name="OHIPNum" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="login" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="patientLogin" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="userID" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="MakePrescriptionViewController" superclassName="UIViewController">
@@ -1293,10 +1292,11 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Yej-04-1Zl"/>
-        <segue reference="wOq-Pt-sKU"/>
-        <segue reference="hYV-yY-A8q"/>
-        <segue reference="P0Y-n8-U77"/>
+        <segue reference="yst-Fv-oDL"/>
+        <segue reference="7Ri-f8-tXb"/>
+        <segue reference="qoD-tj-Ghf"/>
         <segue reference="LbL-F0-a3j"/>
+        <segue reference="hYV-yY-A8q"/>
+        <segue reference="YSa-j8-CJy"/>
     </inferredMetricsTieBreakers>
 </document>

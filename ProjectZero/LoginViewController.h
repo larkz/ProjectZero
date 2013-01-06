@@ -12,22 +12,31 @@
     
     NSString * userIDStr;
     NSString * passwordStr;
+
     
 }
 
+- (void)postNotificationWithString:(NSString *)orientation;
+- (void)useNotificationWithString:(NSNotification*)notification;
 
 
-@property (strong, nonatomic) IBOutlet UIButton *patientLogin;
-@property (strong, nonatomic) IBOutlet UITextField *userID;
+@property (strong, nonatomic) IBOutlet UIButton *login;
+@property (strong, nonatomic) IBOutlet UITextField *OHIPNum;
 @property (strong, nonatomic) IBOutlet UITextField *password;
+
+
 
 
 @property (strong, nonatomic) NSString * userIDStr;
 @property (strong, nonatomic) NSString * passwordStr;
 @property (strong, nonatomic) NSString * loginURL;
 
+@property (strong, nonatomic) NSString * fetchIDURL;
 
-- (IBAction)pressPatientLogin:(id)sender;
+@property (strong, nonatomic) NSMutableDictionary * fetchIDDict;
+
+- (IBAction)pressLogin:(id)sender;
+- (IBAction)pressRegister:(id)sender;
 
 
 @end
