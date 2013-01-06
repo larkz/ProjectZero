@@ -72,7 +72,7 @@
     [userDefaults synchronize];
     
     
-    NSLog(@"Login Pressed! 123asfd");
+    NSLog(@"Login Pressed! 123asfd4444");
     NSLog(@"contained fields: ID %@ Pass %@", [userDefaults objectForKey:@"userID"], [userDefaults objectForKey:@"password"]);
     
 }
