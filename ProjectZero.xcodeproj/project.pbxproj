@@ -12,6 +12,20 @@
 		63F7BD4F169138E200EAE9A5 /* e-prescribe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD4B169138E200EAE9A5 /* e-prescribe.jpg */; };
 		63F7BD50169138E200EAE9A5 /* medicine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD4C169138E200EAE9A5 /* medicine.jpg */; };
 		63F7BD531691441700EAE9A5 /* patient.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD521691441700EAE9A5 /* patient.jpg */; };
+		63F7BD8B169A873C00EAE9A5 /* buttons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD89169A873C00EAE9A5 /* buttons.jpg */; };
+		63F7BD8C169A873C00EAE9A5 /* register.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD8A169A873C00EAE9A5 /* register.jpg */; };
+		63F7BD90169A882900EAE9A5 /* locate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD8D169A882900EAE9A5 /* locate.jpg */; };
+		63F7BD91169A882900EAE9A5 /* prescription.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD8E169A882900EAE9A5 /* prescription.jpg */; };
+		63F7BD92169A882900EAE9A5 /* Profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD8F169A882900EAE9A5 /* Profile.jpg */; };
+		63F7BD97169A896B00EAE9A5 /* createProfile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD93169A896B00EAE9A5 /* createProfile.jpg */; };
+		63F7BD98169A896B00EAE9A5 /* database.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD94169A896B00EAE9A5 /* database.jpg */; };
+		63F7BD99169A896B00EAE9A5 /* find.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD95169A896B00EAE9A5 /* find.jpg */; };
+		63F7BD9A169A896B00EAE9A5 /* makePrescription.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD96169A896B00EAE9A5 /* makePrescription.jpg */; };
+		63F7BD9E169A89EB00EAE9A5 /* Create.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD9B169A89EB00EAE9A5 /* Create.jpg */; };
+		63F7BD9F169A89EB00EAE9A5 /* NP.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD9C169A89EB00EAE9A5 /* NP.jpg */; };
+		63F7BDA0169A89EB00EAE9A5 /* SAPatients.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BD9D169A89EB00EAE9A5 /* SAPatients.jpg */; };
+		63F7BDA3169A89F500EAE9A5 /* SearchBN.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BDA1169A89F500EAE9A5 /* SearchBN.jpg */; };
+		63F7BDA4169A89F500EAE9A5 /* ViewPP.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BDA2169A89F500EAE9A5 /* ViewPP.jpg */; };
 		91DADFDB168E49CB006F027F /* SetPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DADFDA168E49CB006F027F /* SetPrescription.m */; };
 		DB1C6A571690BA1D00D08169 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A561690BA1D00D08169 /* LoginViewController.m */; };
 		DB1C6A671691522300D08169 /* PrescQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A661691522300D08169 /* PrescQRViewController.m */; };
@@ -116,6 +130,20 @@
 		63F7BD4B169138E200EAE9A5 /* e-prescribe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "e-prescribe.jpg"; sourceTree = "<group>"; };
 		63F7BD4C169138E200EAE9A5 /* medicine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = medicine.jpg; sourceTree = "<group>"; };
 		63F7BD521691441700EAE9A5 /* patient.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = patient.jpg; sourceTree = "<group>"; };
+		63F7BD89169A873C00EAE9A5 /* buttons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = buttons.jpg; sourceTree = "<group>"; };
+		63F7BD8A169A873C00EAE9A5 /* register.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = register.jpg; sourceTree = "<group>"; };
+		63F7BD8D169A882900EAE9A5 /* locate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = locate.jpg; sourceTree = "<group>"; };
+		63F7BD8E169A882900EAE9A5 /* prescription.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prescription.jpg; sourceTree = "<group>"; };
+		63F7BD8F169A882900EAE9A5 /* Profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Profile.jpg; sourceTree = "<group>"; };
+		63F7BD93169A896B00EAE9A5 /* createProfile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = createProfile.jpg; sourceTree = "<group>"; };
+		63F7BD94169A896B00EAE9A5 /* database.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = database.jpg; sourceTree = "<group>"; };
+		63F7BD95169A896B00EAE9A5 /* find.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = find.jpg; sourceTree = "<group>"; };
+		63F7BD96169A896B00EAE9A5 /* makePrescription.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = makePrescription.jpg; sourceTree = "<group>"; };
+		63F7BD9B169A89EB00EAE9A5 /* Create.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Create.jpg; sourceTree = "<group>"; };
+		63F7BD9C169A89EB00EAE9A5 /* NP.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NP.jpg; sourceTree = "<group>"; };
+		63F7BD9D169A89EB00EAE9A5 /* SAPatients.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SAPatients.jpg; sourceTree = "<group>"; };
+		63F7BDA1169A89F500EAE9A5 /* SearchBN.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SearchBN.jpg; sourceTree = "<group>"; };
+		63F7BDA2169A89F500EAE9A5 /* ViewPP.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ViewPP.jpg; sourceTree = "<group>"; };
 		91DADFD9168E49CB006F027F /* SetPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPrescription.h; sourceTree = "<group>"; };
 		91DADFDA168E49CB006F027F /* SetPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPrescription.m; sourceTree = "<group>"; };
 		DB1C6A551690BA1D00D08169 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ProjectZero/LoginViewController.h; sourceTree = "<group>"; };
@@ -220,6 +248,20 @@
 		63F7BD48169138E200EAE9A5 /* artwork */ = {
 			isa = PBXGroup;
 			children = (
+				63F7BDA1169A89F500EAE9A5 /* SearchBN.jpg */,
+				63F7BDA2169A89F500EAE9A5 /* ViewPP.jpg */,
+				63F7BD9B169A89EB00EAE9A5 /* Create.jpg */,
+				63F7BD9C169A89EB00EAE9A5 /* NP.jpg */,
+				63F7BD9D169A89EB00EAE9A5 /* SAPatients.jpg */,
+				63F7BD93169A896B00EAE9A5 /* createProfile.jpg */,
+				63F7BD94169A896B00EAE9A5 /* database.jpg */,
+				63F7BD95169A896B00EAE9A5 /* find.jpg */,
+				63F7BD96169A896B00EAE9A5 /* makePrescription.jpg */,
+				63F7BD8D169A882900EAE9A5 /* locate.jpg */,
+				63F7BD8E169A882900EAE9A5 /* prescription.jpg */,
+				63F7BD8F169A882900EAE9A5 /* Profile.jpg */,
+				63F7BD89169A873C00EAE9A5 /* buttons.jpg */,
+				63F7BD8A169A873C00EAE9A5 /* register.jpg */,
 				63F7BD521691441700EAE9A5 /* patient.jpg */,
 				63F7BD49169138E200EAE9A5 /* 89.jpg */,
 				63F7BD4A169138E200EAE9A5 /* blank-clipboard-icon.jpg */,
@@ -511,6 +553,20 @@
 				63F7BD531691441700EAE9A5 /* patient.jpg in Resources */,
 				DB534DE71691860100225DE0 /* UserTableCell.xib in Resources */,
 				DB67F50E16947A7F009097BD /* facebook-profile-picture.jpg in Resources */,
+				63F7BD8B169A873C00EAE9A5 /* buttons.jpg in Resources */,
+				63F7BD8C169A873C00EAE9A5 /* register.jpg in Resources */,
+				63F7BD90169A882900EAE9A5 /* locate.jpg in Resources */,
+				63F7BD91169A882900EAE9A5 /* prescription.jpg in Resources */,
+				63F7BD92169A882900EAE9A5 /* Profile.jpg in Resources */,
+				63F7BD97169A896B00EAE9A5 /* createProfile.jpg in Resources */,
+				63F7BD98169A896B00EAE9A5 /* database.jpg in Resources */,
+				63F7BD99169A896B00EAE9A5 /* find.jpg in Resources */,
+				63F7BD9A169A896B00EAE9A5 /* makePrescription.jpg in Resources */,
+				63F7BD9E169A89EB00EAE9A5 /* Create.jpg in Resources */,
+				63F7BD9F169A89EB00EAE9A5 /* NP.jpg in Resources */,
+				63F7BDA0169A89EB00EAE9A5 /* SAPatients.jpg in Resources */,
+				63F7BDA3169A89F500EAE9A5 /* SearchBN.jpg in Resources */,
+				63F7BDA4169A89F500EAE9A5 /* ViewPP.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
