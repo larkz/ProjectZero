@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -535,8 +535,8 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5J-SA-SoN">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="169" id="1ZL-cX-zee"/>
-                                    <constraint firstAttribute="height" constant="165" id="Sp8-nJ-GTK"/>
+                                    <constraint firstAttribute="width" constant="199" id="H8C-j9-6mT"/>
+                                    <constraint firstAttribute="height" constant="199" id="alv-PK-JXr"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3o-ng-9DW">
@@ -549,21 +549,41 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Drug:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOp-oq-TqB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="Fmw-2E-OYX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zp-6S-W28">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="hK7-6t-sbI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.39827449199999998" green="0.63596325310000001" blue="1" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="zSc-xX-VyB" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2i7-Av-Zwp"/>
-                            <constraint firstItem="O5J-SA-SoN" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9sF-al-S9A"/>
+                            <constraint firstItem="O5J-SA-SoN" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="125" id="87L-22-cKx"/>
+                            <constraint firstItem="uai-I0-xwQ" firstAttribute="baseline" secondItem="1zp-6S-W28" secondAttribute="baseline" type="default" id="CAZ-7V-LhU"/>
                             <constraint firstItem="E3o-ng-9DW" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="20" symbolic="YES" type="default" id="F5z-rO-avZ"/>
-                            <constraint firstAttribute="bottom" secondItem="zSc-xX-VyB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="P1P-dj-q1i"/>
+                            <constraint firstItem="jOp-oq-TqB" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="16" id="GH1-62-ABw"/>
+                            <constraint firstItem="1zp-6S-W28" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="60" id="HwD-8q-98Y"/>
+                            <constraint firstItem="zSc-xX-VyB" firstAttribute="centerX" secondItem="FVI-iX-dHb" secondAttribute="centerX" type="default" id="NQx-GP-FHw"/>
+                            <constraint firstItem="jOp-oq-TqB" firstAttribute="leading" secondItem="1zp-6S-W28" secondAttribute="leading" type="default" id="OCi-4a-Fmi"/>
                             <constraint firstItem="FVI-iX-dHb" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" type="default" id="RMv-av-MyS"/>
-                            <constraint firstItem="uai-I0-xwQ" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="78" id="hky-RQ-zh4"/>
+                            <constraint firstItem="E3o-ng-9DW" firstAttribute="leading" secondItem="jOp-oq-TqB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Rgx-Lh-X28"/>
+                            <constraint firstAttribute="bottom" secondItem="zSc-xX-VyB" secondAttribute="bottom" constant="32" id="Utx-dU-MMv"/>
+                            <constraint firstItem="uai-I0-xwQ" firstAttribute="leading" secondItem="E3o-ng-9DW" secondAttribute="leading" type="default" id="Zry-53-MAS"/>
+                            <constraint firstItem="jOp-oq-TqB" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="20" symbolic="YES" type="default" id="dVL-vY-Jua"/>
+                            <constraint firstItem="O5J-SA-SoN" firstAttribute="centerX" secondItem="zSc-xX-VyB" secondAttribute="centerX" type="default" id="hEx-XQ-y6w"/>
                             <constraint firstItem="FVI-iX-dHb" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" type="default" id="m9b-E0-o2o"/>
-                            <constraint firstItem="FVI-iX-dHb" firstAttribute="trailing" secondItem="A0K-1E-C6D" secondAttribute="trailing" type="default" id="nH8-q9-184"/>
-                            <constraint firstItem="O5J-SA-SoN" firstAttribute="top" secondItem="A0K-1E-C6D" secondAttribute="top" constant="171" id="qi4-D3-C8v"/>
+                            <constraint firstItem="FVI-iX-dHb" firstAttribute="trailing" secondItem="A0K-1E-C6D" secondAttribute="trailing" type="default" id="mrW-Mf-BQq"/>
                             <constraint firstItem="FVI-iX-dHb" firstAttribute="bottom" secondItem="A0K-1E-C6D" secondAttribute="bottom" type="default" id="wot-Lb-1tG"/>
-                            <constraint firstItem="uai-I0-xwQ" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xGR-d4-k35"/>
-                            <constraint firstItem="E3o-ng-9DW" firstAttribute="leading" secondItem="A0K-1E-C6D" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xSJ-I1-H4d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Prescription" id="LND-l6-8Ke"/>
@@ -647,7 +667,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-hI-qDq">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Patient Databse">
+                                <state key="normal" title="Patient Database">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -701,11 +721,12 @@
                             <constraint firstAttribute="trailing" secondItem="LDG-vn-BeG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2rW-md-oxb"/>
                             <constraint firstItem="srQ-f1-JkA" firstAttribute="top" secondItem="afz-NG-nK8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="J7Y-PH-h31"/>
                             <constraint firstItem="cdb-hI-qDq" firstAttribute="top" secondItem="Z7w-Oc-G3a" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Krv-aF-GGu"/>
+                            <constraint firstItem="srQ-f1-JkA" firstAttribute="leading" secondItem="Z7w-Oc-G3a" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mfv-rS-YgK"/>
                             <constraint firstItem="cdb-hI-qDq" firstAttribute="leading" secondItem="Z7w-Oc-G3a" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QAk-oR-OyQ"/>
                             <constraint firstItem="LDG-vn-BeG" firstAttribute="top" secondItem="cdb-hI-qDq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SCP-mg-uVE"/>
-                            <constraint firstItem="srQ-f1-JkA" firstAttribute="leading" secondItem="Z7w-Oc-G3a" secondAttribute="leading" constant="117" id="ZXs-sG-vhj"/>
                             <constraint firstItem="afz-NG-nK8" firstAttribute="top" secondItem="LDG-vn-BeG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fea-GN-EaZ"/>
                             <constraint firstItem="LDG-vn-BeG" firstAttribute="leading" secondItem="Z7w-Oc-G3a" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="htR-81-Vfs"/>
+                            <constraint firstAttribute="trailing" secondItem="srQ-f1-JkA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="i4u-Tj-E3e"/>
                             <constraint firstItem="afz-NG-nK8" firstAttribute="leading" secondItem="Z7w-Oc-G3a" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pNp-d5-TjO"/>
                             <constraint firstAttribute="trailing" secondItem="cdb-hI-qDq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rOu-wq-wyM"/>
                         </constraints>
@@ -1371,12 +1392,12 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="J8M-eq-iG1"/>
+        <segue reference="1nQ-V9-ZsE"/>
         <segue reference="wDs-fM-Hzo"/>
-        <segue reference="wOq-Pt-sKU"/>
+        <segue reference="qoD-tj-Ghf"/>
+        <segue reference="7Ri-f8-tXb"/>
+        <segue reference="Xm4-z2-3nr"/>
         <segue reference="hYV-yY-A8q"/>
-        <segue reference="Yej-04-1Zl"/>
-        <segue reference="P0Y-n8-U77"/>
-        <segue reference="LbL-F0-a3j"/>
+        <segue reference="YSa-j8-CJy"/>
     </inferredMetricsTieBreakers>
 </document>

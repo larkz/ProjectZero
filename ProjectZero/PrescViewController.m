@@ -30,23 +30,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     return [self.prescList count];
 }
 
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
-     NSLog(@"Presc List:%@", self.prescList);
-    
+    NSLog(@"Presc List:%@", self.prescList);
     
 	if ([segue.identifier isEqualToString:@"PrescQRSegue"])
 	{
@@ -55,7 +49,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         PrescQRViewController *destViewController = (PrescQRViewController*)segue.destinationViewController;
-    
+        
         
         
         destViewController.prescID =[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"presc_id"];
@@ -64,7 +58,7 @@
         
         destViewController.description = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"note"];
         
-    
+        
         NSLog(@"Selected Row asdf: %@",[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"]) ;
         NSLog(@"Selected Row asdf: %@", [segue.destinationViewController drugName]  );
         
@@ -79,9 +73,6 @@
     self.selectedDrug = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
     //NSLog(@"Selected Row: %@", self.selectedDrug);
 }
-
-
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -104,6 +95,7 @@
     }
     
     cell.drugName.text = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
+    cell.date.text = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"date"];
     
     return cell;
 }
@@ -111,31 +103,23 @@
 
 - (void)viewDidLoad
 {
-    
-   self.dataURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=";
-    
+    self.dataURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=1";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults synchronize];
     
     self.userID =[ userDefaults objectForKey:@"userID"];
     NSLog(@"User ID Presc %@", self.userID);
-    
-    
+
     //[NSURL URLWithString:[self.dataURL stringByAppendingString:self.userID]];
     
-    NSLog(@"access URL %@",  [self.dataURL stringByAppendingString:self.userID]);
+   // NSLog(@"access URL %@",  [self.dataURL stringByAppendingString:self.userID]);
+    // NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:[self.dataURL stringByAppendingString:self.userID]]];
+    NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.dataURL]];
     
-    
-    NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:[self.dataURL stringByAppendingString:self.userID]]];
-
     NSError* error;
     self.prescList = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
-    
     //NSLog(@"Presc List:%@", self.prescList);
-    
-    
-    
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view.
