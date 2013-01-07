@@ -54,6 +54,7 @@
 		DBD8934D16894FE8005C0B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932816894FE8005C0B87 /* Foundation.framework */; };
 		DBD8935516894FE8005C0B87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBD8935316894FE8005C0B87 /* InfoPlist.strings */; };
 		DBD8935816894FE8005C0B87 /* ProjectZeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8935716894FE8005C0B87 /* ProjectZeroTests.m */; };
+		DBDC57F3169A29ED0088AC1B /* VerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC57F2169A29ED0088AC1B /* VerifyViewController.m */; };
 		DBFF2C6C168FFBFD0002C403 /* UserVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFF2C6B168FFBFD0002C403 /* UserVariables.m */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,8 @@
 		DBD8935416894FE8005C0B87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DBD8935616894FE8005C0B87 /* ProjectZeroTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectZeroTests.h; sourceTree = "<group>"; };
 		DBD8935716894FE8005C0B87 /* ProjectZeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectZeroTests.m; sourceTree = "<group>"; };
+		DBDC57F1169A29ED0088AC1B /* VerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyViewController.h; sourceTree = "<group>"; };
+		DBDC57F2169A29ED0088AC1B /* VerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyViewController.m; sourceTree = "<group>"; };
 		DBFF2C6A168FFBFD0002C403 /* UserVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserVariables.h; sourceTree = "<group>"; };
 		DBFF2C6B168FFBFD0002C403 /* UserVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserVariables.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,6 +258,8 @@
 				DB67F5141696802D009097BD /* MakePrescriptionViewController.m */,
 				DB67F51E1697DA75009097BD /* FindUserViewController.h */,
 				DB67F51F1697DA75009097BD /* FindUserViewController.m */,
+				DBDC57F1169A29ED0088AC1B /* VerifyViewController.h */,
+				DBDC57F2169A29ED0088AC1B /* VerifyViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 				DB67F5151696802E009097BD /* MakePrescriptionViewController.m in Sources */,
 				DB67F51C1697B97C009097BD /* PharmaHomeViewController.m in Sources */,
 				DB67F5201697DA75009097BD /* FindUserViewController.m in Sources */,
+				DBDC57F3169A29ED0088AC1B /* VerifyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,6 +44,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+     NSLog(@"Presc List:%@", self.prescList);
+    
+    
 	if ([segue.identifier isEqualToString:@"PrescQRSegue"])
 	{
         
@@ -51,8 +55,15 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         PrescQRViewController *destViewController = (PrescQRViewController*)segue.destinationViewController;
-       
+    
+        
+        
+        destViewController.prescID =[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"presc_id"];
+        
         destViewController.drugName = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
+        
+        destViewController.description = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"note"];
+        
     
         NSLog(@"Selected Row asdf: %@",[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"]) ;
         NSLog(@"Selected Row asdf: %@", [segue.destinationViewController drugName]  );
@@ -60,6 +71,7 @@
         
 	}
 }
+
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -118,6 +130,10 @@
 
     NSError* error;
     self.prescList = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    
+    //NSLog(@"Presc List:%@", self.prescList);
+    
     
     
     [super viewDidLoad];

@@ -69,6 +69,9 @@
     
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"account Type ID: %@",[userDefaults objectForKey:@"account_type_id"]  );
+    
     if ([userDefaults objectForKey:@"account_type_id"] == @"3")
     {
         self.prescButton.hidden = YES;

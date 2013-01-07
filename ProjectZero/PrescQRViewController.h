@@ -26,10 +26,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *descriptionTextField;
 @property (strong, nonatomic) NSString *description;
 
+@property (strong, nonatomic) NSString * prescID;
+
+
+
+- (IBAction)verifyPresc:(id)sender;
 
 
 @property (strong, nonatomic) UIImage *QRImage;
-
 @property (strong, nonatomic) NSString * imageURL;
 
 

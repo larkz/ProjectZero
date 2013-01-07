@@ -128,25 +128,11 @@
 
 
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
-{
-    if (interfaceOrientation == UIInterfaceOrientationPortrait) {
-        [self postNotificationWithString:@"Portrait"];
-    }
-    else {
-        [self postNotificationWithString:@"Landscape"];
-    }
-}
-
-
-
-
 
 - (void)viewDidLoad
 {
     
-    //self.loginURL = [[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/login/?user=" stringByAppendingString:self.userIDStr] stringByAppendingString: @"&password="] stringByAppendingString: self.passwordStr];
-    
+
     password.delegate = self; // ADD THIS LINE
     [self.view addSubview:password];
     

@@ -8,6 +8,7 @@
 
 #import "PrescQRViewController.h"
 #import "PrescViewController.h"
+#import "VerifyViewController.h"
 
 
 @interface PrescQRViewController ()
@@ -23,6 +24,7 @@
 @synthesize imageURL;
 @synthesize description;
 @synthesize descriptionTextField;
+@synthesize prescID;
 
 
 
@@ -48,9 +50,9 @@
     
     if (self.imageURL == nil){
         
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         
-        self.imageURL = [[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/retrieveQRCode/?user_id=" stringByAppendingString:[userDefaults objectForKey:@"userID"]] stringByAppendingString:@"&drug="] stringByAppendingString:self.drugName];
+        self.imageURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/retrieveQRCode/?presc_id=" stringByAppendingString:self.prescID];
     
     }
     
@@ -59,13 +61,26 @@
         
     
     self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: self.imageURL ]]];
-                    
+    
+    
+    
+    if (self.QRImage == nil){
+        
+        NSLog(@"Error Occured while retrieving image");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"Unable to Retrieve QR Image"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    }
+    
+    
     NSLog(@"Image URL %@", self.imageURL);
     
     self.QRImageView.image = self.QRImage;
-    
     [self.QRImageView setNeedsDisplay];
-    
     self.drugNameTextField.text = self.drugName;
     self.descriptionTextField.text = self.description;
     
@@ -73,11 +88,41 @@
     
     
     
-    
-    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"toPrescVerifySegue"]){
+        
+        VerifyViewController *destViewController = (VerifyViewController*)segue.destinationViewController;
+        
+        destViewController.drugName = self.drugName;
+        
+        destViewController.description = self.description;
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+- (IBAction)verifyPresc:(id)sender{
+    
+    
+    
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
