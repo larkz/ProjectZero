@@ -8,6 +8,7 @@
 
 
 #import "PharmaHomeViewController.h"
+#import "PrescQRViewController.h"
 
 
 @interface PharmaHomeViewController ()
@@ -17,6 +18,8 @@
 
 
 @implementation PharmaHomeViewController
+
+@synthesize scanPrescID;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -33,7 +36,6 @@
     return self;
     
 }
-
 
 
 - (void)viewDidLoad
@@ -55,6 +57,37 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction)test:(id)sender{
+    
+    
+    [self performSegueWithIdentifier:@"toPrescQRFromVerifySegue" sender:self];
+    
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"toPrescQRFromVerifySegue"]){
+        
+        
+        
+        PrescQRViewController *destViewController = (PrescQRViewController*)segue.destinationViewController;
+        
+        destViewController.prescID = self.scanPrescID;
+        
+    }
+    
+    
+    
+    
+    
+    
+}
+
+
+
 
 
 - (IBAction) verify:(id)sender
@@ -88,20 +121,29 @@
         
         NSLog(result);
         
+        NSURL * scanURL = [NSURL URLWithString:[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/scanCode/?presc_id=" stringByAppendingString:result]];
+        
+        NSData* data = [NSData dataWithContentsOfURL:scanURL];
+        NSError* error;
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QR Code Scanned"
                                                         message:result
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
-
+        AudioServicesPlaySystemSound(1103);
+        
+        self.scanPrescID = result;
+        
+        [self performSegueWithIdentifier:@"toPrescQRFromVerifySegue" sender:self];
+        
         
         
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
     
 }
-
 
 
 @end

@@ -53,9 +53,7 @@
         
         
         destViewController.prescID =[[self.prescList objectAtIndex:indexPath.row] objectForKey:@"presc_id"];
-        
         destViewController.drugName = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"drug_name"];
-        
         destViewController.description = [[self.prescList objectAtIndex:indexPath.row] objectForKey:@"note"];
         
         
@@ -103,26 +101,33 @@
 
 - (void)viewDidLoad
 {
-    self.dataURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=1";
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults synchronize];
     
-    self.userID =[ userDefaults objectForKey:@"userID"];
-    NSLog(@"User ID Presc %@", self.userID);
-
+    //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    //[userDefaults synchronize];
+    
+    self.dataURL =  [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=" stringByAppendingString:self.userID];
+    
+    
+    NSLog(@"Data URL:%@", self.dataURL);
+    
+    //self.userID =[ userDefaults objectForKey:@"userID"];
+    NSLog(@"User ID to get Presc %@", self.userID);
+    
+    
     //[NSURL URLWithString:[self.dataURL stringByAppendingString:self.userID]];
-    
    // NSLog(@"access URL %@",  [self.dataURL stringByAppendingString:self.userID]);
     // NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:[self.dataURL stringByAppendingString:self.userID]]];
+    
     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.dataURL]];
     
     NSError* error;
     self.prescList = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
-    //NSLog(@"Presc List:%@", self.prescList);
+    NSLog(@"Presc List:%@", self.prescList);
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning

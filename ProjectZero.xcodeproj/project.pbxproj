@@ -60,6 +60,7 @@
 		DB743F1C169A9A92004146DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1B169A9A92004146DD /* QuartzCore.framework */; };
 		DB743F1E169A9AA3004146DD /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1D169A9AA3004146DD /* libiconv.dylib */; };
 		DB743F20169A9AED004146DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1F169A9AED004146DD /* CoreMedia.framework */; };
+		DB920413169B5EFF00889D8E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB920412169B5EFF00889D8E /* AudioToolbox.framework */; };
 		DBD8932716894FE8005C0B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932616894FE8005C0B87 /* UIKit.framework */; };
 		DBD8932916894FE8005C0B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932816894FE8005C0B87 /* Foundation.framework */; };
 		DBD8932B16894FE8005C0B87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932A16894FE8005C0B87 /* CoreGraphics.framework */; };
@@ -223,6 +224,7 @@
 		DB743F1B169A9A92004146DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DB743F1D169A9AA3004146DD /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		DB743F1F169A9AED004146DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DB920412169B5EFF00889D8E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DBD8932216894FE8005C0B87 /* ProjectZero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectZero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD8932616894FE8005C0B87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DBD8932816894FE8005C0B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -256,6 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB920413169B5EFF00889D8E /* AudioToolbox.framework in Frameworks */,
 				DB373E311698F198005EF12B /* CoreVideo.framework in Frameworks */,
 				DB710C5A168BEB370029847F /* MapKit.framework in Frameworks */,
 				DBD8932716894FE8005C0B87 /* UIKit.framework in Frameworks */,
@@ -444,6 +447,7 @@
 		DBD8931716894FE8005C0B87 = {
 			isa = PBXGroup;
 			children = (
+				DB920412169B5EFF00889D8E /* AudioToolbox.framework */,
 				DB743F1F169A9AED004146DD /* CoreMedia.framework */,
 				DB743F1D169A9AA3004146DD /* libiconv.dylib */,
 				DB743F1B169A9A92004146DD /* QuartzCore.framework */,

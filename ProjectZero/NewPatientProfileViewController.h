@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *month;
 @property (weak, nonatomic) IBOutlet UITextField *day;
 
-@property (weak, nonatomic) IBOutlet UITextField *address;
+@property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *healthCardNum;
 
 

@@ -38,7 +38,7 @@
 @property (strong, nonatomic) IBOutlet UILabel * healthCardField;
 @property (strong, nonatomic) IBOutlet UIImageView * profPic;
 
-@property (strong, nonatomic) NSString * userID;
+@property (strong, nonatomic) NSString * tempPatientID;
 
 
 @end

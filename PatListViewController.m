@@ -60,7 +60,7 @@
 - (void)viewDidLoad
 {
     
-    self.accessURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/fetchUsers";
+    self.accessURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/fetchPatients";
     
     NSLog(@"access URL %@",  self.accessURL);
 
@@ -87,7 +87,7 @@
         destViewController.firstName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"first_name"];
         destViewController.lastName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"last_name"];
         
-        destViewController.userID = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"id"];
+        destViewController.tempPatientID = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"id"];
         
     }
     

@@ -16,11 +16,15 @@
 
 {
     
-    
+    NSString * scanPrescID;
+
 }
 
 
+@property (nonatomic, retain) NSString * scanPrescID;
 
+
+-(IBAction)test:(id)sender;
 -(IBAction)verify:(id)sender;
 
 

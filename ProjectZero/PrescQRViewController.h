@@ -15,14 +15,25 @@
     UILabel * drugNameTextField;
     NSString *drugName;
     
-    
 }
+
+
+
+@property (strong, nonatomic) IBOutlet UILabel * refillsLabel;
+@property (strong, nonatomic) NSString * refills;
+
+@property (strong, nonatomic) IBOutlet UILabel * doctorNameLabel;
+@property (strong, nonatomic) NSString * doctorName;
+
+@property (strong, nonatomic) IBOutlet UILabel * dateLabel;
+@property (strong, nonatomic) NSString * dateOfIssue;
+
+@property (strong, nonatomic) NSString * doctorID;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *drugNameTextField;
 @property (strong, nonatomic) NSString *drugName;
-
 @property (strong, nonatomic) IBOutlet UIImageView *QRImageView;
-
 @property (strong, nonatomic) IBOutlet UILabel *descriptionTextField;
 @property (strong, nonatomic) NSString *description;
 

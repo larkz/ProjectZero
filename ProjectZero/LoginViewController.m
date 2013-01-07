@@ -65,7 +65,6 @@
 {
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
     self.fetchIDURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserFromOHIP/?ohip=" stringByAppendingString:self.OHIPNum.text];
         
     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.fetchIDURL]];
@@ -80,7 +79,18 @@
     
     
     [userDefaults setObject:password.text forKey:@"password"];
+    
+    
+    //[self.fetchIDDict objectForKey:@"first_name"]
+    
+    [userDefaults setObject:[self.fetchIDDict objectForKey:@"first_name"] forKey:@"first_name"];
+    [userDefaults setObject:[self.fetchIDDict objectForKey:@"last_name"] forKey:@"last_name"];
+
+    
+    
+    
     [userDefaults synchronize];
+    
     
     
     if ([self.password.text isEqualToString:[self.fetchIDDict objectForKey:@"password"]] ){
@@ -88,18 +98,31 @@
     
         if ( [[self.fetchIDDict objectForKey:@"account_type_id"] isEqualToString:@"1"]){
         
+            
+            [userDefaults setObject:[self.fetchIDDict objectForKey:@"account_type_id"] forKey:@"account_type_id"];
+            [userDefaults synchronize];
+
+            
         [self performSegueWithIdentifier:@"toDoctorSegue" sender:self];
 
         }
     
         else if ( [[self.fetchIDDict objectForKey:@"account_type_id"] isEqualToString:@"2"]){
         
+            
+            [userDefaults setObject:[self.fetchIDDict objectForKey:@"account_type_id"] forKey:@"account_type_id"];
+            [userDefaults synchronize];
+            
             [ self performSegueWithIdentifier:@"toPatientSegue" sender:self];
         
         }
     
         else if ( [[self.fetchIDDict objectForKey:@"account_type_id"] isEqualToString:@"3"]){
         
+            
+            [userDefaults setObject:[self.fetchIDDict objectForKey:@"account_type_id"] forKey:@"account_type_id"];
+            [userDefaults synchronize];
+            
             [self performSegueWithIdentifier:@"toPharmaSegue" sender:self];
         
         }
@@ -119,9 +142,11 @@
 
 
     NSLog(@"Login Pressed!");
-    
-    
     NSLog(@"contained fields: ID %@ Pass %@", [userDefaults objectForKey:@"userID"], [userDefaults objectForKey:@"password"]);
+    
+    
+    
+    
     
 }
 
@@ -154,7 +179,6 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
-    
     NSLog(@"Pressed Register!");
     
     

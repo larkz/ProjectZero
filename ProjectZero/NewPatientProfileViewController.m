@@ -21,7 +21,7 @@
 @synthesize year;
 @synthesize month;
 @synthesize day;
-@synthesize address;
+@synthesize password;
 @synthesize healthCardNum;
 @synthesize regURL;
 
@@ -35,7 +35,7 @@
     self.month.delegate = self;
     self.day.delegate =self;
     
-    self.address.delegate = self;
+    self.password.delegate = self;
     self.healthCardNum.delegate = self;
     
     
@@ -112,7 +112,15 @@
 - (IBAction)pressCreate:(id)sender
 {
     
-    self.regURL = [[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?user=" stringByAppendingString:self.firstName.text] stringByAppendingString:@"&password="] stringByAppendingString:@"password"] stringByAppendingString:@"&account_type_id=2"];
+    self.regURL = [[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name=" stringByAppendingString:self.firstName.text] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastName.text]
+                   stringByAppendingString:@"&password=" ]
+                   stringByAppendingString:@"&account_type_id=2"]
+                    stringByAppendingString:@"&ohip=" ]
+                   stringByAppendingString:self.healthCardNum.text];
+    
+    NSLog(@"ref URL :%@", self.regURL);
+    
+    
     
      NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.regURL]];
     

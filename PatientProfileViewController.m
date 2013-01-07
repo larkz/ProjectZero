@@ -8,6 +8,7 @@
 
 #import "PatientProfileViewController.h"
 #import "MakePrescriptionViewController.h"
+#import "PrescViewController.h"
 
 @interface PatientProfileViewController ()
 
@@ -46,29 +47,43 @@
         
         MakePrescriptionViewController *destViewController = (MakePrescriptionViewController*)segue.destinationViewController;
         
-        destViewController.userID = self.userID;
+        destViewController.userID = self.tempPatientID;
+    }
+    
+    else if ([segue.identifier isEqualToString:@"toViewPrescSegue"]){
+        
+        
+        PrescViewController * destViewController = (PrescViewController *)segue.destinationViewController;
+        destViewController.userID = self.tempPatientID;
+
         
     }
+    
+    
+    
+    
     
     
 }
 
 
-
-
-
 - (void)viewDidLoad
 {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
     
-    self.firstNameField.text = self.firstName;
-    self.lastNameField.text =  self.lastName;
+    //self.firstName = [userDefaults objectForKey:@"first_name"];
+    //self.lastNameField = [userDefaults objectForKey:@"last_name"];
+    
+    NSLog(@"first name class: %@",[[userDefaults objectForKey:@"first_name"] class] );
+    
+    
+    self.firstNameField.text = [userDefaults objectForKey:@"first_name"];
+    self.lastNameField.text =  [userDefaults objectForKey:@"last_name"];
     self.birthdayField.text = self.birthday;
     self.healthCardField.text = self.healthCard;
     
-    NSLog(@"userID:: %@", self.userID);
-    
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"tempPatientID:: %@", self.tempPatientID);
     
     NSLog(@"account Type ID: %@",[userDefaults objectForKey:@"account_type_id"]  );
     
@@ -78,8 +93,8 @@
         
     }
     
-    [userDefaults setObject:self.userID forKey:@"userID"];
-    [userDefaults synchronize];
+    //[userDefaults setObject:self.userID forKey:@"userID"];
+    //[userDefaults synchronize];
     
     
     [super viewDidLoad];
