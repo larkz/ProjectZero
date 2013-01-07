@@ -6,17 +6,23 @@
 //  Copyright (c) 2013 Larkin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "ZXingObjC/ZXingObjC.h"
 
-@interface PharmaHomeViewController : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+
+#import <UIKit/UIKit.h>
+#import "ZBarSDK.h"
+
+
+@interface PharmaHomeViewController : UIViewController <ZBarReaderDelegate>
+
 {
-    UIImagePickerController * imgPicker;
+    
+    
 }
+
+
 
 -(IBAction)verify:(id)sender;
 
 
-@property (nonatomic, retain) UIImagePickerController * imgPicker;
 
 @end
