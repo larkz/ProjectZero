@@ -30,7 +30,7 @@
 @property (strong, nonatomic) NSMutableArray * refillArray;
 
 
-@property (weak, nonatomic) NSString * userID;
+@property (weak, nonatomic) NSString * patientID;
 @property (weak, nonatomic) NSString * doctorID;
 @property (weak, nonatomic) NSString * addPrescURL;
 

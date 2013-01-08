@@ -21,7 +21,7 @@
 @synthesize drugNameField;
 @synthesize descriptionView;
 
-@synthesize userID;
+@synthesize patientID;
 @synthesize doctorID;
 
 @synthesize addPrescURL;
@@ -152,7 +152,7 @@
     
     if ([segue.identifier isEqualToString:@"PrescQRSegue"]){
         
-        
+        NSLog(@"enter segue PrescQRSegue");
         
         self.drugName = self.drugNameField.text;
         self.description = self.descriptionView.text;
@@ -162,11 +162,8 @@
         NSLog(@"Display Desc %@", self.description);
         
         
-        //http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addPresc/?user_id=1&doctor_id=3&drug=advil&note=HELLO&refills=5
         
-        
-        
-        self.addPrescURL = [[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addPresc/?user_id=" stringByAppendingString: self.userID] stringByAppendingString:@"&doctor_id="] stringByAppendingString:self.doctorID] stringByAppendingString:@"&drug=" ]  stringByAppendingString: self.drugName] stringByAppendingString:@"&note="] stringByAppendingString:self.description];
+        self.addPrescURL = [[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addPresc/?user_id=" stringByAppendingString: self.patientID] stringByAppendingString:@"&doctor_id="] stringByAppendingString:self.doctorID] stringByAppendingString:@"&drug=" ]  stringByAppendingString: self.drugName] stringByAppendingString:@"&note="] stringByAppendingString:self.description];
         
         NSLog(@"display addPrescURL: %@", self.addPrescURL);
         
@@ -177,7 +174,12 @@
         //self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.addPrescURL]]];
 
         
+        NSData * data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.addPrescURL]];
         
+        
+        NSError* error;
+        
+        [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"presc_id"];
         
         
         PrescQRViewController *destViewController = (PrescQRViewController*)segue.destinationViewController;
@@ -195,10 +197,6 @@
         
         
 }
-
-
-
-
 
 
 

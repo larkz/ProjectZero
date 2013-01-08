@@ -44,10 +44,14 @@
     
     if ([segue.identifier isEqualToString:@"toNewPrescSegue"])
     {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        
         
         MakePrescriptionViewController *destViewController = (MakePrescriptionViewController*)segue.destinationViewController;
         
-        destViewController.userID = self.tempPatientID;
+        destViewController.patientID = self.tempPatientID;
+        destViewController.doctorID = [userDefaults objectForKey:@"userID"];
+    
     }
     
     else if ([segue.identifier isEqualToString:@"toViewPrescSegue"]){
@@ -78,8 +82,8 @@
     NSLog(@"first name class: %@",[[userDefaults objectForKey:@"first_name"] class] );
     
     
-    self.firstNameField.text = [userDefaults objectForKey:@"first_name"];
-    self.lastNameField.text =  [userDefaults objectForKey:@"last_name"];
+    self.firstNameField.text = self.firstName;
+    self.lastNameField.text =  self.lastName;
     self.birthdayField.text = self.birthday;
     self.healthCardField.text = self.healthCard;
     

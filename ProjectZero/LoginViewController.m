@@ -100,17 +100,20 @@
         
             
             [userDefaults setObject:[self.fetchIDDict objectForKey:@"account_type_id"] forKey:@"account_type_id"];
+            
+            [userDefaults setObject:[self.fetchIDDict objectForKey:@"id"] forKey:@"userID"];
+            
             [userDefaults synchronize];
 
-            
-        [self performSegueWithIdentifier:@"toDoctorSegue" sender:self];
+        
+            [self performSegueWithIdentifier:@"toDoctorSegue" sender:self];
 
         }
     
         else if ( [[self.fetchIDDict objectForKey:@"account_type_id"] isEqualToString:@"2"]){
         
-            
             [userDefaults setObject:[self.fetchIDDict objectForKey:@"account_type_id"] forKey:@"account_type_id"];
+            [userDefaults setObject:[self.fetchIDDict objectForKey:@"id"] forKey:@"userID"];
             [userDefaults synchronize];
             
             [ self performSegueWithIdentifier:@"toPatientSegue" sender:self];
@@ -121,6 +124,7 @@
         
             
             [userDefaults setObject:[self.fetchIDDict objectForKey:@"account_type_id"] forKey:@"account_type_id"];
+            [userDefaults setObject:[self.fetchIDDict objectForKey:@"id"] forKey:@"userID"];
             [userDefaults synchronize];
             
             [self performSegueWithIdentifier:@"toPharmaSegue" sender:self];

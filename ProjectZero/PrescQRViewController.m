@@ -26,6 +26,9 @@
 @synthesize descriptionTextField;
 @synthesize prescID;
 
+@synthesize buttonTop;
+@synthesize buttonBot;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,10 +42,42 @@
 
 - (void)viewDidLoad
 {
+    
+    
     //self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/generate/?code=Hello"]]];
 
     //http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=
     //http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/retrieveQRCode/?user_id=1&drug=DRUG
+    
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"detected account type:%@", [userDefaults objectForKey:@"account_type_id" ]);
+    
+    
+    //Doctor
+    if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"1"]){
+        
+        [self.buttonTop setTitle:@"Remove Prescription" forState:UIControlStateNormal];  [self.buttonBot setTitle:@"Confirm Prescription"forState:UIControlStateNormal];
+        
+        
+    }
+    if( [[userDefaults objectForKey:@"account_type_id" ]isEqualToString:@"2"]    ){
+        
+        NSLog(@"detected patient!");
+        
+        self.buttonTop.hidden = YES;
+        self.buttonBot.hidden = YES;
+        
+    }
+    if([[userDefaults objectForKey:@"account_type_id" ]isEqualToString:@"3"]){
+        
+        self.buttonTop.hidden = YES;
+        [self.buttonBot setTitle:@"Confirm Prescription"forState:UIControlStateNormal];        
+        
+    }
+    
+    
+    
     
     
     
@@ -60,8 +95,12 @@
     NSData * data = [ NSData dataWithContentsOfURL:[NSURL URLWithString: [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/scanCode/?presc_id=" stringByAppendingString:self.prescID] ]];
     
     NSError *error;
-    self.drugName = [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"drug"];
-
+    
+    if (self.drugName != nil){
+        self.drugName = [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"drug"];
+    }
+    
+    
     NSLog(@"drugName:%@  ||  prescID:%@ || URL:%@", self.drugName, self.prescID, [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/scanCode/?presc_id=" stringByAppendingString:self.prescID] );
     
     self.description = [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"note"];
@@ -74,7 +113,6 @@
     NSData * doctorData = [ NSData dataWithContentsOfURL:[NSURL URLWithString: [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserByID/?user_id=" stringByAppendingString:self.doctorID] ]];
     
     self.doctorName = [[[[[NSJSONSerialization JSONObjectWithData:doctorData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"first_name"] stringByAppendingString:@" " ] stringByAppendingString:[[[NSJSONSerialization JSONObjectWithData:doctorData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"last_name"]];
-    
     
     if (self.QRImage == nil){
         

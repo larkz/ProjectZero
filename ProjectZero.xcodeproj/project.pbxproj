@@ -61,6 +61,7 @@
 		DB743F1E169A9AA3004146DD /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1D169A9AA3004146DD /* libiconv.dylib */; };
 		DB743F20169A9AED004146DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1F169A9AED004146DD /* CoreMedia.framework */; };
 		DB920413169B5EFF00889D8E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB920412169B5EFF00889D8E /* AudioToolbox.framework */; };
+		DB920423169BCFE700889D8E /* PharmaScribe-iOSicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */; };
 		DBD8932716894FE8005C0B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932616894FE8005C0B87 /* UIKit.framework */; };
 		DBD8932916894FE8005C0B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932816894FE8005C0B87 /* Foundation.framework */; };
 		DBD8932B16894FE8005C0B87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932A16894FE8005C0B87 /* CoreGraphics.framework */; };
@@ -225,6 +226,7 @@
 		DB743F1D169A9AA3004146DD /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		DB743F1F169A9AED004146DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DB920412169B5EFF00889D8E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PharmaScribe-iOSicon.png"; sourceTree = "<group>"; };
 		DBD8932216894FE8005C0B87 /* ProjectZero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectZero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD8932616894FE8005C0B87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DBD8932816894FE8005C0B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -447,6 +449,7 @@
 		DBD8931716894FE8005C0B87 = {
 			isa = PBXGroup;
 			children = (
+				DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */,
 				DB920412169B5EFF00889D8E /* AudioToolbox.framework */,
 				DB743F1F169A9AED004146DD /* CoreMedia.framework */,
 				DB743F1D169A9AA3004146DD /* libiconv.dylib */,
@@ -683,6 +686,7 @@
 				DB743F18169A97AB004146DD /* zbar-help.html in Resources */,
 				DB743F19169A97AB004146DD /* zbar-helpicons.png in Resources */,
 				DB743F1A169A97AB004146DD /* zbar-samples.png in Resources */,
+				DB920423169BCFE700889D8E /* PharmaScribe-iOSicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,12 @@
 
 @property (strong, nonatomic) NSString * doctorID;
 
+@property (strong, nonatomic) IBOutlet UIButton * buttonTop;
+@property (strong, nonatomic) IBOutlet UIButton * buttonBot;
+
+
+
+
 
 @property (strong, nonatomic) IBOutlet UILabel *drugNameTextField;
 @property (strong, nonatomic) NSString *drugName;

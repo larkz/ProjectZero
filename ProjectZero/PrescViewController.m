@@ -102,10 +102,19 @@
 - (void)viewDidLoad
 {
     
-    //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     //[userDefaults synchronize];
     
+    if (self.userID != nil){
     self.dataURL =  [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=" stringByAppendingString:self.userID];
+    }
+    
+    else{
+        
+        self.dataURL =  [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=" stringByAppendingString:[userDefaults objectForKey:@"userID"]];
+        
+    }
+    
     
     
     NSLog(@"Data URL:%@", self.dataURL);
