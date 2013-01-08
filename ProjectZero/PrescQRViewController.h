@@ -29,12 +29,14 @@
 @property (strong, nonatomic) NSString * dateOfIssue;
 
 @property (strong, nonatomic) NSString * doctorID;
+@property (strong, nonatomic) NSString * patientID;
 
 @property (strong, nonatomic) IBOutlet UIButton * buttonTop;
 @property (strong, nonatomic) IBOutlet UIButton * buttonBot;
 
 
-
+@property (strong, nonatomic) IBOutlet UILabel * patientNameLabel;
+@property (strong, nonatomic) NSString * patientName;
 
 
 @property (strong, nonatomic) IBOutlet UILabel *drugNameTextField;

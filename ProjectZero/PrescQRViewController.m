@@ -51,11 +51,13 @@
     
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"detected account type:%@", [userDefaults objectForKey:@"account_type_id" ]);
+    NSLog(@"detected account type:%@", [[userDefaults objectForKey:@"account_type_id" ] class]);
     
     
     //Doctor
     if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"1"]){
+        
+        NSLog(@"detected doctor!");
         
         [self.buttonTop setTitle:@"Remove Prescription" forState:UIControlStateNormal];  [self.buttonBot setTitle:@"Confirm Prescription"forState:UIControlStateNormal];
         
@@ -70,6 +72,8 @@
         
     }
     if([[userDefaults objectForKey:@"account_type_id" ]isEqualToString:@"3"]){
+        
+        NSLog(@"detected pharmacist!");
         
         self.buttonTop.hidden = YES;
         [self.buttonBot setTitle:@"Confirm Prescription"forState:UIControlStateNormal];        
@@ -96,10 +100,16 @@
     
     NSError *error;
     
-    if (self.drugName != nil){
-        self.drugName = [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"drug"];
-    }
+    //if (self.drugName != nil){
+    self.drugName = [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"drug"];
     
+    
+    
+    
+    
+    
+    
+    if (self.drugName != nil){
     
     NSLog(@"drugName:%@  ||  prescID:%@ || URL:%@", self.drugName, self.prescID, [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/scanCode/?presc_id=" stringByAppendingString:self.prescID] );
     
@@ -109,10 +119,23 @@
     
     self.doctorID = [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"doctor_id"];
     
+        
+        
+    self.patientID = [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"user_id"];
+        
     
     NSData * doctorData = [ NSData dataWithContentsOfURL:[NSURL URLWithString: [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserByID/?user_id=" stringByAppendingString:self.doctorID] ]];
+        
+    NSData * patientData = [ NSData dataWithContentsOfURL:[NSURL URLWithString: [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserByID/?user_id=" stringByAppendingString:self.patientID] ]];
     
     self.doctorName = [[[[[NSJSONSerialization JSONObjectWithData:doctorData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"first_name"] stringByAppendingString:@" " ] stringByAppendingString:[[[NSJSONSerialization JSONObjectWithData:doctorData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"last_name"]];
+        
+        self.patientName = [[[[[NSJSONSerialization JSONObjectWithData:patientData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"first_name"] stringByAppendingString:@" " ] stringByAppendingString:[[[NSJSONSerialization JSONObjectWithData:doctorData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"last_name"]];
+        
+        
+    }
+    
+    
     
     if (self.QRImage == nil){
         
@@ -130,12 +153,27 @@
     self.QRImageView.image = self.QRImage;
     [self.QRImageView setNeedsDisplay];
     
+    if (self.QRImage != nil){
     
-    self.drugNameTextField.text = self.drugName;
-    self.descriptionTextField.text = self.description;
-    self.refillsLabel.text = self.refills;
-    self.doctorNameLabel.text = self.doctorName;
-    self.dateLabel.text = self.dateOfIssue;
+        self.drugNameTextField.text = self.drugName;
+        self.descriptionTextField.text = self.description;
+        
+        self.doctorNameLabel.text = self.doctorName;
+        self.dateLabel.text = self.dateOfIssue;
+        self.patientNameLabel.text = self.patientName;
+        
+        // Convert to NSString
+        NSLog(@"Refills class type:%@", [self.refills class] );
+        
+        if ([self.refills isKindOfClass:[NSString class]]){
+            self.refillsLabel.text = self.refills;
+        }
+        
+        
+        
+        
+    }
+    
     
     NSLog(@"Text Label: %@", self.drugName );
     

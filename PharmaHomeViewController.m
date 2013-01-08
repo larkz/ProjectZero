@@ -119,25 +119,47 @@
         
         NSString * result = symbol.data;
         
-        NSLog(result);
+        NSLog(@"Scanned Code:%@",result);
         
         NSURL * scanURL = [NSURL URLWithString:[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/scanCode/?presc_id=" stringByAppendingString:result]];
         
         NSData* data = [NSData dataWithContentsOfURL:scanURL];
+        
+        
+        
         NSError* error;
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QR Code Scanned"
+        
+        if (data != nil){
+        
+            NSLog(@"Valid QR CODE!");
+        
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QR Code Scanned"
                                                         message:result
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
-        [alert show];
-        AudioServicesPlaySystemSound(1103);
+            [alert show];
+            AudioServicesPlaySystemSound(1103);
         
-        self.scanPrescID = result;
+            self.scanPrescID = result;
         
-        [self performSegueWithIdentifier:@"toPrescQRFromVerifySegue" sender:self];
-        
+            [self performSegueWithIdentifier:@"toPrescQRFromVerifySegue" sender:self];
+        }
+        else{
+            
+            NSLog(@"INVALID QR CODE!");
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid QR Code"
+                                                            message:result
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            AudioServicesPlaySystemSound(1103);
+            
+            
+        }
         
         
     }

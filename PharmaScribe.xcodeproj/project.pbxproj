@@ -227,7 +227,7 @@
 		DB743F1F169A9AED004146DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DB920412169B5EFF00889D8E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PharmaScribe-iOSicon.png"; sourceTree = "<group>"; };
-		DBD8932216894FE8005C0B87 /* ProjectZero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectZero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD8932216894FE8005C0B87 /* PharmaScribe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PharmaScribe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD8932616894FE8005C0B87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DBD8932816894FE8005C0B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DBD8932A16894FE8005C0B87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -472,7 +472,7 @@
 		DBD8932316894FE8005C0B87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DBD8932216894FE8005C0B87 /* ProjectZero.app */,
+				DBD8932216894FE8005C0B87 /* PharmaScribe.app */,
 				DBD8934916894FE8005C0B87 /* ProjectZeroTests.octest */,
 			);
 			name = Products;
@@ -557,7 +557,7 @@
 			);
 			name = ProjectZero;
 			productName = ProjectZero;
-			productReference = DBD8932216894FE8005C0B87 /* ProjectZero.app */;
+			productReference = DBD8932216894FE8005C0B87 /* PharmaScribe.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DBD8934816894FE8005C0B87 /* ProjectZeroTests */ = {
@@ -588,7 +588,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = Larkin;
 			};
-			buildConfigurationList = DBD8931C16894FE8005C0B87 /* Build configuration list for PBXProject "ProjectZero" */;
+			buildConfigurationList = DBD8931C16894FE8005C0B87 /* Build configuration list for PBXProject "PharmaScribe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -857,7 +857,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PharmaScribe;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -873,7 +873,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PharmaScribe;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -916,7 +916,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DBD8931C16894FE8005C0B87 /* Build configuration list for PBXProject "ProjectZero" */ = {
+		DBD8931C16894FE8005C0B87 /* Build configuration list for PBXProject "PharmaScribe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DBD8935916894FE8005C0B87 /* Debug */,

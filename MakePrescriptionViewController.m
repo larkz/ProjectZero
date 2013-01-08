@@ -179,14 +179,14 @@
         
         NSError* error;
         
-        [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"presc_id"];
+        NSString *prescID = [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"presc_id"];
         
         
         PrescQRViewController *destViewController = (PrescQRViewController*)segue.destinationViewController;
         //destViewController.QRImage = self.QRImage;
         
         destViewController.drugName = self.drugName;
-        destViewController.imageURL = self.addPrescURL;
+        destViewController.prescID = prescID;
         destViewController.description = self.description;
         
         
