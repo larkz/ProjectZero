@@ -18,6 +18,9 @@
 }
 
 
+@property (strong, nonatomic) NSString * justPresc;
+
+
 
 @property (strong, nonatomic) IBOutlet UILabel * refillsLabel;
 @property (strong, nonatomic) NSString * refills;
@@ -49,7 +52,7 @@
 
 
 
-- (IBAction)verifyPresc:(id)sender;
+- (IBAction)pressBottom:(id)sender;
 
 
 @property (strong, nonatomic) UIImage *QRImage;

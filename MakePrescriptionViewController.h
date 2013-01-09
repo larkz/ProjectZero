@@ -13,7 +13,6 @@
     UIPickerView *refillPicker;
     NSMutableArray * refillArray;
     
-    
 }
 
 
@@ -21,7 +20,8 @@
 @property (strong, nonatomic) NSString * description;
 @property (strong, nonatomic) NSString * amountRefill;
 
-
+@property (strong, nonatomic) IBOutlet UILabel *amountRefillLabel;
+@property (strong, nonatomic) IBOutlet UILabel * dateLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField * drugNameField;
 @property (weak, nonatomic) IBOutlet UITextView * descriptionView;
@@ -39,10 +39,14 @@
 
 
 @property (strong, nonatomic) IBOutlet UIButton *numRefillButton;
+@property (strong, nonatomic) IBOutlet UIButton * doneButton;
 
 
 - (IBAction)pressMakePresc:(id)sender;
 - (IBAction)pressNumRefill:(id)sender;
+- (IBAction)pressDone:(id)sender;
+
+
 
 
 

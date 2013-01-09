@@ -76,6 +76,13 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     
+    if ([userDefaults objectForKey:@"account_type_id"] == @"2"){
+        
+        self.prescButton.hidden = YES;
+        
+    }
+    
+    
     //self.firstName = [userDefaults objectForKey:@"first_name"];
     //self.lastNameField = [userDefaults objectForKey:@"last_name"];
     

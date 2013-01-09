@@ -60,6 +60,8 @@
 		DB743F1C169A9A92004146DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1B169A9A92004146DD /* QuartzCore.framework */; };
 		DB743F1E169A9AA3004146DD /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1D169A9AA3004146DD /* libiconv.dylib */; };
 		DB743F20169A9AED004146DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1F169A9AED004146DD /* CoreMedia.framework */; };
+		DB7501CB169CCC490006A749 /* Drug_Pill.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501CA169CCC490006A749 /* Drug_Pill.png */; };
+		DB7501CF169CD6800006A749 /* RefillsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501CE169CD6800006A749 /* RefillsButton.png */; };
 		DB920413169B5EFF00889D8E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB920412169B5EFF00889D8E /* AudioToolbox.framework */; };
 		DB920423169BCFE700889D8E /* PharmaScribe-iOSicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */; };
 		DBD8932716894FE8005C0B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932616894FE8005C0B87 /* UIKit.framework */; };
@@ -225,6 +227,8 @@
 		DB743F1B169A9A92004146DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DB743F1D169A9AA3004146DD /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		DB743F1F169A9AED004146DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DB7501CA169CCC490006A749 /* Drug_Pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drug_Pill.png; sourceTree = "<group>"; };
+		DB7501CE169CD6800006A749 /* RefillsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RefillsButton.png; sourceTree = "<group>"; };
 		DB920412169B5EFF00889D8E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PharmaScribe-iOSicon.png"; sourceTree = "<group>"; };
 		DBD8932216894FE8005C0B87 /* PharmaScribe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PharmaScribe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +297,8 @@
 		63F7BD48169138E200EAE9A5 /* artwork */ = {
 			isa = PBXGroup;
 			children = (
+				DB7501CE169CD6800006A749 /* RefillsButton.png */,
+				DB7501CA169CCC490006A749 /* Drug_Pill.png */,
 				63F7BDA1169A89F500EAE9A5 /* SearchBN.jpg */,
 				63F7BDA2169A89F500EAE9A5 /* ViewPP.jpg */,
 				63F7BD9B169A89EB00EAE9A5 /* Create.jpg */,
@@ -687,6 +693,8 @@
 				DB743F19169A97AB004146DD /* zbar-helpicons.png in Resources */,
 				DB743F1A169A97AB004146DD /* zbar-samples.png in Resources */,
 				DB920423169BCFE700889D8E /* PharmaScribe-iOSicon.png in Resources */,
+				DB7501CB169CCC490006A749 /* Drug_Pill.png in Resources */,
+				DB7501CF169CD6800006A749 /* RefillsButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

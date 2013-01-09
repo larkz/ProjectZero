@@ -65,8 +65,13 @@
 {
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.fetchIDURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserFromOHIP/?ohip=" stringByAppendingString:self.OHIPNum.text];
-        
+    
+    NSString * OHIPnum = [ self.OHIPNum.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    self.fetchIDURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserFromOHIP/?ohip=" stringByAppendingString:OHIPnum];
+    
+    
+    
     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.fetchIDURL]];
     
     NSError* error;
@@ -82,6 +87,8 @@
     
     
     //[self.fetchIDDict objectForKey:@"first_name"]
+    
+    [userDefaults setObject:[self.fetchIDDict objectForKey:@"user_id"] forKey:@"userID"];
     
     [userDefaults setObject:[self.fetchIDDict objectForKey:@"first_name"] forKey:@"first_name"];
     [userDefaults setObject:[self.fetchIDDict objectForKey:@"last_name"] forKey:@"last_name"];

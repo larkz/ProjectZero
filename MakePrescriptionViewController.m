@@ -36,9 +36,35 @@
 - (void)viewDidLoad
 {
     
+    NSDate *date = [NSDate date];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    self.dateLabel.text = [@"Date: " stringByAppendingString:dateString];
+    
+    
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    
     //For now
-    self.doctorID = @"1";
+    self.doctorID = [userDefaults objectForKey:@"userID"];
     //for now
+    self.amountRefill = @"0";
+    
+    
+    if (self.doctorID == nil){
+        
+        self.doctorID = @"1";
+        
+    }
+
+    
+    [descriptionView setScrollEnabled:YES];
+    [descriptionView setUserInteractionEnabled:YES];
     
     self.drugNameField.delegate = self;
     self.descriptionView.delegate = self;
@@ -66,7 +92,11 @@
     [refillPicker selectRow:2 inComponent:0 animated:YES];
     [self.view addSubview: refillPicker];
     
+    
+    self.numRefillButton.hidden = NO;
+    self.doneButton.hidden = YES;
     self.refillPicker.hidden = YES;
+    
     [super viewDidLoad];
     
     
@@ -94,6 +124,9 @@
 
 
 
+
+
+
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
     if (descriptionView.textColor == [UIColor lightGrayColor]) {
@@ -107,13 +140,26 @@
 - (void) textViewDidBeginEditing:(UITextView *)textView{
     
     
+    
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDuration:0.5];
     [UIView setAnimationBeginsFromCurrentState:YES];
     
-    self.descriptionView.frame = CGRectMake(self.descriptionView.frame.origin.x, (self.descriptionView.frame.origin.y - 130.0), self.descriptionView.frame.size.width, self.descriptionView.frame.size.height);
     
+    self.descriptionView.frame = CGRectMake(self.descriptionView.frame.origin.x, (self.descriptionView.frame.origin.y - 50.0), self.descriptionView.frame.size.width, self.descriptionView.frame.size.height);
+    
+    [textView setFrame:CGRectMake(20, 70, 280, 120)];
+    
+    
+    
+    self.doneButton.hidden = NO;
+    self.numRefillButton.hidden = YES;
+    self.amountRefillLabel.hidden = YES;
+    self.dateLabel.hidden = YES;
+    self.drugNameField.hidden = YES;
+
     [UIView commitAnimations];
     
 }
@@ -127,7 +173,16 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
     
     
-    self.descriptionView.frame = CGRectMake(self.descriptionView.frame.origin.x, (self.descriptionView.frame.origin.y + 130.0), self.descriptionView.frame.size.width, self.descriptionView.frame.size.height);
+    self.descriptionView.frame = CGRectMake(self.descriptionView.frame.origin.x, (self.descriptionView.frame.origin.y + 50.0), self.descriptionView.frame.size.width, self.descriptionView.frame.size.height);
+    
+    [textView setFrame:CGRectMake(20, 100, 280, 220)];
+    
+    
+    self.doneButton.hidden = YES;
+    self.numRefillButton.hidden = NO;
+    self.amountRefillLabel.hidden = NO;
+    self.dateLabel.hidden = NO;
+    self.drugNameField.hidden = NO;
     
     [UIView commitAnimations];
 
@@ -152,27 +207,30 @@
     
     if ([segue.identifier isEqualToString:@"PrescQRSegue"]){
         
+        
         NSLog(@"enter segue PrescQRSegue");
         
+                
         self.drugName = self.drugNameField.text;
         self.description = self.descriptionView.text;
+        
+        self.description = [[self.description componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
+        
+        self.description = [self.description stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+        
+        self.drugName = [self.drugName stringByReplacingOccurrencesOfString:@" " withString:@""];
         
         
         NSLog(@"display drug %@",self.drugName);
         NSLog(@"Display Desc %@", self.description);
+                
+        self.addPrescURL = [[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addPresc/?user_id="
+                                    stringByAppendingString: self.patientID] stringByAppendingString:@"&doctor_id="] stringByAppendingString:self.doctorID] stringByAppendingString:@"&drug=" ]  stringByAppendingString: self.drugName] stringByAppendingString:@"&note="] stringByAppendingString:self.description] stringByAppendingString:@"&refills="] stringByAppendingString:self.amountRefill];
         
         
         
-        self.addPrescURL = [[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addPresc/?user_id=" stringByAppendingString: self.patientID] stringByAppendingString:@"&doctor_id="] stringByAppendingString:self.doctorID] stringByAppendingString:@"&drug=" ]  stringByAppendingString: self.drugName] stringByAppendingString:@"&note="] stringByAppendingString:self.description];
         
         NSLog(@"display addPrescURL: %@", self.addPrescURL);
-        
-        // NSError* error;
-        //NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.addPrescURL]];
-        
-        
-        //self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.addPrescURL]]];
-
         
         NSData * data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.addPrescURL]];
         
@@ -183,19 +241,35 @@
         
         
         PrescQRViewController *destViewController = (PrescQRViewController*)segue.destinationViewController;
-        //destViewController.QRImage = self.QRImage;
         
-        destViewController.drugName = self.drugName;
+        
+        destViewController.QRImage = self.QRImage;
         destViewController.prescID = prescID;
         destViewController.description = self.description;
+        destViewController.justPresc = @"YES";
         
         
-        NSLog(@"QRImage: %@", self.QRImage);
+        NSLog(@"Make User success!!");
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                        message:[[@"Prescription for " stringByAppendingString:self.drugName ]
+                                                                 stringByAppendingString:@" approved!" ]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
         
         
+        [alert show];
     }
         
         
+}
+
+
+- (IBAction)pressDone:(id)sender{
+    
+    [descriptionView resignFirstResponder];
+    
 }
 
 
@@ -246,7 +320,7 @@
     NSLog(@"Num refills string:%@", self.numRefillButton.titleLabel.text);
     
     
-    if ([self.numRefillButton.titleLabel.text isEqualToString: @"# of Refills"]){
+    if ([self.numRefillButton.titleLabel.text isEqualToString: @"# of Refills:"]){
         
         
         NSLog(@"Num refills string is EQUAL");
@@ -260,8 +334,8 @@
     else if ([self.numRefillButton.titleLabel.text isEqualToString: @"Select"]){
         
         self.refillPicker.hidden = YES;
-        self.numRefillButton.titleLabel.text = @"# of Refills";
-        [self.numRefillButton setTitle:@"# of Refills" forState:UIControlStateNormal];
+        self.numRefillButton.titleLabel.text = @"# of Refills:";
+        [self.numRefillButton setTitle:@"# of Refills:" forState:UIControlStateNormal];
         
     }
     
@@ -273,20 +347,44 @@
       inComponent:(NSInteger)component{
     
     self.amountRefill = [self.refillArray objectAtIndex:row];
-    
+    //self.numRefillButton.titleLabel.text = [@"# of Refills " stringByAppendingString:[self.refillArray objectAtIndex:row]];
     NSLog(@"selected refill #:%@", self.amountRefill);
+    
+    self.amountRefillLabel.text = self.amountRefill;
+    
+    
 }
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     //Touch outside of box
-    self.refillPicker.hidden = YES;
+    
+    if ([self.numRefillButton.titleLabel.text isEqualToString: @"# of Refills:"]){
+        
+        self.refillPicker.hidden = YES;
+    }
+    else if([self.numRefillButton.titleLabel.text isEqualToString: @"Select"])
+            {
+                
+                self.numRefillButton.titleLabel.text = @"# of Refills:";
+                [self.numRefillButton setTitle:@"# of Refills:" forState:UIControlStateNormal];
+                self.amountRefillLabel.text = self.amountRefill;
+                self.refillPicker.hidden = YES;
+
+            }
+    
     self.numRefillButton.titleLabel.text =  @"# of Refills";
     
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }
+
+
+
+
+
+
 
 
 

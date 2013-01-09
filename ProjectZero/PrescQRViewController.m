@@ -44,6 +44,17 @@
 {
     
     
+    NSLog(@"BOOL: %@",self.justPresc);
+    
+    
+    if (self.justPresc == @"YES"){
+        
+        self.buttonTop.hidden = YES;
+        
+        [self.buttonBot setTitle:@"Back Home"forState:UIControlStateNormal];
+    }
+    
+    
     //self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/generate/?code=Hello"]]];
 
     //http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=
@@ -51,11 +62,12 @@
     
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"detected account type:%@", [[userDefaults objectForKey:@"account_type_id" ] class]);
+    NSLog(@"detected account type:%@", [userDefaults objectForKey:@"account_type_id" ]);
     
     
     //Doctor
-    if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"1"]){
+    if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"1"] &&
+        self.justPresc == nil){
         
         NSLog(@"detected doctor!");
         
@@ -130,11 +142,10 @@
     
     self.doctorName = [[[[[NSJSONSerialization JSONObjectWithData:doctorData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"first_name"] stringByAppendingString:@" " ] stringByAppendingString:[[[NSJSONSerialization JSONObjectWithData:doctorData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"last_name"]];
         
-        self.patientName = [[[[[NSJSONSerialization JSONObjectWithData:patientData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"first_name"] stringByAppendingString:@" " ] stringByAppendingString:[[[NSJSONSerialization JSONObjectWithData:doctorData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"last_name"]];
+        self.patientName = [[[[[NSJSONSerialization JSONObjectWithData:patientData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"first_name"] stringByAppendingString:@" " ] stringByAppendingString:[[[NSJSONSerialization JSONObjectWithData:patientData options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"last_name"]];
         
         
     }
-    
     
     
     if (self.QRImage == nil){
@@ -167,6 +178,10 @@
         
         if ([self.refills isKindOfClass:[NSString class]]){
             self.refillsLabel.text = self.refills;
+        }else{
+            
+            self.refillsLabel.text = [NSString stringWithFormat:@"%@",self.refills];
+
         }
         
         
@@ -187,30 +202,36 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if ([segue.identifier isEqualToString:@"toPrescVerifySegue"]){
+    
+}
+
+
+
+
+- (IBAction)pressBottom:(id)sender{
+    
+    
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    if([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"1"]){
         
-        VerifyViewController *destViewController = (VerifyViewController*)segue.destinationViewController;
-        
-        destViewController.drugName = self.drugName;
-        
-        destViewController.description = self.description;
-        
+        [self performSegueWithIdentifier:@"toDoctorHomeSegue" sender:self];
+    }else if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"3"] ){
+        [self performSegueWithIdentifier:@"toPharHome" sender:self];
+
+    }else{
+        [self performSegueWithIdentifier:@"toPatHome" sender:self];
     }
     
-}
-
-
-
-
-
-
-
-
-- (IBAction)verifyPresc:(id)sender{
+    
     
     
     
 }
+
+
+
 
 
 
