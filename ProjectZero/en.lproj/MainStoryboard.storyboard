@@ -703,26 +703,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-hI-qDq">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="6rI-6A-HGX"/>
-                                    <constraint firstAttribute="width" constant="250" id="aZ0-uF-PSg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="See All Patients">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Ikd-xv-Nkm" kind="push" id="hYV-yY-A8q"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDG-vn-BeG">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="Uq4-uV-s6j"/>
+                                    <constraint firstAttribute="width" constant="250" id="Wit-Md-hwA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="createProfile.jpg">
@@ -755,14 +738,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="srQ-f1-JkA" firstAttribute="centerX" secondItem="Z7w-Oc-G3a" secondAttribute="centerX" type="default" id="2VW-xa-Mo7"/>
-                            <constraint firstItem="LDG-vn-BeG" firstAttribute="leading" secondItem="cdb-hI-qDq" secondAttribute="leading" type="default" id="8mf-JN-kwg"/>
-                            <constraint firstItem="cdb-hI-qDq" firstAttribute="top" secondItem="Z7w-Oc-G3a" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Krv-aF-GGu"/>
-                            <constraint firstItem="LDG-vn-BeG" firstAttribute="trailing" secondItem="cdb-hI-qDq" secondAttribute="trailing" type="default" id="P9h-8b-29v"/>
+                            <constraint firstItem="srQ-f1-JkA" firstAttribute="centerX" secondItem="Z7w-Oc-G3a" secondAttribute="centerX" type="default" id="1yg-sH-zJj"/>
+                            <constraint firstItem="srQ-f1-JkA" firstAttribute="top" secondItem="Z7w-Oc-G3a" secondAttribute="top" constant="83" id="IpK-0I-ahV"/>
+                            <constraint firstItem="LDG-vn-BeG" firstAttribute="top" secondItem="Z7w-Oc-G3a" secondAttribute="top" constant="20" symbolic="YES" type="default" id="R6n-gI-5ec"/>
                             <constraint firstItem="LDG-vn-BeG" firstAttribute="trailing" secondItem="srQ-f1-JkA" secondAttribute="trailing" type="default" id="VSl-Uu-Nqa"/>
                             <constraint firstItem="srQ-f1-JkA" firstAttribute="leading" secondItem="LDG-vn-BeG" secondAttribute="leading" type="default" id="ZW3-xP-um8"/>
-                            <constraint firstAttribute="bottom" secondItem="srQ-f1-JkA" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="jGj-Wt-zma"/>
-                            <constraint firstItem="LDG-vn-BeG" firstAttribute="top" secondItem="Z7w-Oc-G3a" secondAttribute="top" constant="112" id="qaC-YF-hf7"/>
+                            <constraint firstItem="srQ-f1-JkA" firstAttribute="top" secondItem="LDG-vn-BeG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="z1a-V3-di5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Doctor Home" id="4YD-4O-Fab">
@@ -802,7 +783,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ikd-xv-Nkm" kind="push" id="ZpI-bV-Zoj"/>
+                                    <action selector="seeAllPats:" destination="Cud-RM-Fxk" eventType="touchUpInside" id="LRq-pU-4fG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX4-sy-qTt">
@@ -818,6 +799,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchOHIP:" destination="Cud-RM-Fxk" eventType="touchUpInside" id="bId-wV-Puo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyK-5r-gxd">
                                 <color key="backgroundColor" red="1" green="0.6947621491" blue="0.21154891619999999" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
@@ -832,6 +816,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="serchByName:" destination="Cud-RM-Fxk" eventType="touchUpInside" id="8II-qi-vit"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by OHIP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jf0-ev-kfS">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -894,7 +881,15 @@
                     <connections>
                         <outlet property="firstName" destination="yPb-2z-FZL" id="gEC-FW-jDK"/>
                         <outlet property="lastName" destination="JGq-XX-7tS" id="R24-dj-kKt"/>
+                        <outlet property="orLabeBot" destination="n8A-v3-kAn" id="Upr-4P-Um7"/>
+                        <outlet property="orLabelTop" destination="oY4-6j-ACU" id="MDs-wg-8p2"/>
                         <outlet property="patientID" destination="Jf0-ev-kfS" id="hwL-pf-BUR"/>
+                        <outlet property="searchByName" destination="xyK-5r-gxd" id="aLE-yt-z0Z"/>
+                        <outlet property="searchByOHIP" destination="eX4-sy-qTt" id="LsG-xJ-rSL"/>
+                        <outlet property="seeAllPatients" destination="jO3-Cx-gUz" id="T6q-1U-QLD"/>
+                        <segue destination="Ikd-xv-Nkm" kind="push" identifier="toPatListSegue" id="Zp3-Aj-Zjl"/>
+                        <segue destination="Ikd-xv-Nkm" kind="push" identifier="toPatListSegueByOHIP" id="aBp-oS-So0"/>
+                        <segue destination="Ikd-xv-Nkm" kind="push" identifier="toPatListFromName" id="ObW-u7-bRx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyJ-TI-3vT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1385,10 +1380,16 @@
         <class className="FindUserViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FindUserViewController.h"/>
             <relationships>
+                <relationship kind="action" name="searchOHIP:"/>
+                <relationship kind="action" name="seeAllPats:"/>
+                <relationship kind="action" name="serchByName:"/>
                 <relationship kind="outlet" name="firstName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="lastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="orLabeBot" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="orLabelTop" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="patientID" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="searchByName" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchByOHIP" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="seeAllPatients" candidateClass="UIButton"/>
             </relationships>
         </class>
@@ -1516,12 +1517,12 @@
     <inferredMetricsTieBreakers>
         <segue reference="cfW-31-cXX"/>
         <segue reference="X6f-kb-7Vg"/>
-        <segue reference="7Ri-f8-tXb"/>
+        <segue reference="A7H-Ll-0Ya"/>
+        <segue reference="ObW-u7-bRx"/>
+        <segue reference="YSa-j8-CJy"/>
+        <segue reference="UCn-zT-ZtL"/>
+        <segue reference="1nQ-V9-ZsE"/>
         <segue reference="SHO-Re-PeG"/>
         <segue reference="yMT-qC-e1T"/>
-        <segue reference="UCn-zT-ZtL"/>
-        <segue reference="YSa-j8-CJy"/>
-        <segue reference="1nQ-V9-ZsE"/>
-        <segue reference="hYV-yY-A8q"/>
     </inferredMetricsTieBreakers>
 </document>

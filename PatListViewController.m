@@ -60,7 +60,7 @@
 - (void)viewDidLoad
 {
     
-    self.accessURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/fetchPatients";
+    //self.accessURL =  @"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/fetchPatients";
     
     NSLog(@"access URL %@",  self.accessURL);
 
