@@ -45,6 +45,10 @@
 
     if ( [[self.patList objectAtIndex:indexPath.row]  objectForKey:@"first_name"] != [NSNull null] && [[self.patList objectAtIndex:indexPath.row]  objectForKey:@"last_name"] != [NSNull null] ){
         cell.name.text = [[[[self.patList objectAtIndex:indexPath.row] objectForKey:@"first_name"] stringByAppendingString:@" " ]  stringByAppendingString:[[self.patList objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
+        
+        cell.subDesc.text = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"OHIP"];
+        //= [[self.patList objectAtIndex:indexPath.row] objectForKey:@"OHIP"];
+        
     }
     
     //cell.name.text = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"first_name"]; //stringByAppendingString:[[self.patList objectAtIndex:indexPath.row] objectForKey:@"last_name"]];

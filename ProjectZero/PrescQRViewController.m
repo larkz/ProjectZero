@@ -44,13 +44,11 @@
 {
     
     
-    [self.largeQRView setImage:self.QRImage];
-    self.largeQRView.hidden = NO;
+    
     self.QRbool = @"no";
     
     
     NSLog(@"BOOL: %@",self.justPresc);
-    
     
     
     
@@ -114,6 +112,11 @@
     
     self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: self.imageURL ]]];
 
+    
+    
+    [self.largeQRView setImage:self.QRImage];
+    
+    self.largeQRView.hidden = YES;
     
     
     NSData * data = [ NSData dataWithContentsOfURL:[NSURL URLWithString: [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/scanCode/?presc_id=" stringByAppendingString:self.prescID] ]];
