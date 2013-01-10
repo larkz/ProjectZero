@@ -20,7 +20,7 @@
 @synthesize drugName;
 @synthesize drugNameTextField;
 @synthesize QRImage;
-@synthesize QRImageView;
+@synthesize QRImageButton;
 @synthesize imageURL;
 @synthesize description;
 @synthesize descriptionTextField;
@@ -44,7 +44,15 @@
 {
     
     
+    [self.largeQRView setImage:self.QRImage];
+    self.largeQRView.hidden = NO;
+    self.QRbool = @"no";
+    
+    
     NSLog(@"BOOL: %@",self.justPresc);
+    
+    
+    
     
     
     if (self.justPresc == @"YES"){
@@ -161,8 +169,10 @@
     
     NSLog(@"Image URL %@", self.imageURL);
     
-    self.QRImageView.image = self.QRImage;
-    [self.QRImageView setNeedsDisplay];
+    [self.QRImageButton setBackgroundImage:QRImage forState:UIControlStateNormal];
+    
+    
+    [self.QRImageButton setNeedsDisplay];
     
     if (self.QRImage != nil){
     
@@ -233,7 +243,27 @@
 
 
 
-
+- (IBAction)tapQR:(id)sender{
+    
+    if ([self.QRbool isEqualToString:@"no"]){
+        
+        NSLog(@"show QR view");
+        
+        self.QRbool = @"yes";
+        self.largeQRView.hidden = NO;
+        
+        
+    }else if ([self.QRbool isEqualToString:@"yes"]){
+        
+        NSLog(@"hide QR view");
+        
+        self.QRbool = @"no";
+        self.largeQRView.hidden = YES;
+        
+    }
+    
+    
+}
 
 
 

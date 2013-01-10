@@ -72,8 +72,6 @@
     [descriptionView setText:@"Include notes on doseage, description etc"];
     [descriptionView setTextColor:[UIColor lightGrayColor]];
     
-        
-    
     
     
     self.refillArray = [[NSMutableArray alloc] init];
@@ -83,6 +81,10 @@
     [refillArray addObject:@"3"];
     [refillArray addObject:@"4"];
     [refillArray addObject:@"5"];
+    
+    NSLog(@"Refill Array:%@", refillArray);
+    
+    
     
     
     [refillPicker setDataSource: self];
@@ -267,12 +269,8 @@
 
 
 - (IBAction)pressDone:(id)sender{
-    
     [descriptionView resignFirstResponder];
-    
 }
-
-
 
 
 - (IBAction)pressMakePresc:(id)sender;

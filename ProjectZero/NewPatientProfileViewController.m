@@ -25,26 +25,131 @@
 @synthesize healthCardNum;
 @synthesize regURL;
 
+@synthesize yearArray;
 
 - (void)viewDidLoad
 {
     
+    [self.datePicker setDataSource: self];
+    [self.datePicker setDelegate: self];
+
+    
+    
     self.firstName.delegate = self;
     self.lastName.delegate = self;
-    self.year.delegate = self;
-    self.month.delegate = self;
-    self.day.delegate =self;
-    
+
     self.password.delegate = self;
     self.healthCardNum.delegate = self;
     
+    //Datepicker
     
+    self.datePicker.hidden = YES;
+    
+    
+    
+    self.yearArray = [[NSMutableArray alloc] init];
+    for (int i =2012; i>1900; i--){
+        
+        //NSLog(@"number i:%@", [NSString stringWithFormat:@"%d", i]);
+        [yearArray addObject: [NSString stringWithFormat:@"%d", i]];
+        
+    }
+    
+
+    //NSLog(@"Year Array:%@", self.yearArray );
+    
+    self.monthArray = [[NSMutableArray alloc] init];
+    for (int i =1; i<13; i++){
+        
+        //NSLog(@"number i:%@", [NSString stringWithFormat:@"%d", i]);
+        [self.monthArray addObject: [NSString stringWithFormat:@"%d", i]];
+        
+    }
+    
+    self.dayArray = [[NSMutableArray alloc] init];
+    for (int i =1; i<32; i++){
+        
+        //NSLog(@"number i:%@", [NSString stringWithFormat:@"%d", i]);
+        [self.dayArray addObject: [NSString stringWithFormat:@"%d", i]];
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    
+//    [self.datePicker addTarget:self
+//               action:@selector(dateChange:)
+//     forControlEvents:UIControlEventValueChanged];
     
     
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view.
 }
+
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    if (component == 0) {
+        return [self.yearArray count];
+    }
+    if (component == 1){
+        
+        return [self.monthArray count];
+    }
+    return [self.dayArray count];
+}
+
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 3; // or 2 or more
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+    //For one component (column)
+    //return [oneColumnList objectAtIndex:row];
+    
+    //For mutiple columns
+    if (component == 0) {
+        return [self.yearArray objectAtIndex:row];
+        
+    }
+    if (component ==1){
+        return [self.monthArray objectAtIndex:row];
+    }
+    
+    return [self.dayArray objectAtIndex:row];
+    
+}
+
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (component == 0) {
+        
+        self.year =[self.yearArray objectAtIndex:row];
+        return;
+    }
+    if (component == 1) {
+        
+        self.month =[self.monthArray objectAtIndex:row];
+        return;
+    }
+    self.day = [self.dayArray objectAtIndex:row];
+
+}
+
 
 
 
@@ -74,15 +179,23 @@
         
         destViewController.firstName = self.firstName.text;
         destViewController.lastName = self.lastName.text;
-        
-        NSLog(@"self.firstName class :: %@", [self.firstName class]);
-        NSLog(@"test:: %@", [[self.year.text stringByAppendingString: self.month.text] stringByAppendingString: self.day.text]);
+        destViewController.healthCard = self.healthCardNum.text;
         
         
-        NSArray *myStrings = [[NSArray alloc] initWithObjects: self.year.text, self.month.text, self.day.text, nil];
-        NSString *joinedString = [myStrings componentsJoinedByString:@"-"];
-        NSLog(@"joined string :: %@", joinedString);
-        destViewController.birthday = joinedString;
+        
+        destViewController.birthday = [self.birthday.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+        
+        
+//        NSLog(@"self.firstName class :: %@", [self.firstName class]);
+//        NSLog(@"test:: %@", [[self.year.text stringByAppendingString: self.month.text] stringByAppendingString: self.day.text]);
+//        
+//        
+//        NSArray *myStrings = [[NSArray alloc] initWithObjects: self.year.text, self.month.text, self.day.text, nil];
+//        NSString *joinedString = [myStrings componentsJoinedByString:@"-"];
+//        NSLog(@"joined string :: %@", joinedString);
+//        
+//        
+//        destViewController.birthday = joinedString;
         
     }
     
@@ -107,30 +220,92 @@
 
 
 
-
-
 - (IBAction)pressCreate:(id)sender
 {
     
-    self.regURL = [[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name=" stringByAppendingString:self.firstName.text] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastName.text]
-                   stringByAppendingString:@"&password=" ]
-                   stringByAppendingString:@"&account_type_id=2"]
-                    stringByAppendingString:@"&ohip=" ]
-                   stringByAppendingString:self.healthCardNum.text];
     
-    NSLog(@"ref URL :%@", self.regURL);
+    NSString * birthdayText = [self.birthday.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     
-    
-     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.regURL]];
-    
-    //NSError* error;
-    //[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"JSON Serialization:: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+//    self.regURL = [[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name=" stringByAppendingString:self.firstName.text] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastName.text]
+//                   stringByAppendingString:@"&password=" ]
+//                   stringByAppendingString:@"&account_type_id=2"]
+//                    stringByAppendingString:@"&ohip=" ]
+//                   stringByAppendingString:self.healthCardNum.text]
+//                    stringByAppendingString:@"&birthday="]
+//                   stringByAppendingString:birthdayText];
+//    
+//    
+//    NSLog(@"ref URL :%@", self.regURL);
+//    
+//    
+//    
+//     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.regURL]];
+//    
+//    //NSError* error;
+//    //[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    
+//    NSLog(@"JSON Serialization:: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     
     
 }
+
+- (IBAction)pressSelect:(id)sender{
+    
+    
+    
+    if ([self.selectBDay.titleLabel.text isEqualToString:@"Select Birthday:"]){
+        
+        NSLog(@"IsEqualtoSelect");
+        
+        self.datePicker.hidden = NO;
+        
+        [self.selectBDay setTitle:@"OK" forState:UIControlStateNormal];
+        
+    }
+    else if([self.selectBDay.titleLabel.text isEqualToString:@"OK"]){
+        
+        self.datePicker.hidden = YES;
+        [self.selectBDay setTitle:@"Select Birthday:" forState:UIControlStateNormal];
+        
+        NSArray *myStrings = [[NSArray alloc] initWithObjects: self.year, self.month, self.day, nil];
+        
+        self.birthday.text = [myStrings componentsJoinedByString:@"-"];
+        
+        
+        
+        NSLog(@"joined string :: %@", self.birthday);
+    }
+    
+    
+    
+//            NSArray *myStrings = [[NSArray alloc] initWithObjects: self.year, self.month, self.day, nil];
+//    
+//            self.birthday.text = [myStrings componentsJoinedByString:@"-"];
+//    
+//            NSLog(@"joined string :: %@", self.birthday);
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+-(IBAction)changeDate:(id)sender {
+	
+    
+    //NSDate * selected = [self.datePicker date];
+	//NSString * date = [selected description];
+    //self.birthday.text = date;
+    
+    
+}
+
+
 
 
 

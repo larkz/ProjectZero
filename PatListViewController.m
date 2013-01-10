@@ -86,6 +86,9 @@
 
         destViewController.firstName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"first_name"];
         destViewController.lastName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"last_name"];
+        destViewController.healthCard =destViewController.lastName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"OHIP"];
+        //destViewController.birthday =destViewController.lastName = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"birthday"];
+        
         
         destViewController.tempPatientID = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"id"];
         
@@ -93,10 +96,6 @@
     
     
 }
-
-
-
-
 
 
 

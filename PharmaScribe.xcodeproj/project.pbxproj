@@ -33,7 +33,6 @@
 		DB373E2D1698F189005EF12B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E2C1698F189005EF12B /* AVFoundation.framework */; };
 		DB373E2F1698F191005EF12B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E2E1698F191005EF12B /* ImageIO.framework */; };
 		DB373E311698F198005EF12B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E301698F197005EF12B /* CoreVideo.framework */; };
-		DB373E321698F1A7005EF12B /* libZXingObjC-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E231698F100005EF12B /* libZXingObjC-iOS.a */; };
 		DB448673168CE988002BEBF7 /* PrescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB448672168CE988002BEBF7 /* PrescViewController.m */; };
 		DB448679168CEAEC002BEBF7 /* PrescTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB448678168CEAEC002BEBF7 /* PrescTableCell.m */; };
 		DB44867B168CF297002BEBF7 /* PrescTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB44867A168CF297002BEBF7 /* PrescTableCell.xib */; };
@@ -62,6 +61,11 @@
 		DB743F20169A9AED004146DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1F169A9AED004146DD /* CoreMedia.framework */; };
 		DB7501CB169CCC490006A749 /* Drug_Pill.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501CA169CCC490006A749 /* Drug_Pill.png */; };
 		DB7501CF169CD6800006A749 /* RefillsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501CE169CD6800006A749 /* RefillsButton.png */; };
+		DB7501DF169D16D10006A749 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DA169D16D10006A749 /* Camera.png */; };
+		DB7501E0169D16D10006A749 /* Clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DB169D16D10006A749 /* Clipboard.png */; };
+		DB7501E1169D16D10006A749 /* Cross.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DC169D16D10006A749 /* Cross.png */; };
+		DB7501E2169D16D10006A749 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DD169D16D10006A749 /* Play.png */; };
+		DB7501E3169D16D10006A749 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DE169D16D10006A749 /* Profile.png */; };
 		DB920413169B5EFF00889D8E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB920412169B5EFF00889D8E /* AudioToolbox.framework */; };
 		DB920423169BCFE700889D8E /* PharmaScribe-iOSicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */; };
 		DBD8932716894FE8005C0B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932616894FE8005C0B87 /* UIKit.framework */; };
@@ -85,48 +89,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DB373E221698F100005EF12B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB373E161698F0FF005EF12B /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25403CB3166A96FA00E13304;
-			remoteInfo = "ZXingObjC-iOS";
-		};
-		DB373E241698F100005EF12B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB373E161698F0FF005EF12B /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25403CC4166A96FA00E13304;
-			remoteInfo = "ZXingObjCTests-iOS";
-		};
-		DB373E261698F100005EF12B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB373E161698F0FF005EF12B /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25404166166AADAC00E13304;
-			remoteInfo = "ZXingObjC-osx";
-		};
-		DB373E281698F100005EF12B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB373E161698F0FF005EF12B /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25404178166AADAC00E13304;
-			remoteInfo = "ZXingObjCTests-osx";
-		};
-		DB373E2A1698F100005EF12B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB373E161698F0FF005EF12B /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2540439E166ABA0A00E13304;
-			remoteInfo = "OS X Framework";
-		};
-		DB373E331698F1C0005EF12B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB373E161698F0FF005EF12B /* ZXingObjC.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 25403CB2166A96FA00E13304;
-			remoteInfo = "ZXingObjC-iOS";
-		};
 		DBD8934E16894FE8005C0B87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DBD8931916894FE8005C0B87 /* Project object */;
@@ -164,7 +126,6 @@
 		DB1C6A661691522300D08169 /* PrescQRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrescQRViewController.m; path = ProjectZero/PrescQRViewController.m; sourceTree = "<group>"; };
 		DB1C6A7116916C8B00D08169 /* NewPatientProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewPatientProfileViewController.h; path = ProjectZero/NewPatientProfileViewController.h; sourceTree = "<group>"; };
 		DB1C6A7216916C8B00D08169 /* NewPatientProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewPatientProfileViewController.m; path = ProjectZero/NewPatientProfileViewController.m; sourceTree = "<group>"; };
-		DB373E161698F0FF005EF12B /* ZXingObjC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingObjC.xcodeproj; path = ZXingObjC/ZXingObjC.xcodeproj; sourceTree = "<group>"; };
 		DB373E2C1698F189005EF12B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DB373E2E1698F191005EF12B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		DB373E301698F197005EF12B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -229,6 +190,11 @@
 		DB743F1F169A9AED004146DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DB7501CA169CCC490006A749 /* Drug_Pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drug_Pill.png; sourceTree = "<group>"; };
 		DB7501CE169CD6800006A749 /* RefillsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RefillsButton.png; sourceTree = "<group>"; };
+		DB7501DA169D16D10006A749 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		DB7501DB169D16D10006A749 /* Clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clipboard.png; sourceTree = "<group>"; };
+		DB7501DC169D16D10006A749 /* Cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cross.png; sourceTree = "<group>"; };
+		DB7501DD169D16D10006A749 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		DB7501DE169D16D10006A749 /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
 		DB920412169B5EFF00889D8E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PharmaScribe-iOSicon.png"; sourceTree = "<group>"; };
 		DBD8932216894FE8005C0B87 /* PharmaScribe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PharmaScribe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,7 +239,6 @@
 				DB743F20169A9AED004146DD /* CoreMedia.framework in Frameworks */,
 				DB743F1E169A9AA3004146DD /* libiconv.dylib in Frameworks */,
 				DB743F1C169A9A92004146DD /* QuartzCore.framework in Frameworks */,
-				DB373E321698F1A7005EF12B /* libZXingObjC-iOS.a in Frameworks */,
 				DB373E2F1698F191005EF12B /* ImageIO.framework in Frameworks */,
 				DB373E2D1698F189005EF12B /* AVFoundation.framework in Frameworks */,
 				DBD8932B16894FE8005C0B87 /* CoreGraphics.framework in Frameworks */,
@@ -297,6 +262,11 @@
 		63F7BD48169138E200EAE9A5 /* artwork */ = {
 			isa = PBXGroup;
 			children = (
+				DB7501DA169D16D10006A749 /* Camera.png */,
+				DB7501DB169D16D10006A749 /* Clipboard.png */,
+				DB7501DC169D16D10006A749 /* Cross.png */,
+				DB7501DD169D16D10006A749 /* Play.png */,
+				DB7501DE169D16D10006A749 /* Profile.png */,
 				DB7501CE169CD6800006A749 /* RefillsButton.png */,
 				DB7501CA169CCC490006A749 /* Drug_Pill.png */,
 				63F7BDA1169A89F500EAE9A5 /* SearchBN.jpg */,
@@ -355,18 +325,6 @@
 				DBDC57F2169A29ED0088AC1B /* VerifyViewController.m */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		DB373E171698F0FF005EF12B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DB373E231698F100005EF12B /* libZXingObjC-iOS.a */,
-				DB373E251698F100005EF12B /* ZXingObjCTests-iOS.octest */,
-				DB373E271698F100005EF12B /* libZXingObjC-osx.a */,
-				DB373E291698F100005EF12B /* ZXingObjCTests-osx.octest */,
-				DB373E2B1698F100005EF12B /* ZXingObjC.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		DB710C51168BE4450029847F /* Objects */ = {
@@ -464,7 +422,6 @@
 				DB373E301698F197005EF12B /* CoreVideo.framework */,
 				DB373E2E1698F191005EF12B /* ImageIO.framework */,
 				DB373E2C1698F189005EF12B /* AVFoundation.framework */,
-				DB373E161698F0FF005EF12B /* ZXingObjC.xcodeproj */,
 				DB1C6A7516916CA300D08169 /* ViewControllers */,
 				63F7BD48169138E200EAE9A5 /* artwork */,
 				DB710C51168BE4450029847F /* Objects */,
@@ -559,7 +516,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DB373E341698F1C0005EF12B /* PBXTargetDependency */,
 			);
 			name = ProjectZero;
 			productName = ProjectZero;
@@ -604,12 +560,6 @@
 			mainGroup = DBD8931716894FE8005C0B87;
 			productRefGroup = DBD8932316894FE8005C0B87 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = DB373E171698F0FF005EF12B /* Products */;
-					ProjectRef = DB373E161698F0FF005EF12B /* ZXingObjC.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				DBD8932116894FE8005C0B87 /* ProjectZero */,
@@ -617,44 +567,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		DB373E231698F100005EF12B /* libZXingObjC-iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libZXingObjC-iOS.a";
-			remoteRef = DB373E221698F100005EF12B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB373E251698F100005EF12B /* ZXingObjCTests-iOS.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ZXingObjCTests-iOS.octest";
-			remoteRef = DB373E241698F100005EF12B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB373E271698F100005EF12B /* libZXingObjC-osx.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libZXingObjC-osx.a";
-			remoteRef = DB373E261698F100005EF12B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB373E291698F100005EF12B /* ZXingObjCTests-osx.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ZXingObjCTests-osx.octest";
-			remoteRef = DB373E281698F100005EF12B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB373E2B1698F100005EF12B /* ZXingObjC.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ZXingObjC.framework;
-			remoteRef = DB373E2A1698F100005EF12B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DBD8932016894FE8005C0B87 /* Resources */ = {
@@ -695,6 +607,11 @@
 				DB920423169BCFE700889D8E /* PharmaScribe-iOSicon.png in Resources */,
 				DB7501CB169CCC490006A749 /* Drug_Pill.png in Resources */,
 				DB7501CF169CD6800006A749 /* RefillsButton.png in Resources */,
+				DB7501DF169D16D10006A749 /* Camera.png in Resources */,
+				DB7501E0169D16D10006A749 /* Clipboard.png in Resources */,
+				DB7501E1169D16D10006A749 /* Cross.png in Resources */,
+				DB7501E2169D16D10006A749 /* Play.png in Resources */,
+				DB7501E3169D16D10006A749 /* Profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,11 +682,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DB373E341698F1C0005EF12B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ZXingObjC-iOS";
-			targetProxy = DB373E331698F1C0005EF12B /* PBXContainerItemProxy */;
-		};
 		DBD8934F16894FE8005C0B87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DBD8932116894FE8005C0B87 /* ProjectZero */;

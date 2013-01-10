@@ -59,13 +59,8 @@
         
         PrescViewController * destViewController = (PrescViewController *)segue.destinationViewController;
         destViewController.userID = self.tempPatientID;
-
         
     }
-    
-    
-    
-    
     
     
 }
@@ -73,6 +68,11 @@
 
 - (void)viewDidLoad
 {
+    
+    
+    NSLog(@"DID LOAD SCREEN!");
+    
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     
@@ -83,16 +83,89 @@
     }
     
     
-    //self.firstName = [userDefaults objectForKey:@"first_name"];
-    //self.lastNameField = [userDefaults objectForKey:@"last_name"];
-    
     NSLog(@"first name class: %@",[[userDefaults objectForKey:@"first_name"] class] );
+
     
     
-    self.firstNameField.text = self.firstName;
-    self.lastNameField.text =  self.lastName;
-    self.birthdayField.text = self.birthday;
-    self.healthCardField.text = self.healthCard;
+    NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
+    
+    if (self.tempPatientID != nil){
+        NSURL *validUserUrl = [NSURL URLWithString:[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserByID/?user_id=" stringByAppendingString:self.tempPatientID]];
+    
+        NSData* verData = [NSData dataWithContentsOfURL:validUserUrl];
+        
+        NSError * error;
+        
+        NSDictionary * verDict = [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
+        
+        
+        self.firstName = [verDict objectForKey:@"first_name"];
+        self.lastName = [verDict objectForKey:@"last_name"];
+        self.healthCard =  [verDict objectForKey:@"OHIP"];
+        self.birthday = [verDict objectForKey:@"birthday"];
+
+    }
+    
+    
+    NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
+
+    
+    
+    if(self.tempPatientID == nil){
+    
+    
+    self.regURL = [[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name=" stringByAppendingString:self.firstName] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastName]
+                        stringByAppendingString:@"&password=" ]
+                       stringByAppendingString:@"&account_type_id=2"]
+                      stringByAppendingString:@"&ohip=" ]
+                     stringByAppendingString:self.healthCard]
+                    stringByAppendingString:@"&birthday="]
+                   stringByAppendingString:self.birthday];
+    }
+    
+    
+    
+    
+    
+    
+    NSLog(@"ref URL :%@", self.regURL);
+    
+    
+    
+    NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.regURL]];
+    
+    //NSError* error;
+    //[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+//    if (data != nil){
+//    
+//    if ( [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] isEqualToString:@"SUCCESS"]){
+//    
+//            NSLog(@"User Created!");
+//        } else{
+//        
+//            NSLog(@"User Creation failed!");
+//
+//        }
+//    }
+    
+
+    if (self.tempPatientID == nil){
+        
+        NSString *getUserUrl = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserFromOHIP/?ohip=" stringByAppendingString:self.healthCard];
+        
+        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:getUserUrl]];
+        
+        NSError* error;
+        
+        NSDictionary * userDict = [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
+        
+        self.tempPatientID = [userDict objectForKey:@"id"];
+        
+        
+    }
+    
+    
     
     NSLog(@"tempPatientID:: %@", self.tempPatientID);
     
@@ -108,6 +181,24 @@
     //[userDefaults synchronize];
     
     
+    self.firstNameField.text = self.firstName;
+    self.lastNameField.text =  self.lastName;
+    
+    
+    if (self.birthday == [NSNull null]){
+        
+        NSLog(@"Birthday non-nil class:%@", [self.birthday class]);        
+        self.birthday = @"Unknown";
+    
+    }
+    self.birthdayField.text = self.birthday;
+        
+    
+    self.healthCardField.text = self.healthCard;
+    
+    
+    NSLog(@"DID FINISH LOAD SCREEN!");
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

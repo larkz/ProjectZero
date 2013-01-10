@@ -44,15 +44,24 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *drugNameTextField;
 @property (strong, nonatomic) NSString *drugName;
-@property (strong, nonatomic) IBOutlet UIImageView *QRImageView;
+
+@property (strong, nonatomic) IBOutlet UIButton *QRImageButton;
 @property (strong, nonatomic) IBOutlet UILabel *descriptionTextField;
 @property (strong, nonatomic) NSString *description;
+
+@property (strong, nonatomic) IBOutlet UIImageView * largeQRView;
+
+
+@property (strong, nonatomic) NSString * QRbool;
+
 
 @property (strong, nonatomic) NSString * prescID;
 
 
 
 - (IBAction)pressBottom:(id)sender;
+- (IBAction)tapQR:(id)sender;
+
 
 
 @property (strong, nonatomic) UIImage *QRImage;
