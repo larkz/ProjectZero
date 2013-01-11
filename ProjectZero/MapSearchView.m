@@ -7,6 +7,7 @@
 //
 
 #import "MapSearchView.h"
+#import "MapViewController.h"
 
 @interface MapSearchView ()
 
@@ -18,44 +19,9 @@
 @synthesize postalCodeTextField;
 @synthesize distanceRadiusPicker;
 @synthesize distanceList;
-@synthesize locationManager;
-@synthesize currentLocation;
-
-
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-    
-    self.currentLocation = newLocation;
-    if(newLocation.horizontalAccuracy <= 100.0f) { [locationManager stopUpdatingLocation];
-    
-        
-        CLLocationCoordinate2D cood = self.currentLocation.coordinate;
-        
-    
-        NSLog(@" Long: %f, lat:%f", cood.longitude, cood.latitude);}
-    
-    
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    
-    if(error.code == kCLErrorDenied) {
-        [locationManager stopUpdatingLocation];
-    } else if(error.code == kCLErrorLocationUnknown) {
-        // retry
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error retrieving location"
-                                                        message:[error description]
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)distanceRadiusPicker {
-
+    
     
     return 1;
 }
@@ -67,9 +33,18 @@
 }
 
 
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
+      inComponent:(NSInteger)component{
+ 
+    
+    self.radius = [self.distanceList objectAtIndex:row];
+    
+}
+
 
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
     
     return [distanceList objectAtIndex:row];
 }
@@ -87,27 +62,64 @@
 
 - (void)viewDidLoad
 {
+    self.navigationItem.title = @"Locate Pharmacy";
 
     
     distanceList = [[NSMutableArray alloc] init];
     
+    [distanceList addObject:@"1 km"];
+    [distanceList addObject:@"2 km"];
     [distanceList addObject:@"5 km"];
     [distanceList addObject:@"10 km"];
     [distanceList addObject:@"20 km"];
-    [distanceList addObject:@"50 km"];
-
-    
-    
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
-    NSLog(@"%@", self.currentLocation);
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
+    
     
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"toMapSegue"]){
+        
+        MapViewController *destViewController = (MapViewController*)segue.destinationViewController;
+
+        destViewController.radiusStr = self.radius;
+        
+//        if ([self.radius isEqualToString:@"1 km"]){
+//         
+//            NSLog(@"Distance Egual to 1 km");
+//            destViewController.radius = 1;
+//            
+//        }else if ([self.radius isEqualToString:@"2 km"]){
+//            
+//            destViewController.radius = 2;
+//            
+//        }else if ([self.radius isEqualToString:@"5 km"]){
+//            
+//            destViewController.radius = 5;
+//        }
+//        else if ([self.radius isEqualToString:@"10 km"])
+//        {
+//                
+//            destViewController.radius = 10;
+//            
+//                
+//        }else if ([self.radius isEqualToString:@"20 km"])
+//        {
+//            
+//            destViewController.radius = 20;
+//            
+//        }
+        
+    }
+    
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

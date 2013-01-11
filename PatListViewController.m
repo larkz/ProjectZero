@@ -54,7 +54,6 @@
     //cell.name.text = [[self.patList objectAtIndex:indexPath.row] objectForKey:@"first_name"]; //stringByAppendingString:[[self.patList objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
     
     
-    
     [[self.patList objectAtIndex:indexPath.row] objectForKey:@"name"];
     
     return cell;

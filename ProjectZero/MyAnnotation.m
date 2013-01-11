@@ -10,7 +10,7 @@
 
 @implementation MyAnnotation
 
-@synthesize coordinate;
+@synthesize coordinate, title, subtitle;
 
 - (id) initWithCoordinate:(CLLocationCoordinate2D)coord
 {
