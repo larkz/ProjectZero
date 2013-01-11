@@ -57,7 +57,7 @@
 
 @property (strong, nonatomic) NSString * prescID;
 
-
+- (IBAction)pressTop:(id)sender;
 
 - (IBAction)pressBottom:(id)sender;
 - (IBAction)tapQR:(id)sender;

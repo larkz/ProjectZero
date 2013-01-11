@@ -69,29 +69,73 @@
 - (void)viewDidLoad
 {
     
-    
-    NSLog(@"DID LOAD SCREEN!");
-    
-    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
+    NSLog(@"DID LOAD SCREEN!");
     
-    if ([userDefaults objectForKey:@"account_type_id"] == @"2"){
+    NSLog(@"tempPatientID:: %@", self.tempPatientID);
+    
+    NSLog(@"account Type ID: %@",[userDefaults objectForKey:@"account_type_id"]  );
+    
+    if ([[userDefaults objectForKey:@"account_type_id"] isEqualToString:@"1"]){
+
+    
+        NSLog(@"first name class: %@",[[userDefaults objectForKey:@"first_name"] class] );
+        NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
+    
+        if(self.tempPatientID == nil){
+    
+    
+            self.regURL = [[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name=" stringByAppendingString:self.firstName] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastName]
+                        stringByAppendingString:@"&password=" ]
+                       stringByAppendingString:@"&account_type_id=2"]
+                      stringByAppendingString:@"&ohip=" ]
+                     stringByAppendingString:self.healthCard]
+                    stringByAppendingString:@"&birthday="]
+                   stringByAppendingString:self.birthday];
+            
+            NSData* verData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.regURL]];
+            
+            NSError * error;
+            
+            [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
+        
+            
+            
+            NSURL *validUserUrl = [NSURL URLWithString:[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserFromOHIP/?ohip=" stringByAppendingString:self.healthCard]];
+            
+            verData = [NSData dataWithContentsOfURL:validUserUrl];
+            
+            
+            NSDictionary * verDict = [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
+            
+            self.tempPatientID = [verDict objectForKey:@"id"];
+            NSLog(@"Got patiend ID after registration: %@", self.tempPatientID);
+            
+        }
+    
+        NSLog(@"ref URL :%@", self.regURL);
+    
+    
+    }else if ([[userDefaults objectForKey:@"account_type_id"] isEqualToString:@"3"]){
+        {
+            self.prescButton.hidden = YES;
+        
+        }
+    
+    }else if ([[userDefaults objectForKey:@"account_type_id"] isEqualToString: @"2"]){
+        
+        self.tempPatientID = [userDefaults objectForKey:@"userID"];
+        NSLog(@"Patient Profile URL %@!", self.tempPatientID);
         
         self.prescButton.hidden = YES;
-        
+
     }
     
     
-    NSLog(@"first name class: %@",[[userDefaults objectForKey:@"first_name"] class] );
-
-    
-    
-    NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
-    
     if (self.tempPatientID != nil){
         NSURL *validUserUrl = [NSURL URLWithString:[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserByID/?user_id=" stringByAppendingString:self.tempPatientID]];
-    
+        
         NSData* verData = [NSData dataWithContentsOfURL:validUserUrl];
         
         NSError * error;
@@ -103,87 +147,11 @@
         self.lastName = [verDict objectForKey:@"last_name"];
         self.healthCard =  [verDict objectForKey:@"OHIP"];
         self.birthday = [verDict objectForKey:@"birthday"];
-
     }
-    
-    
+
     NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
-
-    
-    
-    if(self.tempPatientID == nil){
-    
-    
-    self.regURL = [[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name=" stringByAppendingString:self.firstName] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastName]
-                        stringByAppendingString:@"&password=" ]
-                       stringByAppendingString:@"&account_type_id=2"]
-                      stringByAppendingString:@"&ohip=" ]
-                     stringByAppendingString:self.healthCard]
-                    stringByAppendingString:@"&birthday="]
-                   stringByAppendingString:self.birthday];
-    }
-    
-    
-    
-    
-    
-    
-    NSLog(@"ref URL :%@", self.regURL);
-    
-    
-    
-    NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.regURL]];
-    
-    //NSError* error;
-    //[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-//    if (data != nil){
-//    
-//    if ( [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] isEqualToString:@"SUCCESS"]){
-//    
-//            NSLog(@"User Created!");
-//        } else{
-//        
-//            NSLog(@"User Creation failed!");
-//
-//        }
-//    }
-    
-
-    if (self.tempPatientID == nil){
-        
-        NSString *getUserUrl = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserFromOHIP/?ohip=" stringByAppendingString:self.healthCard];
-        
-        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:getUserUrl]];
-        
-        NSError* error;
-        
-        NSDictionary * userDict = [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
-        
-        self.tempPatientID = [userDict objectForKey:@"id"];
-        
-        
-    }
-    
-    
-    
-    NSLog(@"tempPatientID:: %@", self.tempPatientID);
-    
-    NSLog(@"account Type ID: %@",[userDefaults objectForKey:@"account_type_id"]  );
-    
-    if ([userDefaults objectForKey:@"account_type_id"] == @"3")
-    {
-        self.prescButton.hidden = YES;
-        
-    }
-    
-    //[userDefaults setObject:self.userID forKey:@"userID"];
-    //[userDefaults synchronize];
-    
-    
     self.firstNameField.text = self.firstName;
     self.lastNameField.text =  self.lastName;
-    
     
     if (self.birthday == [NSNull null]){
         
@@ -192,8 +160,6 @@
     
     }
     self.birthdayField.text = self.birthday;
-        
-    
     self.healthCardField.text = self.healthCard;
     
     

@@ -209,9 +209,7 @@
     
     if ([segue.identifier isEqualToString:@"PrescQRSegue"]){
         
-        
         NSLog(@"enter segue PrescQRSegue");
-        
                 
         self.drugName = self.drugNameField.text;
         self.description = self.descriptionView.text;
@@ -220,17 +218,17 @@
         
         self.description = [self.description stringByReplacingOccurrencesOfString:@" " withString:@"+"];
         
+        self.description = [self.description stringByTrimmingCharactersInSet:
+         [NSCharacterSet whitespaceCharacterSet]];
+        
         self.drugName = [self.drugName stringByReplacingOccurrencesOfString:@" " withString:@""];
         
         
-        NSLog(@"display drug %@",self.drugName);
+        NSLog(@"Display all fields to append:%@ %@ %@ %@ %@",self.patientID, self.doctorID, self.drugName, self.description, self.amountRefill);
         NSLog(@"Display Desc %@", self.description);
                 
         self.addPrescURL = [[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addPresc/?user_id="
                                     stringByAppendingString: self.patientID] stringByAppendingString:@"&doctor_id="] stringByAppendingString:self.doctorID] stringByAppendingString:@"&drug=" ]  stringByAppendingString: self.drugName] stringByAppendingString:@"&note="] stringByAppendingString:self.description] stringByAppendingString:@"&refills="] stringByAppendingString:self.amountRefill];
-        
-        
-        
         
         NSLog(@"display addPrescURL: %@", self.addPrescURL);
         
@@ -251,7 +249,7 @@
         destViewController.justPresc = @"YES";
         
         
-        NSLog(@"Make User success!!");
+        NSLog(@"Make Presc success!!");
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
                                                         message:[[@"Prescription for " stringByAppendingString:self.drugName ]

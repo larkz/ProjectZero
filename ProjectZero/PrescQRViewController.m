@@ -43,28 +43,22 @@
 - (void)viewDidLoad
 {
     
-    
+
     
     self.QRbool = @"no";
     
     
     NSLog(@"BOOL: %@",self.justPresc);
     
-    
-    
-    
-    if (self.justPresc == @"YES"){
+    if ([self.justPresc isEqualToString:@"YES"]){
         
-        self.buttonTop.hidden = YES;
+        self.buttonTop.hidden = NO;
+        self.buttonBot.hidden = YES;
+        [self.buttonTop setTitle:@"Back Home" forState:UIControlStateNormal];
+
         
-        [self.buttonBot setTitle:@"Back Home"forState:UIControlStateNormal];
     }
     
-    
-    //self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/generate/?code=Hello"]]];
-
-    //http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUser/?user_id=
-    //http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/retrieveQRCode/?user_id=1&drug=DRUG
     
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -76,9 +70,10 @@
         self.justPresc == nil){
         
         NSLog(@"detected doctor!");
-        
-        [self.buttonTop setTitle:@"Remove Prescription" forState:UIControlStateNormal];  [self.buttonBot setTitle:@"Confirm Prescription"forState:UIControlStateNormal];
-        
+        //elf.buttonTop.hidden = NO;
+
+        [self.buttonTop setTitle:@"Back Home" forState:UIControlStateNormal];
+        [self.buttonBot setTitle:@"Remove Prescription"forState:UIControlStateNormal];
         
     }
     if( [[userDefaults objectForKey:@"account_type_id" ]isEqualToString:@"2"]    ){
@@ -92,15 +87,10 @@
     if([[userDefaults objectForKey:@"account_type_id" ]isEqualToString:@"3"]){
         
         NSLog(@"detected pharmacist!");
-        
         self.buttonTop.hidden = YES;
         [self.buttonBot setTitle:@"Confirm Prescription"forState:UIControlStateNormal];        
         
     }
-    
-    
-    
-    
     
     
     if (self.imageURL == nil){
@@ -229,21 +219,41 @@
 
     if([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"1"]){
         
+        NSString * removeURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/removePresc/?presc_id=" stringByAppendingString:self.prescID];
+        
+        NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:removeURL]];
+        NSError* error;
+        
+        [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
+        
         [self performSegueWithIdentifier:@"toDoctorHomeSegue" sender:self];
+       
+        
     }else if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"3"] ){
+        
+        NSString * removeURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/removePresc/?presc_id=" stringByAppendingString:self.prescID];
+        
+        NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:removeURL]];
+        NSError* error;
+        
+         [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
+        
         [self performSegueWithIdentifier:@"toPharHome" sender:self];
 
     }else{
         [self performSegueWithIdentifier:@"toPatHome" sender:self];
     }
     
-    
-    
-    
+
     
 }
 
+- (IBAction)pressTop:(id)sender{
+    
+    [self performSegueWithIdentifier:@"toDoctorHomeSegue" sender:self];
 
+    
+}
 
 
 - (IBAction)tapQR:(id)sender{

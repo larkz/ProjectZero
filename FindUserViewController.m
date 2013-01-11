@@ -164,7 +164,7 @@
 }
 - (IBAction)serchByName:(id)sender{
     
-    if (self.firstName.text.length != 0 || self.lastName.text.length != 0 ){
+    if (self.firstName.text.length == 0 || self.lastName.text.length == 0 ){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unfilled Fields"
                                                         message:@"Please fill out both first and last name."
                                                        delegate:nil
