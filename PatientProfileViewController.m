@@ -27,6 +27,7 @@
 @synthesize healthCard;
 
 @synthesize prescButton;
+@synthesize regPass;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,7 +47,6 @@
     {
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         
-        
         MakePrescriptionViewController *destViewController = (MakePrescriptionViewController*)segue.destinationViewController;
         
         destViewController.patientID = self.tempPatientID;
@@ -55,7 +55,6 @@
     }
     
     else if ([segue.identifier isEqualToString:@"toViewPrescSegue"]){
-        
         
         PrescViewController * destViewController = (PrescViewController *)segue.destinationViewController;
         destViewController.userID = self.tempPatientID;
@@ -72,7 +71,6 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     NSLog(@"DID LOAD SCREEN!");
-    
     NSLog(@"tempPatientID:: %@", self.tempPatientID);
     
     NSLog(@"account Type ID: %@",[userDefaults objectForKey:@"account_type_id"]  );
@@ -86,8 +84,11 @@
         if(self.tempPatientID == nil){
     
     
-            self.regURL = [[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name=" stringByAppendingString:self.firstName] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastName]
-                        stringByAppendingString:@"&password=" ]
+            self.regURL = [[[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name="
+                                    stringByAppendingString:self.firstName] stringByAppendingString:@"&last_name="]
+                                  stringByAppendingString:self.lastName]
+                        stringByAppendingString:@"&password="]
+                        stringByAppendingString:self.regPass]
                        stringByAppendingString:@"&account_type_id=2"]
                       stringByAppendingString:@"&ohip=" ]
                      stringByAppendingString:self.healthCard]

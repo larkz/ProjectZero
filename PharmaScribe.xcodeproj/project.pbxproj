@@ -27,6 +27,11 @@
 		63F7BDA3169A89F500EAE9A5 /* SearchBN.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BDA1169A89F500EAE9A5 /* SearchBN.jpg */; };
 		63F7BDA4169A89F500EAE9A5 /* ViewPP.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63F7BDA2169A89F500EAE9A5 /* ViewPP.jpg */; };
 		91DADFDB168E49CB006F027F /* SetPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DADFDA168E49CB006F027F /* SetPrescription.m */; };
+		DB0D180B16A21833006ECCC7 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = DB0D180616A21833006ECCC7 /* Camera.png */; };
+		DB0D180C16A21833006ECCC7 /* Clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = DB0D180716A21833006ECCC7 /* Clipboard.png */; };
+		DB0D180D16A21833006ECCC7 /* Cross.png in Resources */ = {isa = PBXBuildFile; fileRef = DB0D180816A21833006ECCC7 /* Cross.png */; };
+		DB0D180E16A21833006ECCC7 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = DB0D180916A21833006ECCC7 /* Play.png */; };
+		DB0D180F16A21833006ECCC7 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DB0D180A16A21833006ECCC7 /* Profile.png */; };
 		DB1C6A571690BA1D00D08169 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A561690BA1D00D08169 /* LoginViewController.m */; };
 		DB1C6A671691522300D08169 /* PrescQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A661691522300D08169 /* PrescQRViewController.m */; };
 		DB1C6A7316916C8B00D08169 /* NewPatientProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A7216916C8B00D08169 /* NewPatientProfileViewController.m */; };
@@ -61,11 +66,6 @@
 		DB743F20169A9AED004146DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB743F1F169A9AED004146DD /* CoreMedia.framework */; };
 		DB7501CB169CCC490006A749 /* Drug_Pill.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501CA169CCC490006A749 /* Drug_Pill.png */; };
 		DB7501CF169CD6800006A749 /* RefillsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501CE169CD6800006A749 /* RefillsButton.png */; };
-		DB7501DF169D16D10006A749 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DA169D16D10006A749 /* Camera.png */; };
-		DB7501E0169D16D10006A749 /* Clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DB169D16D10006A749 /* Clipboard.png */; };
-		DB7501E1169D16D10006A749 /* Cross.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DC169D16D10006A749 /* Cross.png */; };
-		DB7501E2169D16D10006A749 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DD169D16D10006A749 /* Play.png */; };
-		DB7501E3169D16D10006A749 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7501DE169D16D10006A749 /* Profile.png */; };
 		DB920413169B5EFF00889D8E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB920412169B5EFF00889D8E /* AudioToolbox.framework */; };
 		DB920423169BCFE700889D8E /* PharmaScribe-iOSicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */; };
 		DBD8932716894FE8005C0B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8932616894FE8005C0B87 /* UIKit.framework */; };
@@ -120,6 +120,11 @@
 		63F7BDA2169A89F500EAE9A5 /* ViewPP.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ViewPP.jpg; sourceTree = "<group>"; };
 		91DADFD9168E49CB006F027F /* SetPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPrescription.h; sourceTree = "<group>"; };
 		91DADFDA168E49CB006F027F /* SetPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPrescription.m; sourceTree = "<group>"; };
+		DB0D180616A21833006ECCC7 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		DB0D180716A21833006ECCC7 /* Clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clipboard.png; sourceTree = "<group>"; };
+		DB0D180816A21833006ECCC7 /* Cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cross.png; sourceTree = "<group>"; };
+		DB0D180916A21833006ECCC7 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		DB0D180A16A21833006ECCC7 /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
 		DB1C6A551690BA1D00D08169 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ProjectZero/LoginViewController.h; sourceTree = "<group>"; };
 		DB1C6A561690BA1D00D08169 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ProjectZero/LoginViewController.m; sourceTree = "<group>"; };
 		DB1C6A651691522300D08169 /* PrescQRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrescQRViewController.h; path = ProjectZero/PrescQRViewController.h; sourceTree = "<group>"; };
@@ -190,11 +195,6 @@
 		DB743F1F169A9AED004146DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DB7501CA169CCC490006A749 /* Drug_Pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drug_Pill.png; sourceTree = "<group>"; };
 		DB7501CE169CD6800006A749 /* RefillsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RefillsButton.png; sourceTree = "<group>"; };
-		DB7501DA169D16D10006A749 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
-		DB7501DB169D16D10006A749 /* Clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clipboard.png; sourceTree = "<group>"; };
-		DB7501DC169D16D10006A749 /* Cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cross.png; sourceTree = "<group>"; };
-		DB7501DD169D16D10006A749 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
-		DB7501DE169D16D10006A749 /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
 		DB920412169B5EFF00889D8E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PharmaScribe-iOSicon.png"; sourceTree = "<group>"; };
 		DBD8932216894FE8005C0B87 /* PharmaScribe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PharmaScribe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,11 +262,11 @@
 		63F7BD48169138E200EAE9A5 /* artwork */ = {
 			isa = PBXGroup;
 			children = (
-				DB7501DA169D16D10006A749 /* Camera.png */,
-				DB7501DB169D16D10006A749 /* Clipboard.png */,
-				DB7501DC169D16D10006A749 /* Cross.png */,
-				DB7501DD169D16D10006A749 /* Play.png */,
-				DB7501DE169D16D10006A749 /* Profile.png */,
+				DB0D180616A21833006ECCC7 /* Camera.png */,
+				DB0D180716A21833006ECCC7 /* Clipboard.png */,
+				DB0D180816A21833006ECCC7 /* Cross.png */,
+				DB0D180916A21833006ECCC7 /* Play.png */,
+				DB0D180A16A21833006ECCC7 /* Profile.png */,
 				DB7501CE169CD6800006A749 /* RefillsButton.png */,
 				DB7501CA169CCC490006A749 /* Drug_Pill.png */,
 				63F7BDA1169A89F500EAE9A5 /* SearchBN.jpg */,
@@ -607,11 +607,11 @@
 				DB920423169BCFE700889D8E /* PharmaScribe-iOSicon.png in Resources */,
 				DB7501CB169CCC490006A749 /* Drug_Pill.png in Resources */,
 				DB7501CF169CD6800006A749 /* RefillsButton.png in Resources */,
-				DB7501DF169D16D10006A749 /* Camera.png in Resources */,
-				DB7501E0169D16D10006A749 /* Clipboard.png in Resources */,
-				DB7501E1169D16D10006A749 /* Cross.png in Resources */,
-				DB7501E2169D16D10006A749 /* Play.png in Resources */,
-				DB7501E3169D16D10006A749 /* Profile.png in Resources */,
+				DB0D180B16A21833006ECCC7 /* Camera.png in Resources */,
+				DB0D180C16A21833006ECCC7 /* Clipboard.png in Resources */,
+				DB0D180D16A21833006ECCC7 /* Cross.png in Resources */,
+				DB0D180E16A21833006ECCC7 /* Play.png in Resources */,
+				DB0D180F16A21833006ECCC7 /* Profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,6 +793,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = PharmaScribe;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

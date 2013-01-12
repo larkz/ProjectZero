@@ -29,6 +29,8 @@
 @property (strong, nonatomic) NSString * healthCard;
 @property (strong, nonatomic) NSString * prescID;
 
+@property (strong, nonatomic) NSString * regPass;
+
 
 @property IBOutlet UIButton * prescButton;
 

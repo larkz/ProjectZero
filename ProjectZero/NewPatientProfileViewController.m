@@ -32,7 +32,6 @@
     
     [self.datePicker setDataSource: self];
     [self.datePicker setDelegate: self];
-
     
     
     self.firstName.delegate = self;
@@ -180,11 +179,8 @@
         destViewController.firstName = self.firstName.text;
         destViewController.lastName = self.lastName.text;
         destViewController.healthCard = self.healthCardNum.text;
-        
-        
-        
+        destViewController.regPass = self.password.text;
         destViewController.birthday = [self.birthday.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-        
         
 //        NSLog(@"self.firstName class :: %@", [self.firstName class]);
 //        NSLog(@"test:: %@", [[self.year.text stringByAppendingString: self.month.text] stringByAppendingString: self.day.text]);
@@ -192,9 +188,7 @@
 //        
 //        NSArray *myStrings = [[NSArray alloc] initWithObjects: self.year.text, self.month.text, self.day.text, nil];
 //        NSString *joinedString = [myStrings componentsJoinedByString:@"-"];
-//        NSLog(@"joined string :: %@", joinedString);
-//        
-//        
+//        NSLog(@"joined string :: %@", joinedString); 
 //        destViewController.birthday = joinedString;
         
     }

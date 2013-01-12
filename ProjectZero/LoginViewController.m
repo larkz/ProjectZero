@@ -183,8 +183,8 @@
 - (IBAction)pressRegister:(id)sender{
     
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Register Feature"
-                                                    message:@"Will be Implemented Later"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Temporary Login"
+                                                    message:@"Doctor OHIP: '1' \n Patient OHIP: '2' \n Pharmacist OHIP '3' \n Enter password: 'pass'"
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];

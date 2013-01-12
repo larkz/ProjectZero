@@ -171,6 +171,7 @@
     
         self.drugNameTextField.text = self.drugName;
         self.descriptionTextField.text = self.description;
+        self.descriptionTextField.editable = NO;
         
         self.doctorNameLabel.text = self.doctorName;
         self.dateLabel.text = self.dateOfIssue;
@@ -262,8 +263,12 @@
         
         NSLog(@"show QR view");
         
+        
         self.QRbool = @"yes";
         self.largeQRView.hidden = NO;
+        [self.view bringSubviewToFront:self.largeQRView];
+
+        
         
         
     }else if ([self.QRbool isEqualToString:@"yes"]){

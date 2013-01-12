@@ -46,7 +46,7 @@
 @property (strong, nonatomic) NSString *drugName;
 
 @property (strong, nonatomic) IBOutlet UIButton *QRImageButton;
-@property (strong, nonatomic) IBOutlet UILabel *descriptionTextField;
+@property (strong, nonatomic) IBOutlet UITextView *descriptionTextField;
 @property (strong, nonatomic) NSString *description;
 
 @property (strong, nonatomic) IBOutlet UIImageView * largeQRView;
