@@ -1514,7 +1514,7 @@
             <relationships>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="drugName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pic" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="PrescViewController" superclassName="UIViewController">

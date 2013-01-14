@@ -35,6 +35,10 @@
 		DB1C6A571690BA1D00D08169 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A561690BA1D00D08169 /* LoginViewController.m */; };
 		DB1C6A671691522300D08169 /* PrescQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A661691522300D08169 /* PrescQRViewController.m */; };
 		DB1C6A7316916C8B00D08169 /* NewPatientProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A7216916C8B00D08169 /* NewPatientProfileViewController.m */; };
+		DB28820116A45F4A00079D12 /* PSLogo114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = DB28820016A45F4A00079D12 /* PSLogo114x114.png */; };
+		DB28820416A45FC800079D12 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DB28820316A45FC800079D12 /* Default.png */; };
+		DB28820616A45FCC00079D12 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB28820516A45FCC00079D12 /* Default@2x.png */; };
+		DB28820816A45FDA00079D12 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB28820716A45FDA00079D12 /* Default-568h@2x.png */; };
 		DB373E2D1698F189005EF12B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E2C1698F189005EF12B /* AVFoundation.framework */; };
 		DB373E2F1698F191005EF12B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E2E1698F191005EF12B /* ImageIO.framework */; };
 		DB373E311698F198005EF12B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E301698F197005EF12B /* CoreVideo.framework */; };
@@ -131,6 +135,10 @@
 		DB1C6A661691522300D08169 /* PrescQRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrescQRViewController.m; path = ProjectZero/PrescQRViewController.m; sourceTree = "<group>"; };
 		DB1C6A7116916C8B00D08169 /* NewPatientProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewPatientProfileViewController.h; path = ProjectZero/NewPatientProfileViewController.h; sourceTree = "<group>"; };
 		DB1C6A7216916C8B00D08169 /* NewPatientProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewPatientProfileViewController.m; path = ProjectZero/NewPatientProfileViewController.m; sourceTree = "<group>"; };
+		DB28820016A45F4A00079D12 /* PSLogo114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PSLogo114x114.png; sourceTree = "<group>"; };
+		DB28820316A45FC800079D12 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DB28820516A45FCC00079D12 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DB28820716A45FDA00079D12 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DB373E2C1698F189005EF12B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DB373E2E1698F191005EF12B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		DB373E301698F197005EF12B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -413,6 +421,10 @@
 		DBD8931716894FE8005C0B87 = {
 			isa = PBXGroup;
 			children = (
+				DB28820716A45FDA00079D12 /* Default-568h@2x.png */,
+				DB28820516A45FCC00079D12 /* Default@2x.png */,
+				DB28820316A45FC800079D12 /* Default.png */,
+				DB28820016A45F4A00079D12 /* PSLogo114x114.png */,
 				DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */,
 				DB920412169B5EFF00889D8E /* AudioToolbox.framework */,
 				DB743F1F169A9AED004146DD /* CoreMedia.framework */,
@@ -612,6 +624,10 @@
 				DB0D180D16A21833006ECCC7 /* Cross.png in Resources */,
 				DB0D180E16A21833006ECCC7 /* Play.png in Resources */,
 				DB0D180F16A21833006ECCC7 /* Profile.png in Resources */,
+				DB28820116A45F4A00079D12 /* PSLogo114x114.png in Resources */,
+				DB28820416A45FC800079D12 /* Default.png in Resources */,
+				DB28820616A45FCC00079D12 /* Default@2x.png in Resources */,
+				DB28820816A45FDA00079D12 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
