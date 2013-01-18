@@ -142,6 +142,7 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
     
     
+    
     self.descriptionView.frame = CGRectMake(self.descriptionView.frame.origin.x, (self.descriptionView.frame.origin.y - 50.0), self.descriptionView.frame.size.width, self.descriptionView.frame.size.height);
     
     [textView setFrame:CGRectMake(20, 70, 280, 120)];
@@ -316,6 +317,8 @@
         self.refillPicker.hidden = NO;
         self.numRefillButton.titleLabel.text = @"Select";
         [self.numRefillButton setTitle:@"Select" forState:UIControlStateNormal];
+        [self.refillPicker selectRow:0 inComponent:0 animated:NO];
+        [self.drugNameField resignFirstResponder];
         
     }
     
