@@ -73,16 +73,7 @@
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 //    
 //    [self.datePicker addTarget:self
 //               action:@selector(dateChange:)

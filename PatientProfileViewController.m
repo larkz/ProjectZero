@@ -193,7 +193,7 @@
     
     self.patDesc.frame = CGRectMake(self.patDesc.frame.origin.x, (self.patDesc.frame.origin.y - 50.0), self.patDesc.frame.size.width, self.patDesc.frame.size.height);
     
-    [textView setFrame:CGRectMake(20, 70, 280, 120)];
+    [textView setFrame:CGRectMake(20, 20, 280, 120)];
     
     
     [UIView commitAnimations];
@@ -211,7 +211,7 @@
     
     self.patDesc.frame = CGRectMake(self.patDesc.frame.origin.x, (self.patDesc.frame.origin.y + 50.0), self.patDesc.frame.size.width, self.patDesc.frame.size.height);
     
-    [textView setFrame:CGRectMake(20, 100, 280, 220)];
+    [textView setFrame:CGRectMake(20, 140, 280, 170)];
     
     
     
@@ -219,13 +219,6 @@
     
     
 }
-
-
-
-
-
-
-
 
 
 

@@ -154,6 +154,8 @@
     self.amountRefillLabel.hidden = YES;
     self.dateLabel.hidden = YES;
     self.drugNameField.hidden = YES;
+    self.refillPicker.hidden = YES;
+    
 
     [UIView commitAnimations];
     
@@ -178,6 +180,8 @@
     self.amountRefillLabel.hidden = NO;
     self.dateLabel.hidden = NO;
     self.drugNameField.hidden = NO;
+    self.refillPicker.hidden = NO;
+
     
     [UIView commitAnimations];
 
