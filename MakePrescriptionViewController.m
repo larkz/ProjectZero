@@ -141,13 +141,21 @@
 
 - (void) textViewDidBeginEditing:(UITextView *)textView{
     
-    
-    
+    if([self.numRefillButton.titleLabel.text isEqualToString: @"Select"])
+    {
+        
+        self.numRefillButton.titleLabel.text = @"# of Refills:";
+        [self.numRefillButton setTitle:@"# of Refills:" forState:UIControlStateNormal];
+        self.amountRefillLabel.text = self.amountRefill;
+        self.refillPicker.hidden = YES;
+        
+    }
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDuration:0.5];
     [UIView setAnimationBeginsFromCurrentState:YES];
+    
     
     
     self.descriptionView.frame = CGRectMake(self.descriptionView.frame.origin.x, (self.descriptionView.frame.origin.y - 50.0), self.descriptionView.frame.size.width, self.descriptionView.frame.size.height);
@@ -324,6 +332,8 @@
         self.refillPicker.hidden = NO;
         self.numRefillButton.titleLabel.text = @"Select";
         [self.numRefillButton setTitle:@"Select" forState:UIControlStateNormal];
+        [self.refillPicker selectRow:0 inComponent:0 animated:NO];
+        [self.drugNameField resignFirstResponder];
         
     }
     
@@ -377,11 +387,18 @@
 }
 
 
-
-
-
-
-
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if([self.numRefillButton.titleLabel.text isEqualToString: @"Select"])
+    {
+        
+        self.numRefillButton.titleLabel.text = @"# of Refills:";
+        [self.numRefillButton setTitle:@"# of Refills:" forState:UIControlStateNormal];
+        self.amountRefillLabel.text = self.amountRefill;
+        self.refillPicker.hidden = YES;
+        
+    }
+}
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

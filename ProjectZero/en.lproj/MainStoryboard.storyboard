@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -226,7 +226,7 @@
             <objects>
                 <viewController id="9Gv-gv-gwq" customClass="PrescViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ri7-ap-ipz">
-                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-sa-hVn">
@@ -716,7 +716,7 @@
             <objects>
                 <viewController id="vJn-Uy-cKu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z7w-Oc-G3a">
-                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDG-vn-BeG">
@@ -779,7 +779,7 @@
             <objects>
                 <viewController id="Cud-RM-Fxk" customClass="FindUserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="39c-zr-iXn">
-                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS3-wm-7dW">
@@ -917,7 +917,7 @@
             <objects>
                 <viewController id="Ikd-xv-Nkm" customClass="PatListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wbF-UN-TrA">
-                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4X3-Xb-Cpp">
@@ -1247,7 +1247,7 @@
             <objects>
                 <viewController id="YwB-Y5-XaG" customClass="NewPatientProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NdI-fx-hEv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-Mi-IPe">
@@ -1394,158 +1394,20 @@
         <image name="e-prescribe.jpg" width="900" height="676"/>
         <image name="facebook-profile-picture.jpg" width="563" height="353"/>
     </resources>
-    <classes>
-        <class className="FindUserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindUserViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchOHIP:"/>
-                <relationship kind="action" name="seeAllPats:"/>
-                <relationship kind="action" name="serchByName:"/>
-                <relationship kind="outlet" name="firstName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="lastName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="orLabeBot" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="orLabelTop" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="patientID" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="searchByName" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="searchByOHIP" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="seeAllPatients" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressLogin:"/>
-                <relationship kind="action" name="pressRegister:"/>
-                <relationship kind="outlet" name="OHIPNum" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="login" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MakePrescriptionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MakePrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressDone:"/>
-                <relationship kind="action" name="pressMakePresc:"/>
-                <relationship kind="action" name="pressNumRefill:"/>
-                <relationship kind="outlet" name="amountRefillLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="drugNameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="numRefillButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="refillPicker" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
-        <class className="MapSearchView" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapSearchView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="distanceRadiusPicker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="postalCodeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NewPatientProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewPatientProfileViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeDate:"/>
-                <relationship kind="action" name="pressCreate:"/>
-                <relationship kind="action" name="pressSelect:"/>
-                <relationship kind="outlet" name="birthday" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="firstName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="healthCardNum" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="lastName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectBDay" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="PatListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="PatientProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatientProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="birthdayField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="firstNameField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="healthCardField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lastNameField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="prescButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="profPic" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="PharmaHomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PharmaHomeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="test:"/>
-                <relationship kind="action" name="verify:"/>
-            </relationships>
-        </class>
-        <class className="PrescQRViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescQRViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressBottom:"/>
-                <relationship kind="action" name="pressTop:"/>
-                <relationship kind="action" name="tapQR:"/>
-                <relationship kind="outlet" name="QRImageButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonBot" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTop" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionTextField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="doctorNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="drugNameTextField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="largeQRView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="patientNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="refillsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PrescTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="date" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="drugName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pic" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="PrescViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UserTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pic" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="subDesc" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wOq-Pt-sKU"/>
-        <segue reference="yMT-qC-e1T"/>
-        <segue reference="c4v-nX-Mqq"/>
-        <segue reference="cfW-31-cXX"/>
-        <segue reference="UCn-zT-ZtL"/>
+        <segue reference="X6f-kb-7Vg"/>
         <segue reference="7Ri-f8-tXb"/>
+        <segue reference="cfW-31-cXX"/>
         <segue reference="qoD-tj-Ghf"/>
-        <segue reference="J8M-eq-iG1"/>
+        <segue reference="yMT-qC-e1T"/>
+        <segue reference="YSa-j8-CJy"/>
+        <segue reference="qA6-B0-AL6"/>
+        <segue reference="1nQ-V9-ZsE"/>
         <segue reference="ObW-u7-bRx"/>
     </inferredMetricsTieBreakers>
 </document>
