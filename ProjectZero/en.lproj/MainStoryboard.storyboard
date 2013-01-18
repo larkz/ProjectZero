@@ -1163,7 +1163,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="facebook-profile-picture.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2JK-SC-slE">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="103" id="giS-w0-XZt"/>
-                                    <constraint firstAttribute="width" constant="147" id="qz8-9e-DOM"/>
+                                    <constraint firstAttribute="width" constant="141" id="oEU-Sm-We9"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FirstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJ1-1Y-asU">
@@ -1203,26 +1203,37 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Patient Description" translatesAutoresizingMaskIntoConstraints="NO" id="HiW-Xm-LxN">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="184" id="BOf-aF-cCe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.39827449199999998" green="0.63596325310000001" blue="1" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kPk-O5-7Oc" firstAttribute="leading" secondItem="bDG-KA-Kgl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Pk-Xe-wu4"/>
                             <constraint firstItem="zrd-qg-EHf" firstAttribute="top" secondItem="hJ1-1Y-asU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1rZ-iM-i8W"/>
-                            <constraint firstItem="2JK-SC-slE" firstAttribute="leading" secondItem="bDG-KA-Kgl" secondAttribute="leading" constant="159" id="3cn-3d-qa3"/>
+                            <constraint firstItem="o4k-m6-8Z4" firstAttribute="top" secondItem="HiW-Xm-LxN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5c7-18-sVb"/>
                             <constraint firstItem="SM1-TY-qU3" firstAttribute="bottom" secondItem="bDG-KA-Kgl" secondAttribute="bottom" type="default" id="ARO-BP-CbZ"/>
+                            <constraint firstAttribute="trailing" secondItem="HiW-Xm-LxN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="BDM-Ta-070"/>
+                            <constraint firstItem="2JK-SC-slE" firstAttribute="top" secondItem="bDG-KA-Kgl" secondAttribute="top" constant="20" symbolic="YES" type="default" id="DxB-DR-44m"/>
                             <constraint firstItem="zrd-qg-EHf" firstAttribute="leading" secondItem="bDG-KA-Kgl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GIl-Qb-ax4"/>
                             <constraint firstItem="ozN-x5-pSa" firstAttribute="leading" secondItem="bDG-KA-Kgl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ll7-wN-UXR"/>
                             <constraint firstAttribute="trailing" secondItem="o4k-m6-8Z4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Rer-8A-vHU"/>
                             <constraint firstItem="SM1-TY-qU3" firstAttribute="leading" secondItem="bDG-KA-Kgl" secondAttribute="leading" type="default" id="Tpx-Yg-SBw"/>
-                            <constraint firstAttribute="bottom" secondItem="o4k-m6-8Z4" secondAttribute="bottom" constant="59" id="WXq-BE-L8S"/>
+                            <constraint firstItem="HiW-Xm-LxN" firstAttribute="leading" secondItem="bDG-KA-Kgl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Yp7-TX-IIp"/>
                             <constraint firstItem="hJ1-1Y-asU" firstAttribute="top" secondItem="bDG-KA-Kgl" secondAttribute="top" constant="20" symbolic="YES" type="default" id="cnk-YL-MxK"/>
+                            <constraint firstAttribute="trailing" secondItem="2JK-SC-slE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="crc-hx-v1Y"/>
                             <constraint firstItem="o4k-m6-8Z4" firstAttribute="leading" secondItem="bDG-KA-Kgl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fAq-Ge-HNA"/>
                             <constraint firstItem="hJ1-1Y-asU" firstAttribute="leading" secondItem="bDG-KA-Kgl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gNC-BK-Szi"/>
                             <constraint firstAttribute="trailing" secondItem="kPk-O5-7Oc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="iek-P6-oHf"/>
+                            <constraint firstItem="HiW-Xm-LxN" firstAttribute="top" secondItem="jNq-TP-ZI8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iri-8j-Thf"/>
                             <constraint firstAttribute="bottom" secondItem="kPk-O5-7Oc" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="jfB-XM-kPP"/>
                             <constraint firstItem="jNq-TP-ZI8" firstAttribute="leading" secondItem="bDG-KA-Kgl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="l1o-zy-gEC"/>
                             <constraint firstItem="jNq-TP-ZI8" firstAttribute="top" secondItem="ozN-x5-pSa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="m29-5q-V4d"/>
-                            <constraint firstItem="2JK-SC-slE" firstAttribute="top" secondItem="bDG-KA-Kgl" secondAttribute="top" constant="14" id="mSC-v7-ktI"/>
                             <constraint firstItem="SM1-TY-qU3" firstAttribute="top" secondItem="bDG-KA-Kgl" secondAttribute="top" type="default" id="uGa-qH-pUv"/>
                             <constraint firstItem="ozN-x5-pSa" firstAttribute="top" secondItem="zrd-qg-EHf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="w3N-Uq-O9V"/>
                             <constraint firstItem="SM1-TY-qU3" firstAttribute="trailing" secondItem="bDG-KA-Kgl" secondAttribute="trailing" type="default" id="z9p-6l-dEn"/>
@@ -1234,6 +1245,7 @@
                         <outlet property="firstNameField" destination="hJ1-1Y-asU" id="u5W-Nr-qdf"/>
                         <outlet property="healthCardField" destination="jNq-TP-ZI8" id="YkI-6f-hWu"/>
                         <outlet property="lastNameField" destination="zrd-qg-EHf" id="r2D-g9-ekR"/>
+                        <outlet property="patDesc" destination="HiW-Xm-LxN" id="Ukj-VF-g3N"/>
                         <outlet property="prescButton" destination="o4k-m6-8Z4" id="0xl-BX-oaz"/>
                         <outlet property="profPic" destination="2JK-SC-slE" id="mDK-hJ-PKT"/>
                     </connections>
@@ -1480,6 +1492,7 @@
                 <relationship kind="outlet" name="firstNameField" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="healthCardField" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lastNameField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="patDesc" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="prescButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="profPic" candidateClass="UIImageView"/>
             </relationships>
@@ -1514,7 +1527,7 @@
             <relationships>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="drugName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pic" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pic" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="PrescViewController" superclassName="UIViewController">
@@ -1538,14 +1551,14 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wOq-Pt-sKU"/>
-        <segue reference="yMT-qC-e1T"/>
-        <segue reference="c4v-nX-Mqq"/>
-        <segue reference="cfW-31-cXX"/>
-        <segue reference="UCn-zT-ZtL"/>
+        <segue reference="SHO-Re-PeG"/>
         <segue reference="7Ri-f8-tXb"/>
-        <segue reference="qoD-tj-Ghf"/>
+        <segue reference="cfW-31-cXX"/>
+        <segue reference="c4v-nX-Mqq"/>
+        <segue reference="yMT-qC-e1T"/>
+        <segue reference="wOq-Pt-sKU"/>
         <segue reference="J8M-eq-iG1"/>
         <segue reference="ObW-u7-bRx"/>
+        <segue reference="UCn-zT-ZtL"/>
     </inferredMetricsTieBreakers>
 </document>

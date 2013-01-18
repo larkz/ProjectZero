@@ -46,7 +46,6 @@
     self.dateLabel.text = [@"Date: " stringByAppendingString:dateString];
     
     
-    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     
@@ -71,7 +70,6 @@
     
     [descriptionView setText:@"Include notes on doseage, description etc"];
     [descriptionView setTextColor:[UIColor lightGrayColor]];
-    
     
     
     self.refillArray = [[NSMutableArray alloc] init];
@@ -125,10 +123,6 @@
 
 
 
-
-
-
-
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
     if (descriptionView.textColor == [UIColor lightGrayColor]) {
@@ -140,8 +134,6 @@
 }
 
 - (void) textViewDidBeginEditing:(UITextView *)textView{
-    
-    
     
     
     [UIView beginAnimations:nil context:NULL];
@@ -375,12 +367,6 @@
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }
-
-
-
-
-
-
 
 
 

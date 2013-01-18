@@ -107,11 +107,11 @@
             
             verData = [NSData dataWithContentsOfURL:validUserUrl];
             
-            
             NSDictionary * verDict = [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
             
             self.tempPatientID = [verDict objectForKey:@"id"];
             NSLog(@"Got patiend ID after registration: %@", self.tempPatientID);
+            
             
         }
     
@@ -121,6 +121,7 @@
     }else if ([[userDefaults objectForKey:@"account_type_id"] isEqualToString:@"3"]){
         {
             self.prescButton.hidden = YES;
+            self.patDesc.editable = NO;
         
         }
     
@@ -130,6 +131,8 @@
         NSLog(@"Patient Profile URL %@!", self.tempPatientID);
         
         self.prescButton.hidden = YES;
+        self.patDesc.editable = NO;
+
 
     }
     
@@ -163,12 +166,69 @@
     self.birthdayField.text = self.birthday;
     self.healthCardField.text = self.healthCard;
     
+    self.patDesc.delegate = self;
     
     NSLog(@"DID FINISH LOAD SCREEN!");
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    //Touch outside of box
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+
+- (void) textViewDidBeginEditing:(UITextView *)textView{
+    
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    
+    self.patDesc.frame = CGRectMake(self.patDesc.frame.origin.x, (self.patDesc.frame.origin.y - 50.0), self.patDesc.frame.size.width, self.patDesc.frame.size.height);
+    
+    [textView setFrame:CGRectMake(20, 70, 280, 120)];
+    
+    
+    [UIView commitAnimations];
+    
+}
+
+- (void) textViewDidEndEditing:(UITextView *)textView{
+    
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    
+    self.patDesc.frame = CGRectMake(self.patDesc.frame.origin.x, (self.patDesc.frame.origin.y + 50.0), self.patDesc.frame.size.width, self.patDesc.frame.size.height);
+    
+    [textView setFrame:CGRectMake(20, 100, 280, 220)];
+    
+    
+    
+    [UIView commitAnimations];
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
