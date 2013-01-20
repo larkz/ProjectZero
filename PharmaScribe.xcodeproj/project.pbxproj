@@ -36,9 +36,6 @@
 		DB1C6A671691522300D08169 /* PrescQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A661691522300D08169 /* PrescQRViewController.m */; };
 		DB1C6A7316916C8B00D08169 /* NewPatientProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1C6A7216916C8B00D08169 /* NewPatientProfileViewController.m */; };
 		DB28820116A45F4A00079D12 /* PSLogo114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = DB28820016A45F4A00079D12 /* PSLogo114x114.png */; };
-		DB28820416A45FC800079D12 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DB28820316A45FC800079D12 /* Default.png */; };
-		DB28820616A45FCC00079D12 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB28820516A45FCC00079D12 /* Default@2x.png */; };
-		DB28820816A45FDA00079D12 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB28820716A45FDA00079D12 /* Default-568h@2x.png */; };
 		DB373E2D1698F189005EF12B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E2C1698F189005EF12B /* AVFoundation.framework */; };
 		DB373E2F1698F191005EF12B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E2E1698F191005EF12B /* ImageIO.framework */; };
 		DB373E311698F198005EF12B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB373E301698F197005EF12B /* CoreVideo.framework */; };
@@ -49,6 +46,12 @@
 		DB534DE5169185C100225DE0 /* UserTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB534DE4169185C100225DE0 /* UserTableCell.m */; };
 		DB534DE71691860100225DE0 /* UserTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB534DE61691860100225DE0 /* UserTableCell.xib */; };
 		DB55417F169249BB00B31ADF /* PatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB55417E169249BB00B31ADF /* PatListViewController.m */; };
+		DB65F5A816AA5F4300EB6D19 /* 320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65F5A516AA5F4200EB6D19 /* 320x480.png */; };
+		DB65F5A916AA5F4300EB6D19 /* 640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65F5A616AA5F4200EB6D19 /* 640x960.png */; };
+		DB65F5AA16AA5F4300EB6D19 /* Launch-logo 640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65F5A716AA5F4300EB6D19 /* Launch-logo 640x1136.png */; };
+		DB65F5B016AA5FB100EB6D19 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65F5AF16AA5FB100EB6D19 /* Default-568h@2x.png */; };
+		DB65F5B216AA5FC000EB6D19 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65F5B116AA5FC000EB6D19 /* Default@2x.png */; };
+		DB65F5B416AA5FDC00EB6D19 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65F5B316AA5FDC00EB6D19 /* Default.png */; };
 		DB67F50E16947A7F009097BD /* facebook-profile-picture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB67F50D16947A7F009097BD /* facebook-profile-picture.jpg */; };
 		DB67F51216947C2B009097BD /* PatientProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67F51116947C2B009097BD /* PatientProfileViewController.m */; };
 		DB67F5151696802E009097BD /* MakePrescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67F5141696802D009097BD /* MakePrescriptionViewController.m */; };
@@ -136,9 +139,6 @@
 		DB1C6A7116916C8B00D08169 /* NewPatientProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewPatientProfileViewController.h; path = ProjectZero/NewPatientProfileViewController.h; sourceTree = "<group>"; };
 		DB1C6A7216916C8B00D08169 /* NewPatientProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewPatientProfileViewController.m; path = ProjectZero/NewPatientProfileViewController.m; sourceTree = "<group>"; };
 		DB28820016A45F4A00079D12 /* PSLogo114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PSLogo114x114.png; sourceTree = "<group>"; };
-		DB28820316A45FC800079D12 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		DB28820516A45FCC00079D12 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		DB28820716A45FDA00079D12 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DB373E2C1698F189005EF12B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DB373E2E1698F191005EF12B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		DB373E301698F197005EF12B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -154,6 +154,12 @@
 		DB534DE61691860100225DE0 /* UserTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableCell.xib; sourceTree = "<group>"; };
 		DB55417D169249BB00B31ADF /* PatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatListViewController.h; sourceTree = "<group>"; };
 		DB55417E169249BB00B31ADF /* PatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatListViewController.m; sourceTree = "<group>"; };
+		DB65F5A516AA5F4200EB6D19 /* 320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 320x480.png; sourceTree = "<group>"; };
+		DB65F5A616AA5F4200EB6D19 /* 640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640x960.png; sourceTree = "<group>"; };
+		DB65F5A716AA5F4300EB6D19 /* Launch-logo 640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch-logo 640x1136.png"; sourceTree = "<group>"; };
+		DB65F5AF16AA5FB100EB6D19 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DB65F5B116AA5FC000EB6D19 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DB65F5B316AA5FDC00EB6D19 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DB67F50D16947A7F009097BD /* facebook-profile-picture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "facebook-profile-picture.jpg"; sourceTree = "<group>"; };
 		DB67F51016947C2B009097BD /* PatientProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientProfileViewController.h; sourceTree = "<group>"; };
 		DB67F51116947C2B009097BD /* PatientProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientProfileViewController.m; sourceTree = "<group>"; };
@@ -421,9 +427,12 @@
 		DBD8931716894FE8005C0B87 = {
 			isa = PBXGroup;
 			children = (
-				DB28820716A45FDA00079D12 /* Default-568h@2x.png */,
-				DB28820516A45FCC00079D12 /* Default@2x.png */,
-				DB28820316A45FC800079D12 /* Default.png */,
+				DB65F5B316AA5FDC00EB6D19 /* Default.png */,
+				DB65F5B116AA5FC000EB6D19 /* Default@2x.png */,
+				DB65F5AF16AA5FB100EB6D19 /* Default-568h@2x.png */,
+				DB65F5A516AA5F4200EB6D19 /* 320x480.png */,
+				DB65F5A616AA5F4200EB6D19 /* 640x960.png */,
+				DB65F5A716AA5F4300EB6D19 /* Launch-logo 640x1136.png */,
 				DB28820016A45F4A00079D12 /* PSLogo114x114.png */,
 				DB920422169BCFE600889D8E /* PharmaScribe-iOSicon.png */,
 				DB920412169B5EFF00889D8E /* AudioToolbox.framework */,
@@ -625,9 +634,12 @@
 				DB0D180E16A21833006ECCC7 /* Play.png in Resources */,
 				DB0D180F16A21833006ECCC7 /* Profile.png in Resources */,
 				DB28820116A45F4A00079D12 /* PSLogo114x114.png in Resources */,
-				DB28820416A45FC800079D12 /* Default.png in Resources */,
-				DB28820616A45FCC00079D12 /* Default@2x.png in Resources */,
-				DB28820816A45FDA00079D12 /* Default-568h@2x.png in Resources */,
+				DB65F5A816AA5F4300EB6D19 /* 320x480.png in Resources */,
+				DB65F5A916AA5F4300EB6D19 /* 640x960.png in Resources */,
+				DB65F5AA16AA5F4300EB6D19 /* Launch-logo 640x1136.png in Resources */,
+				DB65F5B016AA5FB100EB6D19 /* Default-568h@2x.png in Resources */,
+				DB65F5B216AA5FC000EB6D19 /* Default@2x.png in Resources */,
+				DB65F5B416AA5FDC00EB6D19 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +814,7 @@
 		DBD8935D16894FE8005C0B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectZero/ProjectZero-Prefix.pch";
 				INFOPLIST_FILE = "ProjectZero/ProjectZero-Info.plist";
@@ -811,6 +824,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = PharmaScribe;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

@@ -99,7 +99,6 @@
     
     [super viewDidLoad];
     
-    
 	// Do any additional setup after loading the view.
 }
 
@@ -180,7 +179,7 @@
     self.amountRefillLabel.hidden = NO;
     self.dateLabel.hidden = NO;
     self.drugNameField.hidden = NO;
-    self.refillPicker.hidden = NO;
+    self.refillPicker.hidden = YES;
 
     
     [UIView commitAnimations];
@@ -213,7 +212,7 @@
         
         self.description = [[self.description componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
         
-        self.description = [self.description stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+        self.description = [self.description stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         self.description = [self.description stringByTrimmingCharactersInSet:
          [NSCharacterSet whitespaceCharacterSet]];
@@ -230,7 +229,6 @@
         NSLog(@"display addPrescURL: %@", self.addPrescURL);
         
         NSData * data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.addPrescURL]];
-        
         
         NSError* error;
         
@@ -264,7 +262,15 @@
 
 
 - (IBAction)pressDone:(id)sender{
+    
+    
+    self.refillPicker.hidden = YES;
+    self.numRefillButton.titleLabel.text = @"# of Refills:";
+    [self.numRefillButton setTitle:@"# of Refills:" forState:UIControlStateNormal];
+    
     [descriptionView resignFirstResponder];
+    
+    [self.view setNeedsDisplay];
 }
 
 
@@ -302,19 +308,14 @@
 //    
 //    self.QRImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.addPrescURL]]];
     
-    
 }
 
 
 - (IBAction)pressNumRefill:(id)sender{
-
-    
     
     NSLog(@"Num refills string:%@", self.numRefillButton.titleLabel.text);
     
-    
     if ([self.numRefillButton.titleLabel.text isEqualToString: @"# of Refills:"]){
-        
         
         NSLog(@"Num refills string is EQUAL");
         
@@ -331,9 +332,7 @@
         self.refillPicker.hidden = YES;
         self.numRefillButton.titleLabel.text = @"# of Refills:";
         [self.numRefillButton setTitle:@"# of Refills:" forState:UIControlStateNormal];
-        
     }
-    
     
 }
 
@@ -346,7 +345,6 @@
     NSLog(@"selected refill #:%@", self.amountRefill);
     
     self.amountRefillLabel.text = self.amountRefill;
-    
     
 }
 

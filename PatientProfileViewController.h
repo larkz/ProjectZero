@@ -35,6 +35,7 @@
 
 
 @property IBOutlet UIButton * prescButton;
+@property IBOutlet UIButton * doneButton;
 
 
 @property (strong, nonatomic) IBOutlet UILabel * firstNameField;
@@ -42,17 +43,13 @@
 @property (strong, nonatomic) IBOutlet UILabel * birthdayField;
 @property (strong, nonatomic) IBOutlet UILabel * healthCardField;
 @property (strong, nonatomic) IBOutlet UIImageView * profPic;
-
 @property (strong, nonatomic) IBOutlet UITextView * patDesc;
 
-
-
-
-
-
 @property (strong, nonatomic) NSString * tempPatientID;
-
 @property (strong, nonatomic) NSString * regURL;
+
+
+- (IBAction)pressDone:(id)sender;
 
 
 @end

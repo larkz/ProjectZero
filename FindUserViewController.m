@@ -60,70 +60,54 @@
 
     NSLog(@"textFieldDidBeginEditing");
 
+    if (self.didFinishName == NO){
+        
+    if (textField == self.patientID){
     
-    if (textField == self.lastName){
-    
-    self.patientID.hidden = YES;
-    self.seeAllPatients.hidden = YES;
-    self.searchByOHIP.hidden = YES;
+        self.firstName.hidden = YES;
+        self.lastName.hidden =YES;
+        self.seeAllPatients.hidden = YES;
+        self.searchByName.hidden = YES;
         self.orLabeBot.hidden = YES;
         self.orLabelTop.hidden = YES;
         
 
-    [UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDuration:0.5];
-	[UIView setAnimationBeginsFromCurrentState:YES];
-	
-    self.lastName.frame = CGRectMake(self.lastName.frame.origin.x, (self.lastName.frame.origin.y - 170.0), self.lastName.frame.size.width, self.lastName.frame.size.height);
-        
-    self.searchByName.frame = CGRectMake(self.searchByName.frame.origin.x, (self.searchByName.frame.origin.y - 130.0), self.searchByName.frame.size.width, self.searchByName.frame.size.height);
-        
-	[UIView commitAnimations];
-        
-    }
-    
-    
-    
-    if (textField == self.firstName){
-        
-        self.patientID.hidden = YES;
-        self.seeAllPatients.hidden = YES;
-        self.searchByOHIP.hidden = YES;
-        self.orLabeBot.hidden = YES;
-        self.orLabelTop.hidden = YES;
-        
-        
-        
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDelegate:self];
         [UIView setAnimationDuration:0.5];
         [UIView setAnimationBeginsFromCurrentState:YES];
+	
+        self.patientID.frame = CGRectMake(self.lastName.frame.origin.x, (self.lastName.frame.origin.y - 100.0), self.lastName.frame.size.width, self.lastName.frame.size.height);
         
-        self.firstName.frame = CGRectMake(self.firstName.frame.origin.x, (self.firstName.frame.origin.y - 130.0), self.firstName.frame.size.width, self.firstName.frame.size.height);
-        
-        self.searchByName.frame = CGRectMake(self.searchByName.frame.origin.x, (self.searchByName.frame.origin.y - 130.0), self.searchByName.frame.size.width, self.searchByName.frame.size.height);
+        self.searchByOHIP.frame = CGRectMake(self.searchByName.frame.origin.x, (self.searchByName.frame.origin.y - 100.0), self.searchByName.frame.size.width, self.searchByName.frame.size.height);
         
         [UIView commitAnimations];
         
+        NSLog(@"First name length:%@, Last Name length:%@", self.firstName.text, self.lastName.text);
+
+        
+    }
     }
     
     
     
-    
+
     
 
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     NSLog(@"textFieldDidEndEditing");
-
-    self.patientID.hidden = NO;
-    self.seeAllPatients.hidden = NO;
-    self.searchByOHIP.hidden = NO;
     
-    self.orLabeBot.hidden = NO;
-    self.orLabelTop.hidden = NO;
+    
+        self.patientID.hidden = NO;
+        self.seeAllPatients.hidden = NO;
+        self.searchByName.hidden = NO;
+        self.firstName.hidden = NO;
+        self.lastName.hidden = NO;
+        
+        self.orLabeBot.hidden = NO;
+        self.orLabelTop.hidden = NO;
 
 }
 
@@ -135,6 +119,8 @@
     self.firstName.delegate = self;
     self.lastName.delegate = self;
     
+    self.didFinishName = NO;
+
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -158,11 +144,11 @@
 - (IBAction)searchOHIP:(id)sender{
     
     
-    
     [self performSegueWithIdentifier:@"toPatListSegueByOHIP" sender:self];
     
 }
 - (IBAction)serchByName:(id)sender{
+    
     
     if (self.firstName.text.length == 0 || self.lastName.text.length == 0 ){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unfilled Fields"
@@ -183,7 +169,6 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
     
     
     if ([segue.identifier isEqualToString:@"toPatListSegue"]){

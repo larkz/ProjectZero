@@ -73,33 +73,45 @@
     
     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.fetchIDURL]];
     
-    NSError* error;
+    if (data != nil){
+    
+        NSError* error;
 
-   self.fetchIDDict = [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
+        self.fetchIDDict = [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
 
-    NSLog(@"fetchID URL %@", self.fetchIDURL);
-    NSLog(@"fetchID type %@", self.fetchIDDict);
+        NSLog(@"fetchID URL %@", self.fetchIDURL);
+        NSLog(@"fetchID type %@", self.fetchIDDict);
     
     
     
-    [userDefaults setObject:password.text forKey:@"password"];
+        [userDefaults setObject:password.text forKey:@"password"];
     
     
     //[self.fetchIDDict objectForKey:@"first_name"]
     
-    [userDefaults setObject:[self.fetchIDDict objectForKey:@"user_id"] forKey:@"userID"];
+        [userDefaults setObject:[self.fetchIDDict objectForKey:@"user_id"] forKey:@"userID"];
     
-    [userDefaults setObject:[self.fetchIDDict objectForKey:@"first_name"] forKey:@"first_name"];
-    [userDefaults setObject:[self.fetchIDDict objectForKey:@"last_name"] forKey:@"last_name"];
+        [userDefaults setObject:[self.fetchIDDict objectForKey:@"first_name"] forKey:@"first_name"];
+        [userDefaults setObject:[self.fetchIDDict objectForKey:@"last_name"] forKey:@"last_name"];
 
     
-    
+    }
     
     [userDefaults synchronize];
-    
-    
-    
-    if ([self.password.text isEqualToString:[self.fetchIDDict objectForKey:@"password"]] ){
+    if (data == nil){
+        
+        NSLog(@"Connection Error");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Unsuccessful"
+                                                        message:@"Server Unreachable."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+
+        
+        
+    }
+    else if ([self.password.text isEqualToString:[self.fetchIDDict objectForKey:@"password"]] ){
     
     
         if ( [[self.fetchIDDict objectForKey:@"account_type_id"] isEqualToString:@"1"]){
@@ -108,7 +120,6 @@
             [userDefaults setObject:[self.fetchIDDict objectForKey:@"account_type_id"] forKey:@"account_type_id"];
             
             [userDefaults setObject:[self.fetchIDDict objectForKey:@"id"] forKey:@"userID"];
-            
             [userDefaults synchronize];
 
         
@@ -193,8 +204,6 @@
     
     
 }
-
-
 
 
 

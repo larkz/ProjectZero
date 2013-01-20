@@ -85,6 +85,22 @@
 	// Do any additional setup after loading the view.
 }
 
+//- (BOOL)checkZeroTuple:(NSArray * )A{
+//    
+//    int i;
+//    for(i = 0; i<[A count]; i++){
+//        if(( [A objectAtIndex:i] + [A objectAtIndex:(i+1)] + [A objectAtIndex:(i+2)]) ==0){
+//            
+//            
+//            
+//        }
+//        
+//        
+//    }
+//    
+//    
+//}
+
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if (component == 0) {
@@ -143,18 +159,22 @@
 
 
 
-//- (void)textFieldDidBeginEditing:(UITextField *)textField {
-//    
-//    
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    
+    [textField setReturnKeyType:UIReturnKeyDone];
+
+    
+    
 //    [UIView beginAnimations:nil context:NULL];
 //	[UIView setAnimationDelegate:self];
 //	[UIView setAnimationDuration:0.5];
 //	[UIView setAnimationBeginsFromCurrentState:YES];
 //	textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y - 120.0), textField.frame.size.width, textField.frame.size.height);
 //	[UIView commitAnimations];
-//    
-//    
-//}
+    
+    
+}
 
 
 

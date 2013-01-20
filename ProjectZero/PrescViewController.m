@@ -139,6 +139,23 @@
     
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    NSError * error;
+    NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:self.dataURL]];
+
+    self.prescList = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
+
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

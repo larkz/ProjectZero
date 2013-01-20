@@ -25,8 +25,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *password;
 
 
-
-
 @property (strong, nonatomic) NSString * userIDStr;
 @property (strong, nonatomic) NSString * passwordStr;
 @property (strong, nonatomic) NSString * loginURL;

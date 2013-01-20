@@ -69,7 +69,6 @@
 {
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-
     NSLog(@"DID LOAD SCREEN!");
     NSLog(@"tempPatientID:: %@", self.tempPatientID);
     
@@ -151,25 +150,36 @@
         self.lastName = [verDict objectForKey:@"last_name"];
         self.healthCard =  [verDict objectForKey:@"OHIP"];
         self.birthday = [verDict objectForKey:@"birthday"];
+        
+        if ([verDict objectForKey:@"description"] != nil){
+        
+            self.patDesc.text = [verDict objectForKey:@"description"];
+        }
+    
     }
 
     NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
     self.firstNameField.text = self.firstName;
     self.lastNameField.text =  self.lastName;
+
     
-    if (self.birthday == [NSNull null]){
+    if (self.birthday){
         
-        NSLog(@"Birthday non-nil class:%@", [self.birthday class]);        
-        self.birthday = @"Unknown";
+        NSLog(@"Birthday non-nil class:%@", [self.birthday class]);
+        self.birthday = @"unknown";
+        self.birthdayField.text = @"Unknown Birthday";
     
+    }else{
+        self.birthdayField.text = self.birthday;
     }
-    self.birthdayField.text = self.birthday;
+    
     self.healthCardField.text = self.healthCard;
     
-    self.patDesc.delegate = self;
+    self.doneButton.hidden = YES;
     
+    self.patDesc.delegate = self;
     NSLog(@"DID FINISH LOAD SCREEN!");
-
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -184,7 +194,7 @@
 
 - (void) textViewDidBeginEditing:(UITextView *)textView{
     
-    
+        
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDuration:0.5];
@@ -194,8 +204,9 @@
     self.patDesc.frame = CGRectMake(self.patDesc.frame.origin.x, (self.patDesc.frame.origin.y - 50.0), self.patDesc.frame.size.width, self.patDesc.frame.size.height);
     
     [textView setFrame:CGRectMake(20, 20, 280, 120)];
-    
-    
+    [textView setReturnKeyType:UIReturnKeyDefault];
+
+    self.doneButton.hidden = NO;
     [UIView commitAnimations];
     
 }
@@ -213,15 +224,47 @@
     
     [textView setFrame:CGRectMake(20, 140, 280, 170)];
     
-    
-    
+    self.doneButton.hidden = YES;
     [UIView commitAnimations];
     
     
+    NSString *urlReady = [self.patDesc.text
+                          stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSLog(@"Description for conversion to URL %@", urlReady);
+    NSString *patDescStr = [[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUserDescription/?user_id="
+                              stringByAppendingString:self.tempPatientID]
+                             stringByAppendingString:@"&description=" ]
+                            stringByAppendingString:urlReady];
+    
+    
+    
+    NSURL *patDescURL = [NSURL URLWithString:patDescStr];
+    
+    NSData* data = [NSData dataWithContentsOfURL:patDescURL];
+    NSError* error;
+    [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
+    
+
 }
 
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    
+    if ([self.patDesc.text isEqualToString:@"Enter Patient Description"]){
+        textView.text = @"";
+        
+    }
+    return YES;
+}
 
-
+- (IBAction)pressDone:(id)sender{
+    
+    
+    [self.patDesc resignFirstResponder];
+    self.doneButton.hidden = YES;
+    
+}
 
 - (void)didReceiveMemoryWarning
 {

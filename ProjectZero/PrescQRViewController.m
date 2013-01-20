@@ -43,10 +43,7 @@
 - (void)viewDidLoad
 {
     
-
-    
     self.QRbool = @"no";
-    
     
     NSLog(@"BOOL: %@",self.justPresc);
     
@@ -59,11 +56,8 @@
         
     }
     
-    
-    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSLog(@"detected account type:%@", [userDefaults objectForKey:@"account_type_id" ]);
-    
     
     //Doctor
     if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"1"] &&
@@ -87,8 +81,10 @@
     if([[userDefaults objectForKey:@"account_type_id" ]isEqualToString:@"3"]){
         
         NSLog(@"detected pharmacist!");
-        self.buttonTop.hidden = YES;
-        [self.buttonBot setTitle:@"Confirm Prescription"forState:UIControlStateNormal];        
+        //self.buttonTop.hidden = YES;
+        
+        [self.buttonTop setTitle:@"Decrease Refill"forState:UIControlStateNormal];
+        [self.buttonBot setTitle:@"Remove Prescription"forState:UIControlStateNormal];        
         
     }
     
@@ -251,8 +247,31 @@
 
 - (IBAction)pressTop:(id)sender{
     
-    [self performSegueWithIdentifier:@"toDoctorHomeSegue" sender:self];
-
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"1"] ){
+        [self performSegueWithIdentifier:@"toDoctorHomeSegue" sender:self];
+    }
+    
+    
+    else if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"3"] ){
+        
+        if ([self.refillsLabel.text intValue] > 0){
+            
+            NSString * removeURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/decreasePresc/?presc_id=" stringByAppendingString:self.prescID];
+            
+            NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:removeURL]];
+            NSError* error;
+            
+            [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
+            
+            
+            self.refillsLabel.text = [NSString stringWithFormat:@"%d", [self.refillsLabel.text intValue] - 1 ];
+            
+            [self.refillsLabel setNeedsDisplay];
+            
+        }
+    }
     
 }
 

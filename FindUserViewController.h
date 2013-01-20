@@ -23,6 +23,8 @@
 @property (strong, nonatomic) IBOutlet UIButton * searchByOHIP;
 @property (strong, nonatomic) IBOutlet UIButton * searchByName;
 
+@property (nonatomic, assign) BOOL didFinishName;
+
 
 - (IBAction)seeAllPats:(id)sender;
 - (IBAction)searchOHIP:(id)sender;
