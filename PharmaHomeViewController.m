@@ -125,10 +125,7 @@
         
         NSData* data = [NSData dataWithContentsOfURL:scanURL];
         
-        
-        
         NSError* error;
-        
         
         if (data != nil){
         
@@ -141,7 +138,6 @@
                                               otherButtonTitles:nil];
             [alert show];
             AudioServicesPlaySystemSound(1103);
-        
             self.scanPrescID = result;
         
             [self performSegueWithIdentifier:@"toPrescQRFromVerifySegue" sender:self];
@@ -149,7 +145,6 @@
         else{
             
             NSLog(@"INVALID QR CODE!");
-            
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid QR Code"
                                                             message:result
                                                            delegate:nil
@@ -157,7 +152,6 @@
                                                   otherButtonTitles:nil];
             [alert show];
             AudioServicesPlaySystemSound(1103);
-            
             
         }
         

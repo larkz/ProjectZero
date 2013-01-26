@@ -143,7 +143,7 @@
             <objects>
                 <viewController id="wPT-gn-shQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ur-id-f9k">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dY-XN-bh6">
@@ -225,7 +225,7 @@
             <objects>
                 <viewController id="9Gv-gv-gwq" customClass="PrescViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ri7-ap-ipz">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-sa-hVn">
@@ -305,7 +305,7 @@
             <objects>
                 <viewController title="Pharmacy Search" id="Fyp-mt-je7" customClass="MapSearchView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0c0-0U-FU5">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKg-g8-xmd">
@@ -393,7 +393,7 @@
             <objects>
                 <viewController id="hYw-t3-M7s" customClass="PharmaHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gMS-wg-Mfi">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgh-yS-Eby">
@@ -460,7 +460,7 @@
             <objects>
                 <viewController id="obi-tN-2Xg" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cTc-8d-Xtq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hj7-oe-gJj"/>
@@ -715,7 +715,7 @@
             <objects>
                 <viewController id="vJn-Uy-cKu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z7w-Oc-G3a">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDG-vn-BeG">
@@ -778,7 +778,7 @@
             <objects>
                 <viewController id="Cud-RM-Fxk" customClass="FindUserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="39c-zr-iXn">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS3-wm-7dW">
@@ -916,7 +916,7 @@
             <objects>
                 <viewController id="Ikd-xv-Nkm" customClass="PatListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wbF-UN-TrA">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4X3-Xb-Cpp">
@@ -997,7 +997,7 @@
             <objects>
                 <viewController id="Hqh-N1-6BI" customClass="MakePrescriptionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZJi-21-MBF">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medication" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkP-Ie-h6X">
@@ -1131,7 +1131,7 @@
             <objects>
                 <viewController storyboardIdentifier="PatProfVC" id="F54-rU-MjW" customClass="PatientProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bDG-KA-Kgl">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-TY-qU3">
@@ -1276,7 +1276,7 @@
             <objects>
                 <viewController id="YwB-Y5-XaG" customClass="NewPatientProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NdI-fx-hEv">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-Mi-IPe">
@@ -1546,7 +1546,7 @@
             <relationships>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="drugName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pic" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="PrescViewController" superclassName="UIViewController">
@@ -1570,14 +1570,14 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qA6-B0-AL6"/>
-        <segue reference="J8M-eq-iG1"/>
-        <segue reference="wDs-fM-Hzo"/>
-        <segue reference="wOq-Pt-sKU"/>
-        <segue reference="ObW-u7-bRx"/>
-        <segue reference="iH0-GD-m0b"/>
+        <segue reference="UCn-zT-ZtL"/>
+        <segue reference="X6f-kb-7Vg"/>
         <segue reference="VQt-El-gVg"/>
         <segue reference="SHO-Re-PeG"/>
-        <segue reference="X6f-kb-7Vg"/>
+        <segue reference="yMT-qC-e1T"/>
+        <segue reference="cfW-31-cXX"/>
+        <segue reference="J8M-eq-iG1"/>
+        <segue reference="wOq-Pt-sKU"/>
+        <segue reference="ObW-u7-bRx"/>
     </inferredMetricsTieBreakers>
 </document>

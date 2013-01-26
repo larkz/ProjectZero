@@ -754,7 +754,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Weizhong Li";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Weizhong Li";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -769,6 +770,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "2241278B-13ED-4342-A53F-D8C90A6ED5CB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2241278B-13ED-4342-A53F-D8C90A6ED5CB";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -782,7 +785,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Weizhong Li";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Weizhong Li";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -790,6 +794,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "2241278B-13ED-4342-A53F-D8C90A6ED5CB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2241278B-13ED-4342-A53F-D8C90A6ED5CB";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -798,6 +804,8 @@
 		DBD8935C16894FE8005C0B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Weizhong Li";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Weizhong Li";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectZero/ProjectZero-Prefix.pch";
 				INFOPLIST_FILE = "ProjectZero/ProjectZero-Info.plist";
@@ -806,6 +814,8 @@
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
 				PRODUCT_NAME = PharmaScribe;
+				PROVISIONING_PROFILE = "2241278B-13ED-4342-A53F-D8C90A6ED5CB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2241278B-13ED-4342-A53F-D8C90A6ED5CB";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -814,7 +824,8 @@
 		DBD8935D16894FE8005C0B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Weizhong Li";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Weizhong Li";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectZero/ProjectZero-Prefix.pch";
 				INFOPLIST_FILE = "ProjectZero/ProjectZero-Info.plist";
@@ -824,7 +835,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = PharmaScribe;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "2241278B-13ED-4342-A53F-D8C90A6ED5CB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2241278B-13ED-4342-A53F-D8C90A6ED5CB";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

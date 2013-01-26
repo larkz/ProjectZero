@@ -10,7 +10,7 @@
 #import "PrescViewController.h"
 
 
-@interface PrescQRViewController : UIViewController{
+@interface PrescQRViewController : UIViewController <UIAlertViewDelegate>{
     
     UILabel * drugNameTextField;
     NSString *drugName;

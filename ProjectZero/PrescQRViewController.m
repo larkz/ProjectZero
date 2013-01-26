@@ -44,6 +44,8 @@
 {
     
     self.QRbool = @"no";
+     //[yourAlertViewObject setDelegate:self];
+    
     
     NSLog(@"BOOL: %@",self.justPresc);
     
@@ -112,11 +114,7 @@
     //if (self.drugName != nil){
     self.drugName = [[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0] objectForKey:@"drug"];
     
-    
-    
-    
-    
-    
+
     
     if (self.drugName != nil){
     
@@ -216,17 +214,31 @@
 
     if([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"1"]){
         
-        NSString * removeURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/removePresc/?presc_id=" stringByAppendingString:self.prescID];
         
-        NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:removeURL]];
-        NSError* error;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remove This Patient?"
+                                                        message:@"Are you sure you wish to remove this patient?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"OK", nil];
+        [alert show];
         
-        [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
         
-        [self performSegueWithIdentifier:@"toDoctorHomeSegue" sender:self];
+//        NSString * removeURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/removePresc/?presc_id=" stringByAppendingString:self.prescID];
+//        
+//        NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:removeURL]];
+//        NSError* error;
+//        
+//        [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
+        
+        
+        
+        
+//        [self performSegueWithIdentifier:@"toDoctorHomeSegue" sender:self];
        
         
     }else if ([[userDefaults objectForKey:@"account_type_id" ] isEqualToString:@"3"] ){
+
+        
         
         NSString * removeURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/removePresc/?presc_id=" stringByAppendingString:self.prescID];
         
@@ -273,6 +285,31 @@
         }
     }
     
+}
+
+- (void)alertView:(UIAlertView *)alertView
+didDismissWithButtonIndex:(NSInteger) buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        
+        NSLog(@"Cancel Tapped.");
+    }
+    else if (buttonIndex == 1)
+    {
+        
+        NSString * removeURL = [@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/removePresc/?presc_id=" stringByAppendingString:self.prescID];
+        
+        NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:removeURL]];
+        NSError* error;
+        
+        [[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] objectAtIndex:0];
+        
+        [self performSegueWithIdentifier:@"toDoctorHomeSegue" sender:self];
+        
+        NSLog(@"OK Tapped. Hello World!");
+    
+    }
 }
 
 
