@@ -1316,7 +1316,6 @@
                                 </state>
                                 <connections>
                                     <action selector="pressCreate:" destination="YwB-Y5-XaG" eventType="touchUpInside" id="gBa-fW-2Hh"/>
-                                    <segue destination="F54-rU-MjW" kind="push" identifier="toProfileSegue" id="VQt-El-gVg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WH-Ye-ZFU">
@@ -1387,6 +1386,7 @@
                         <outlet property="lastName" destination="Sdx-MM-q85" id="gk0-oK-sCg"/>
                         <outlet property="password" destination="c15-O8-IWv" id="12m-2m-Lbk"/>
                         <outlet property="selectBDay" destination="6WH-Ye-ZFU" id="XI2-lv-6b6"/>
+                        <segue destination="F54-rU-MjW" kind="push" identifier="toProfileSegue" id="mJ0-9F-aoR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJX-0w-yVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1570,14 +1570,14 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="UCn-zT-ZtL"/>
-        <segue reference="X6f-kb-7Vg"/>
-        <segue reference="VQt-El-gVg"/>
-        <segue reference="SHO-Re-PeG"/>
+        <segue reference="ObW-u7-bRx"/>
+        <segue reference="wOq-Pt-sKU"/>
         <segue reference="yMT-qC-e1T"/>
+        <segue reference="X6f-kb-7Vg"/>
+        <segue reference="mJ0-9F-aoR"/>
+        <segue reference="UCn-zT-ZtL"/>
+        <segue reference="SHO-Re-PeG"/>
         <segue reference="cfW-31-cXX"/>
         <segue reference="J8M-eq-iG1"/>
-        <segue reference="wOq-Pt-sKU"/>
-        <segue reference="ObW-u7-bRx"/>
     </inferredMetricsTieBreakers>
 </document>

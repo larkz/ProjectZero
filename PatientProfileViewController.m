@@ -83,33 +83,33 @@
         if(self.tempPatientID == nil){
     
     
-            self.regURL = [[[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name="
-                                    stringByAppendingString:self.firstName] stringByAppendingString:@"&last_name="]
-                                  stringByAppendingString:self.lastName]
-                        stringByAppendingString:@"&password="]
-                        stringByAppendingString:self.regPass]
-                       stringByAppendingString:@"&account_type_id=2"]
-                      stringByAppendingString:@"&ohip=" ]
-                     stringByAppendingString:self.healthCard]
-                    stringByAppendingString:@"&birthday="]
-                   stringByAppendingString:self.birthday];
-            
-            NSData* verData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.regURL]];
-            
-            NSError * error;
-            
-            [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
-        
-            
-            
-            NSURL *validUserUrl = [NSURL URLWithString:[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserFromOHIP/?ohip=" stringByAppendingString:self.healthCard]];
-            
-            verData = [NSData dataWithContentsOfURL:validUserUrl];
-            
-            NSDictionary * verDict = [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
-            
-            self.tempPatientID = [verDict objectForKey:@"id"];
-            NSLog(@"Got patiend ID after registration: %@", self.tempPatientID);
+//            self.regURL = [[[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name="
+//                                    stringByAppendingString:self.firstName] stringByAppendingString:@"&last_name="]
+//                                  stringByAppendingString:self.lastName]
+//                        stringByAppendingString:@"&password="]
+//                        stringByAppendingString:self.regPass]
+//                       stringByAppendingString:@"&account_type_id=2"]
+//                      stringByAppendingString:@"&ohip=" ]
+//                     stringByAppendingString:self.healthCard]
+//                    stringByAppendingString:@"&birthday="]
+//                   stringByAppendingString:self.birthday];
+//            
+//            NSData* verData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.regURL]];
+//            
+//            NSError * error;
+//            
+//            [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
+//        
+//            
+//            
+//            NSURL *validUserUrl = [NSURL URLWithString:[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserFromOHIP/?ohip=" stringByAppendingString:self.healthCard]];
+//            
+//            verData = [NSData dataWithContentsOfURL:validUserUrl];
+//            
+//            NSDictionary * verDict = [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
+//            
+//            self.tempPatientID = [verDict objectForKey:@"id"];
+//            NSLog(@"Got patiend ID after registration: %@", self.tempPatientID);
             
             
         }
@@ -132,7 +132,6 @@
         self.prescButton.hidden = YES;
         self.patDesc.editable = NO;
 
-
     }
     
     
@@ -145,20 +144,29 @@
         
         NSDictionary * verDict = [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
         
-        
+       
+
         self.firstName = [verDict objectForKey:@"first_name"];
         self.lastName = [verDict objectForKey:@"last_name"];
         self.healthCard =  [verDict objectForKey:@"OHIP"];
         self.birthday = [verDict objectForKey:@"birthday"];
         
-        if ([verDict objectForKey:@"description"] != nil){
+        NSLog(@"Check fields from Temp ID");
+        NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
         
+        if ([verDict objectForKey:@"description"] != (id)[NSNull null]){
+        
+            NSLog(@"Fetched Patient Desc:%@", [verDict objectForKey:@"description"]);
             self.patDesc.text = [verDict objectForKey:@"description"];
+        } else {
+            
+            self.patDesc.text = @"No description available";
+            
         }
     
     }
 
-    NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
+    //NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
     self.firstNameField.text = self.firstName;
     self.lastNameField.text =  self.lastName;
 

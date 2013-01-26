@@ -187,11 +187,46 @@
         
         PatientProfileViewController *destViewController = (PatientProfileViewController*)segue.destinationViewController;
         
-        destViewController.firstName = self.firstName.text;
-        destViewController.lastName = self.lastName.text;
-        destViewController.healthCard = self.healthCardNum.text;
-        destViewController.regPass = self.password.text;
-        destViewController.birthday = [self.birthday.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+        
+        self.regURL = [[[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name="
+                                stringByAppendingString:self.firstName.text] stringByAppendingString:@"&last_name="]
+                              stringByAppendingString:self.lastName.text]
+                             stringByAppendingString:@"&password="]
+                            stringByAppendingString:self.password.text]
+                           stringByAppendingString:@"&account_type_id=2"]
+                          stringByAppendingString:@"&ohip=" ]
+                         stringByAppendingString:self.healthCardNum.text]
+                        stringByAppendingString:@"&birthday="]
+                       stringByAppendingString:self.birthday.text];
+        
+        NSData* verData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.regURL]];
+        
+        NSError * error;
+        
+        [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
+        
+        
+        
+        NSURL *validUserUrl = [NSURL URLWithString:[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/getUserFromOHIP/?ohip=" stringByAppendingString:self.healthCardNum.text]];
+        
+        verData = [NSData dataWithContentsOfURL:validUserUrl];
+        
+        NSDictionary * verDict = [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
+        
+        destViewController.tempPatientID = [verDict objectForKey:@"id"];
+        NSLog(@"Got patiend ID after registration: %@", destViewController.tempPatientID);
+        
+        
+        
+        
+        
+        
+        
+        //destViewController.firstName = self.firstName.text;
+        //destViewController.lastName = self.lastName.text;
+        //destViewController.healthCard = self.healthCardNum.text;
+        //destViewController.regPass = self.password.text;
+        //destViewController.birthday = [self.birthday.text stringByReplacingOccurrencesOfString:@" " withString:@""];
         
 //        NSLog(@"self.firstName class :: %@", [self.firstName class]);
 //        NSLog(@"test:: %@", [[self.year.text stringByAppendingString: self.month.text] stringByAppendingString: self.day.text]);
@@ -229,7 +264,27 @@
 {
     
     
-    NSString * birthdayText = [self.birthday.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    
+    if ( ![self.firstName.text isEqual:@"" ] && ![self.lastName.text isEqual:@""] && ![self.healthCardNum.text isEqual:@""] && ![self.password.text isEqual:@""]){
+    
+    
+        [self performSegueWithIdentifier:@"toProfileSegue" sender:self];
+        
+    } else {
+        
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unfilled Fields"
+                                                        message:@"Please fill out all fields."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        
+    }
+    
+    
     
     
 //    self.regURL = [[[[[[[[[@"http://default-environment-ntmkc2r9ez.elasticbeanstalk.com/ProjectZero-server/index.php/QRCodeGen/addUser/?first_name=" stringByAppendingString:self.firstName.text] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastName.text]
