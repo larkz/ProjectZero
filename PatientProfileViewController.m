@@ -143,13 +143,11 @@
         NSError * error;
         
         NSDictionary * verDict = [[NSJSONSerialization JSONObjectWithData:verData options:kNilOptions error:&error] objectAtIndex:0];
-        
-       
 
         self.firstName = [verDict objectForKey:@"first_name"];
         self.lastName = [verDict objectForKey:@"last_name"];
         self.healthCard =  [verDict objectForKey:@"OHIP"];
-        self.birthday = [verDict objectForKey:@"birthday"];
+        self.birthday = [verDict objectForKey:@"birthday"];       
         
         NSLog(@"Check fields from Temp ID");
         NSLog(@"%@ %@ %@ %@", self.firstName, self.lastName, self.healthCard, self.birthday);
@@ -171,16 +169,7 @@
     self.lastNameField.text =  self.lastName;
 
     
-    if (self.birthday){
-        
-        NSLog(@"Birthday non-nil class:%@", [self.birthday class]);
-        self.birthday = @"unknown";
-        self.birthdayField.text = @"Unknown Birthday";
-    
-    }else{
-        self.birthdayField.text = self.birthday;
-    }
-    
+    self.birthdayField.text = self.birthday;
     self.healthCardField.text = self.healthCard;
     
     self.doneButton.hidden = YES;
