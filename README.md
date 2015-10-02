@@ -1,4 +1,4 @@
-ProjectZero
+Pharmascripe (aka. ProjectZero)
 ===========
 
-Health Care Application
+iOS Mobile app that takes in QR codes, and uses it to verify prescriptions.
